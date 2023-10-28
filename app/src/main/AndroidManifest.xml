@@ -13,6 +13,15 @@
         android:theme="@style/Theme.GroupProject"
         tools:targetApi="31">
         <activity
+            android:name=".catviewer.CatViewMain"
+            android:exported="false" />
+        <activity
+            android:name=".searchbar.SearchBarMain"
+            android:exported="false" />
+        <activity
+            android:name=".CategoriesPage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
