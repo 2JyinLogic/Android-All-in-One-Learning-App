@@ -1,0 +1,5 @@
+class ABC {
+    private static String codeIdToTextFileName(String id) {
+        return "code_" + id + ".txt";
+    }
+}
