@@ -1,5 +1,5 @@
-// Don't change START
 package com.can301.gp.demos;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.can301.gp.Demonstration;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 
-public class EffectExample1 extends AppCompatActivity {
+public class EffectExample5 extends AppCompatActivity {
 
     private String demoTitle;
     // codeId is needed for the code page to load the corresponding code
@@ -32,13 +32,13 @@ public class EffectExample1 extends AppCompatActivity {
 // Don't change END
 
     // Change this to exactly the string as in the AndroidManifest.xml
-    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExample1";
+    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExample5";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Change here to the layout name
-        setContentView(R.layout.activity_effect_example1);
+        setContentView(R.layout.activity_effect_example5);
 
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);

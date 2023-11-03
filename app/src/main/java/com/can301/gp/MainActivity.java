@@ -13,6 +13,7 @@ import com.can301.gp.demos.EffectExample1;
 import com.can301.gp.demos.EffectExample2;
 import com.can301.gp.demos.EffectExample3;
 import com.can301.gp.demos.EffectExample4;
+import com.can301.gp.demos.EffectExample5;
 import com.can301.gp.searchbar.SearchBarMain;
 
 import java.util.ArrayList;
@@ -55,11 +56,13 @@ public class MainActivity extends AppCompatActivity {
         categories.put("Cat2", new Category("Cat2","Cat2", R.drawable.ic_cat2));
         categories.put("Cat3", new Category("Cat3","Cat3", R.drawable.ic_cat1));
         categories.put("Cat4", new Category("Cat4","Cat4", R.drawable.ic_cat2));
+        categories.put("Cat5", new Category("Cat5", "Cat5 desc", R.drawable.ic_cat1));
 
         HashMap<String, Demonstration> cat1Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat2Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat3Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat4Demos = new HashMap<String, Demonstration>();
+        HashMap<String, Demonstration> cat5Demos = new HashMap<String, Demonstration>();
 
         // Set up all demos.
         cat1Demos.put("Demo1", new Demonstration(
@@ -102,12 +105,18 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ic_demo1, EffectExample4.class,"8"
                 )
         );
+        cat5Demos.put("Demo9", new Demonstration(
+                        "Demo9", "Demo9 desc",
+                        R.drawable.ic_demo1, EffectExample5.class,"9"
+                )
+        );
 
         // Decide which demos go into which category.
         demos.put("Cat1", cat1Demos);
         demos.put("Cat2", cat2Demos);
         demos.put("Cat3", cat3Demos);
         demos.put("Cat4", cat4Demos);
+        demos.put("Cat5", cat5Demos);
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
