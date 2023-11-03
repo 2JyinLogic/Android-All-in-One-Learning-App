@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.can301.gp.catviewer.CatViewMain;
+import com.can301.gp.demos.BGServiceExample;
 import com.can301.gp.demos.EffectExample1;
 import com.can301.gp.demos.EffectExample2;
 import com.can301.gp.demos.EffectExample3;
@@ -57,12 +58,18 @@ public class MainActivity extends AppCompatActivity {
         categories.put("Cat3", new Category("Cat3","Cat3", R.drawable.ic_cat1));
         categories.put("Cat4", new Category("Cat4","Cat4", R.drawable.ic_cat2));
         categories.put("Cat5", new Category("Cat5", "Cat5 desc", R.drawable.ic_cat1));
+        categories.put("Services", new Category(
+                "Services",
+                "Foreground and background services",
+                R.drawable.ic_services
+            ));
 
         HashMap<String, Demonstration> cat1Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat2Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat3Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat4Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat5Demos = new HashMap<String, Demonstration>();
+        HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
 
         // Set up all demos.
         cat1Demos.put("Demo1", new Demonstration(
@@ -110,6 +117,13 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.ic_demo1, EffectExample5.class,"9"
                 )
         );
+        catServicesDemos.put("Services", new Demonstration(
+                "Background Services",
+                "A background service performs an operation that isn\\'t directly noticed by the user.\n" +
+                "        In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.\n" +
+                "        Note how running the service in the UI thread will freeze the UI and eventually leads to the app being killed.",
+                R.drawable.ic_bg_service, BGServiceExample.class,"bgservice"
+        ));
 
         // Decide which demos go into which category.
         demos.put("Cat1", cat1Demos);
@@ -117,10 +131,12 @@ public class MainActivity extends AppCompatActivity {
         demos.put("Cat3", cat3Demos);
         demos.put("Cat4", cat4Demos);
         demos.put("Cat5", cat5Demos);
+        demos.put("Services", catServicesDemos);
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
-        highlightedCats.add(0);
+        // highlight services
+        highlightedCats.add(5);
         highlightedCats.add(1);
         highlightedCats.add(2);
         highlightedCats.add(3);
