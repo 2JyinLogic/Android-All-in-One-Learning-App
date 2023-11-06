@@ -1,0 +1,21 @@
+// Import necessary packages
+import androidx.appcompat.app.AlertDialog;
+
+// ...
+
+// Create and show an AlertDialog
+private void showAlertDialog() {
+    new AlertDialog.Builder(this)
+        .setTitle("Alert Dialog Title")
+        .setMessage("This is a simple AlertDialog.")
+        .setPositiveButton("OK", (dialog, which) -> {
+            // Handle positive button click here
+            dialog.dismiss();
+        })
+        .setNegativeButton("Cancel", (dialog, which) -> {
+            // Handle negative button click here
+            dialog.dismiss();
+        })
+        .create()
+        .show();
+}

@@ -1,0 +1,30 @@
+// Import necessary packages
+import android.app.DatePickerDialog;
+import java.util.Calendar;
+
+// ...
+
+// Create and show a DatePickerDialog
+private void showDatePickerDialog() {
+    // Get Current Date
+    final Calendar c = Calendar.getInstance();
+    int year = c.get(Calendar.YEAR); // current year
+    int month = c.get(Calendar.MONTH); // current month
+    int day = c.get(Calendar.DAY_OF_MONTH); // current day
+
+    // DatePickerDialog Initialization
+    DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+        (view, selectedYear, selectedMonth, selectedDayOfMonth) -> {
+            // Handle the date picked action here
+            // selectedYear, selectedMonth, selectedDayOfMonth are the selected date
+        }, year, month, day);
+
+    // Set Title for DatePicker Dialog
+    datePickerDialog.setTitle("Select Date");
+
+    // Optional: If you want to set any specific date or restrict range of selectable dates etc.
+    // datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+
+    // Show DatePickerDialog
+    datePickerDialog.show();
+}
