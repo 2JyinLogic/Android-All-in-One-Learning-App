@@ -25,10 +25,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * For the code webview to work,
- * Load Google's code-prettify that should be put into the "assets" folder.
- * (To create the assets folder, right-click the project root, New -> Folder -> Assets Folder)
- * Then, add this line:
+ * The main page for code display.
  */
 public class CodePage extends AppCompatActivity {
 
@@ -96,10 +93,13 @@ public class CodePage extends AppCompatActivity {
      * name declared in the manifest as @android:name should be activityClassName.
      */
     private void switchToEffectActivity() {
-        Intent startEffectActivity = new Intent();
-        startEffectActivity.setComponent(
-                new ComponentName("com.can301.gp", activityClassName)
-        );
+        Class<?> cls = null;
+        try {
+            cls = Class.forName("com.can301.gp" + activityClassName);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Intent startEffectActivity = new Intent(this, cls);
 
         startEffectActivity.putExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY, codeId);
         startEffectActivity.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, demoTitle);

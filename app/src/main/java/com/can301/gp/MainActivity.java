@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 
 import com.can301.gp.catviewer.CatViewMain;
 import com.can301.gp.demos.BGServiceExample;
+import com.can301.gp.demos.BoundServiceExample;
 import com.can301.gp.demos.EffectExample1;
 import com.can301.gp.demos.EffectExample2;
 import com.can301.gp.demos.EffectExample3;
@@ -117,12 +118,22 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.ic_demo1, EffectExample5.class,"9"
                 )
         );
-        catServicesDemos.put("Services", new Demonstration(
+        catServicesDemos.put("Background Services", new Demonstration(
                 "Background Services",
                 "A background service performs an operation that isn\\'t directly noticed by the user.\n" +
                 "        In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.\n" +
                 "        Note how running the service in the UI thread will freeze the UI and eventually leads to the app being killed.",
                 R.drawable.ic_bg_service, BGServiceExample.class,"bgservice"
+        ));
+        catServicesDemos.put("Bound Services", new Demonstration(
+                "Bound Services",
+                "A bound service is an implementation of the Service class that lets other applications bind to it and interact with it.\n" +
+                        "To provide binding for a service, you implement the onBind() callback method.\n" +
+                        "This method returns an IBinder object that defines the programming interface that clients can use to interact with the service.\n" +
+                        "In this example, a bound and started service will be created to play music in the background.\n" +
+                        "You can bind to the service to control the music play, but even after you unbind, the music is still being played,\n" +
+                        "unless you stop the service.",
+                R.drawable.ic_bound_service, BoundServiceExample.class,"boundservice"
         ));
 
         // Decide which demos go into which category.

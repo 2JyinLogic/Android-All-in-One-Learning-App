@@ -26,9 +26,6 @@ public class BoundServiceExample extends AppCompatActivity {
     // and for this activity to load the documentation link
     private String codeId;
 
-    BoundServiceExampleService.ExampleBinder binder = null;
-    boolean bound = false;
-
     void goToCodePage() {
         Intent intent = new Intent(this, CodePage.class);
 
@@ -46,6 +43,10 @@ public class BoundServiceExample extends AppCompatActivity {
     Button stopBtn;
     Button pauseResumeBtn;
     SeekBar progressSeekBar;
+    BoundServiceExampleService.ExampleBinder binder = null;
+    boolean bound = false;
+    // if the service has started
+    boolean started = false;
 
     ServiceConnection myConnection = new ServiceConnection() {
         @Override
@@ -54,10 +55,7 @@ public class BoundServiceExample extends AppCompatActivity {
         }
 
         @Override
-        public void onServiceDisconnected(ComponentName name) {
-            // Reset the binder so that I know it's safely unbound.
-            binder = null;
-        }
+        public void onServiceDisconnected(ComponentName name) {}
     };
 
     // Change this to exactly the string as in the AndroidManifest.xml
@@ -105,17 +103,39 @@ public class BoundServiceExample extends AppCompatActivity {
             unbindBtn.setOnClickListener(v -> unBindExampleService());
             stopBtn.setOnClickListener(v -> stopExampleService());
             pauseResumeBtn.setOnClickListener(v -> pauseResume());
+
+            // Initially, pauseResumeButton has the image and text of pause
+            // it will be changed whenever the state changes
+            pauseResumeBtn.setText("Pause");
+            pauseResumeBtn.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_music_pause, 0, 0);
+
+            progressSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    float prog = (float)progress / (float)(seekBar.getMax() - seekBar.getMin());
+                    binder.goTo(prog);
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {}
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {}
+            });
         }
     }
 
     void startAndBindToExampleService() {
-        // Start the service.
         Intent intent = new Intent(this, BoundServiceExampleService.class);
-        startService(intent);
+
+        // Start the service.
+        if (!started) {
+            startService(intent);
+        }
 
         // If not bound to the service,
         // then bind to it.
         if (!bound && binder == null) {
+
             bindService(
                 intent,
                 myConnection,
@@ -125,6 +145,9 @@ public class BoundServiceExample extends AppCompatActivity {
 
             bound = true;
         }
+
+        started = true;
+        startSeekbarUpdatingThread();
     }
 
     /**
@@ -133,14 +156,16 @@ public class BoundServiceExample extends AppCompatActivity {
      */
     void pauseResume() {
         if (bound && binder != null) {
-            boolean pausedOrResumed = binder.pauseResume();
+            boolean playing = binder.pauseResume();
 
             // update the UI
-            if(pausedOrResumed) {
-
+            if(playing) {
+                pauseResumeBtn.setText("Pause");
+                pauseResumeBtn.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_music_pause, 0, 0);
             }
             else {
-
+                pauseResumeBtn.setText("Resume");
+                pauseResumeBtn.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_music_resume, 0, 0);
             }
         }
     }
@@ -150,11 +175,62 @@ public class BoundServiceExample extends AppCompatActivity {
         stopService(intent);
 
         bound = false;
+        started = false;
     }
 
     void unBindExampleService() {
         if(bound && binder != null) {
             unbindService(myConnection);
+        }
+        bound = false;
+        binder = null;
+    }
+
+    void startSeekbarUpdatingThread() {
+        new Thread(
+            () -> {
+                while (bound) {
+                    if(binder != null) {
+                        int prog = progressSeekBar.getMin() + (int)(binder.getProgress() *
+                                (progressSeekBar.getMax() - progressSeekBar.getMin()));
+                        runOnUiThread(() -> progressSeekBar.setProgress(prog));
+                    }
+
+                    // Update 10 times per second
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        ).start();
+    }
+
+    /**
+     * Remember to unbind on pause
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unBindExampleService();
+    }
+
+    /**
+     * And rebind on resume
+     */
+    protected void onResume() {
+        super.onResume();
+        if (!bound && binder == null) {
+            Intent intent = new Intent(this, BoundServiceExampleService.class);
+            bindService(
+                    intent,
+                    myConnection,
+                    // declare that the service's important is higher than the activity so that
+                    // the system will try to keep the service even if the activity is killed.
+                    Context.BIND_ABOVE_CLIENT);
+
+            bound = true;
         }
     }
 }
