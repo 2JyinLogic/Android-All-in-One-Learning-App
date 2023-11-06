@@ -17,4 +17,13 @@
         In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.
         Note how running the service in the UI thread will freeze the UI and eventually leads to the app being killed.
     </string>
+    <string name="bound_service_example_desc">
+        A bound service is an implementation of the Service class that lets other applications bind to it and interact with it.
+        To provide binding for a service, you implement the onBind() callback method.
+        This method returns an IBinder object that defines the programming interface that clients can use to interact with the service.
+
+        In this example, a bound and started service will be created to play music in the background.
+        You can bind to the service to control the music play, but even after you unbind, the music is still being played,
+        unless you stop the service.
+    </string>
 </resources>

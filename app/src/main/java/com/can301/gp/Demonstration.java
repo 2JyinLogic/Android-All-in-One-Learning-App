@@ -12,6 +12,16 @@ import android.content.Intent;
  *
  * Each instance will be created by hand and should be immutable,
  * therefore, all fields will be public.
+ *
+ * One problem that I encountered when implementing the design of the code & effect pages
+ * is that each effect has its own activity while there is only one unified code activity.
+ * Therefore, the code activity has to somehow know how to get the the corresponding effect activity.
+ * (Remember that normally the class of the activity is passed to the constructor of Intent).
+ * However, this means each effect activity has to tell the code activity the class of itself
+ * through an Intent, which is not straightforward as a Class object cannot be passed as an Intent
+ * extra.
+ * My solution for this problem is to let each effect activity pass its Activity Name as a String
+ * to the code Activity, which uses Intent.setComponentName to navigate to the correct Activity.
  */
 public final class Demonstration {
 

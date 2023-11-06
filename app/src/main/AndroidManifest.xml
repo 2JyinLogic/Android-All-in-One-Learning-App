@@ -12,10 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject"
         tools:targetApi="31">
+        <activity
+            android:name=".demos.BoundServiceExample"
+            android:exported="false" />
+
+        <service
+            android:name=".demos.BoundServiceExampleService"
+            android:enabled="true"
+            android:exported="false" />
         <service
             android:name=".demos.BGServiceExampleService"
             android:enabled="true"
-            android:exported="false"></service>
+            android:exported="false" />
 
         <activity
             android:name=".demos.BGServiceExample"
