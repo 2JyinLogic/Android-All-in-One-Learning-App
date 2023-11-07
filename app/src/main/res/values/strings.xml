@@ -9,6 +9,6 @@
     <string name="code_link_6">https://developer.android.com/guide/topics/resources/string-resource</string>
     <string name="code_link_7">https://developer.android.com/studio/run/emulator</string>
     <string name="code_link_8">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_alertdialog">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_datepickerdialog">https://developer.android.com/guide/topics/resources/string-resource</string>
+    <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
+    <string name="code_link_datepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/DatePickerDialogExample.java</string>
 </resources>
