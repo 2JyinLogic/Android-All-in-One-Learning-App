@@ -18,6 +18,8 @@ import com.can301.gp.demos.EffectExample4;
 import com.can301.gp.demos.EffectExample5;
 import com.can301.gp.demos.AlertDialogExample;
 import com.can301.gp.demos.DatePickerDialogExample;
+import com.can301.gp.demos.AnimationsExample;
+import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.searchbar.SearchBarMain;
 
 import java.util.ArrayList;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public static void setupCatsAndDemos() {
         // Only initialise them once
-        if(categories != null) {
+        if (categories != null) {
             return;
         }
 
@@ -56,16 +58,19 @@ public class MainActivity extends AppCompatActivity {
         demos = new HashMap<String, HashMap<String, Demonstration>>();
 
         // Set up all categories.
-        categories.put("Cat1", new Category("Cat1","Cat1", R.drawable.ic_cat1));
-        categories.put("Cat2", new Category("Cat2","Cat2", R.drawable.ic_cat2));
-        categories.put("Cat3", new Category("Cat3","Cat3", R.drawable.ic_cat1));
-        categories.put("Cat4", new Category("Cat4","Cat4", R.drawable.ic_cat2));
+        categories.put("Cat1", new Category("Cat1", "Cat1", R.drawable.ic_cat1));
+        categories.put("Cat2", new Category("Cat2", "Cat2", R.drawable.ic_cat2));
+        categories.put("Cat3", new Category("Cat3", "Cat3", R.drawable.ic_cat1));
+        categories.put("Cat4", new Category("Cat4", "Cat4", R.drawable.ic_cat2));
         categories.put("Cat5", new Category("Cat5", "Cat5 desc", R.drawable.ic_cat1));
         categories.put("Services", new Category(
                 "Services",
                 "Foreground and background services",
                 R.drawable.ic_services
-            ));
+        ));
+        categories.put("Navagation", new Category("Navigation", "navigation", R.drawable.ic_cat2));
+
+        categories.put("Animations", new Category("Animations", "description of Animations", R.drawable.baseline_music_note_24));
 
         categories.put("Dialogs", new Category(
                 "Dialogs",
@@ -82,58 +87,60 @@ public class MainActivity extends AppCompatActivity {
         HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> catDialogsDemos = new HashMap<>();
         
+        HashMap<String, Demonstration> catNavigationDemos = new HashMap<>();
+        HashMap<String, Demonstration> catAnimationsDemos = new HashMap<>();
         // Set up all demos.
         cat1Demos.put("Demo1", new Demonstration(
-                "Demo1", "Demo1",
-                R.drawable.ic_demo1, EffectExample1.class,"1"
+                        "Demo1", "Demo1",
+                        R.drawable.ic_demo1, EffectExample1.class, "1"
                 )
         );
         cat1Demos.put("Demo2", new Demonstration(
-                "Demo2", "Demo2",
-                R.drawable.ic_demo1, EffectExample2.class,"2"
+                        "Demo2", "Demo2",
+                        R.drawable.ic_demo1, EffectExample2.class, "2"
                 )
         );
         cat2Demos.put("Demo3", new Demonstration(
-                "Demo3", "Demo3",
-                R.drawable.ic_demo1, EffectExample3.class,"3"
+                        "Demo3", "Demo3",
+                        R.drawable.ic_demo1, EffectExample3.class, "3"
                 )
         );
         cat2Demos.put("Demo4", new Demonstration(
-                "Demo4", "Demo4",
-                R.drawable.ic_demo1, EffectExample4.class,"4"
+                        "Demo4", "Demo4",
+                        R.drawable.ic_demo1, EffectExample4.class, "4"
                 )
         );
         cat3Demos.put("Demo5", new Demonstration(
-                "Demo5", "Demo5",
-                R.drawable.ic_demo1, EffectExample1.class,"5"
+                        "Demo5", "Demo5",
+                        R.drawable.ic_demo1, EffectExample1.class, "5"
                 )
         );
         cat3Demos.put("Demo6", new Demonstration(
-                "Demo6", "Demo6",
-                R.drawable.ic_demo1, EffectExample2.class,"6"
+                        "Demo6", "Demo6",
+                        R.drawable.ic_demo1, EffectExample2.class, "6"
                 )
         );
         cat4Demos.put("Demo7", new Demonstration(
-                "Demo7", "Demo7",
-                R.drawable.ic_demo1, EffectExample3.class,"7"
+                        "Demo7", "Demo7",
+                        R.drawable.ic_demo1, EffectExample3.class, "7"
                 )
         );
         cat4Demos.put("Demo8", new Demonstration(
-                "Demo8", "Demo8",
-                R.drawable.ic_demo1, EffectExample4.class,"8"
+                        "Demo8", "Demo8",
+                        R.drawable.ic_demo1, EffectExample4.class, "8"
                 )
         );
         cat5Demos.put("Demo9", new Demonstration(
                         "Demo9", "Demo9 desc",
-                        R.drawable.ic_demo1, EffectExample5.class,"9"
+                        R.drawable.ic_demo1, EffectExample5.class, "9"
                 )
         );
         catServicesDemos.put("Background Services", new Demonstration(
                 "Background Services",
                 "A background service performs an operation that isn\\'t directly noticed by the user.\n" +
-                "        In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.\n" +
-                "        Note how running the service in the UI thread will freeze the UI and eventually leads to the app being killed.",
-                R.drawable.ic_bg_service, BGServiceExample.class,"bgservice"
+                        "        In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.\n" +
+                        "        Note how running the service in the UI thread will freeze the UI and eventually leads to the app being killed.",
+                R.drawable.ic_bg_service, BGServiceExample.class, "bgservice"
         ));
         catServicesDemos.put("Bound Services", new Demonstration(
                 "Bound Services",
@@ -143,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                         "In this example, a bound and started service will be created to play music in the background.\n" +
                         "You can bind to the service to control the music play, but even after you unbind, the music is still being played,\n" +
                         "unless you stop the service.",
-                R.drawable.ic_bound_service, BoundServiceExample.class,"boundservice"
+                R.drawable.ic_bound_service, BoundServiceExample.class, "boundservice"
         ));
 
         catDialogsDemos.put("AlertDialog", new Demonstration(
@@ -159,6 +166,16 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.ic_demo1, DatePickerDialogExample.class,"datepickerdialog"
                 )
         );
+        catNavigationDemos.put("navigation", new Demonstration(
+                "navigation", "navigation description", R.drawable.ic_demo1, NavigationExample.class, "navigation1"
+        ));
+
+        catAnimationsDemos.put("Animations",new Demonstration(
+                "Animations","description of Animations",R.drawable.baseline_music_note_24, AnimationsExample.class,"animation1"
+        ));
+
+
+
         // Decide which demos go into which category.
         demos.put("Cat1", cat1Demos);
         demos.put("Cat2", cat2Demos);
@@ -167,6 +184,8 @@ public class MainActivity extends AppCompatActivity {
         demos.put("Cat5", cat5Demos);
         demos.put("Services", catServicesDemos);
         demos.put("Dialogs", catDialogsDemos);
+        demos.put("Navigation", catNavigationDemos);
+        demos.put("Animations",catAnimationsDemos);
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
