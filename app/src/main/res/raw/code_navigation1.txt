@@ -1,0 +1,90 @@
+layout:
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/effectExampleName"
+
+        app:menu="@menu/navigation"
+
+        />
+
+menu:
+    <?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item android:id="@+id/navigation_home"
+            android:icon="@drawable/baseline_home_24"
+            android:title="home"/>
+
+        <item android:id="@+id/navigation_search"
+            android:icon="@drawable/search_bar_icon"
+            android:title="search"/>
+
+        <item android:id="@+id/navigation_content"
+            android:icon="@drawable/baseline_content_copy_24"
+            android:title="content"/>
+
+        <item android:id="@+id/navigation_code"
+            android:icon="@drawable/baseline_code_24"
+            android:title="code"/>
+    </menu>
+
+
+
+activity:
+    public class NavigationExample extends AppCompatActivity {
+
+        private String demoTitle;
+        // codeId is needed for the code page to load the corresponding code
+        // and for this activity to load the documentation link
+        private String codeId;
+
+        void goToCodePage() {
+            Intent intent = new Intent(this, CodePage.class);
+
+            intent.putExtra(CodePage.CODE_ID_KEY, codeId);
+            intent.putExtra(CodePage.CODE_CLASS_NAME_KEY, EFFECT_ACTIVITY_NAME);
+            intent.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, demoTitle);
+
+            startActivity(intent);
+        }
+
+    // Don't change END
+
+        // Change this to exactly the string as in the AndroidManifest.xml
+        public static final String EFFECT_ACTIVITY_NAME = ".demos.NavigationExample";
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            // Change here to the layout name
+            setContentView(R.layout.activity_navigation_example);
+
+            Button effectButton = findViewById(R.id.effectBottomButton);
+            Button codeButton = findViewById(R.id.codeBottomButton);
+            effectButton.setEnabled(false);
+            codeButton.setEnabled(true);
+
+            // Handling parameters
+            Intent inIntent = getIntent();
+            if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_TITLE_KEY)) {
+                throw new RuntimeException("Give me the effect title!");
+            }
+            if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY)) {
+                throw new RuntimeException("Give me the code ID!");
+            }
+            demoTitle = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_TITLE_KEY);
+            codeId = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY);
+
+            // Set information about this effect
+            TextView effectTextView = findViewById(R.id.effectExampleName);
+            effectTextView.setText(demoTitle);
+
+            // Go to the corresponding code page
+            codeButton.setOnClickListener(v -> goToCodePage());
+        }
+
+    }
+

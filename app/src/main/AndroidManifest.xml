@@ -29,6 +29,12 @@
             android:name=".demos.BGServiceExample"
             android:exported="false" />
         <activity
+            android:name=".demos.NavigationExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.AnimationsExample"
+            android:exported="false" />
+        <activity
             android:name=".demos.EffectExample5"
             android:exported="false" />
         <activity
