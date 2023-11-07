@@ -11,6 +11,7 @@
     <string name="code_link_8">https://developer.android.com/guide/topics/resources/string-resource</string>
     <string name="code_link_9">https://developer.android.com/guide/topics/resources/string-resource</string>
     <string name="code_link_10">https://developer.android.com/guide/topics/resources/string-resource</string>
+    <string name="code_link_11">https://developer.android.com/guide/topics/resources/string-resource</string>
     <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
 
     <string name="bg_service_example_desc">

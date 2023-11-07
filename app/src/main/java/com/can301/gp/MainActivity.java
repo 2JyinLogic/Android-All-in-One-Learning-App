@@ -16,6 +16,7 @@ import com.can301.gp.demos.EffectExample3;
 import com.can301.gp.demos.EffectExample4;
 import com.can301.gp.demos.EffectExample5;
 import com.can301.gp.demos.EffectExampleNightMode;
+import com.can301.gp.demos.EffectExampleRippleEffect;
 import com.can301.gp.searchbar.SearchBarMain;
 
 import java.util.ArrayList;
@@ -121,6 +122,11 @@ public class MainActivity extends AppCompatActivity {
         cat4Demos.put("Demo10", new Demonstration(
                         "Night Mode", "Light and night mode",
                         R.drawable.ic_demo1, EffectExampleNightMode.class,"10"
+                )
+        );
+        cat4Demos.put("Demo11", new Demonstration(
+                        "Ripple Effect", "Ripple effect",
+                        R.drawable.ic_demo1, EffectExampleRippleEffect.class,"11"
                 )
         );
 
