@@ -10,11 +10,16 @@
     <string name="code_link_7">https://developer.android.com/studio/run/emulator</string>
     <string name="code_link_8">https://developer.android.com/guide/topics/resources/string-resource</string>
     <string name="code_link_9">https://developer.android.com/guide/topics/resources/string-resource</string>
+    <string name="code_link_10">https://developer.android.com/guide/topics/resources/string-resource</string>
     <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
 
     <string name="bg_service_example_desc">
         A background service performs an operation that isn\'t directly noticed by the user.
         In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.
         Note how running the service in the UI thread will freeze the UI and eventually leads to the app being killed.
+    </string>
+
+    <string name="night_mode_text">
+        Some text for testing night mode...
     </string>
 </resources>

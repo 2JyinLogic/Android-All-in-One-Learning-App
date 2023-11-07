@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject"
+
         tools:targetApi="31">
         <service
             android:name=".demos.BGServiceExampleService"
@@ -19,6 +20,9 @@
 
         <activity
             android:name=".demos.BGServiceExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.EffectExampleNightMode"
             android:exported="false" />
         <activity
             android:name=".demos.EffectExample5"

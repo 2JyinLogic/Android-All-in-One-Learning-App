@@ -15,6 +15,7 @@ import com.can301.gp.demos.EffectExample2;
 import com.can301.gp.demos.EffectExample3;
 import com.can301.gp.demos.EffectExample4;
 import com.can301.gp.demos.EffectExample5;
+import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.searchbar.SearchBarMain;
 
 import java.util.ArrayList;
@@ -117,6 +118,12 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.ic_demo1, EffectExample5.class,"9"
                 )
         );
+        cat4Demos.put("Demo10", new Demonstration(
+                        "Demo10", "Demo10 desc",
+                        R.drawable.ic_demo1, EffectExampleNightMode.class,"10"
+                )
+        );
+
         catServicesDemos.put("Services", new Demonstration(
                 "Background Services",
                 "A background service performs an operation that isn\\'t directly noticed by the user.\n" +
