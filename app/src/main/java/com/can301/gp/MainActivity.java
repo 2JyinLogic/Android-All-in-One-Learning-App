@@ -11,11 +11,13 @@ import android.widget.ImageButton;
 import com.can301.gp.catviewer.CatViewMain;
 import com.can301.gp.demos.BGServiceExample;
 import com.can301.gp.demos.BoundServiceExample;
+import com.can301.gp.demos.ButtonWidget;
 import com.can301.gp.demos.EffectExample1;
 import com.can301.gp.demos.EffectExample2;
 import com.can301.gp.demos.EffectExample3;
 import com.can301.gp.demos.EffectExample4;
 import com.can301.gp.demos.EffectExample5;
+import com.can301.gp.demos.WheelViewWidget;
 import com.can301.gp.searchbar.SearchBarMain;
 
 import java.util.ArrayList;
@@ -64,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
                 "Foreground and background services",
                 R.drawable.ic_services
             ));
+        categories.put("Widget", new Category(
+                "Widget",
+                "basic Widgets and advanced widgets",
+                R.drawable.ic_cat1
+        ));
 
         HashMap<String, Demonstration> cat1Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat2Demos = new HashMap<String, Demonstration>();
@@ -71,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         HashMap<String, Demonstration> cat4Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat5Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
+        HashMap<String, Demonstration> catWidgetDemos = new HashMap<String, Demonstration>();
 
         // Set up all demos.
         cat1Demos.put("Demo1", new Demonstration(
@@ -135,6 +143,16 @@ public class MainActivity extends AppCompatActivity {
                         "unless you stop the service.",
                 R.drawable.ic_bound_service, BoundServiceExample.class,"boundservice"
         ));
+        catWidgetDemos.put("Wheel view widget", new Demonstration(
+                        "Wheel view widget", "Wheel view widget desc",
+                        R.drawable.ic_demo1, WheelViewWidget.class,"wvwidget"
+                )
+        );
+        catWidgetDemos.put("Button widget", new Demonstration(
+                        "Button widget", "Button widget desc",
+                        R.drawable.ic_demo1, ButtonWidget.class,"btwidget"
+                )
+        );
 
         // Decide which demos go into which category.
         demos.put("Cat1", cat1Demos);
@@ -143,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         demos.put("Cat4", cat4Demos);
         demos.put("Cat5", cat5Demos);
         demos.put("Services", catServicesDemos);
+        demos.put("Widget", catWidgetDemos);
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();

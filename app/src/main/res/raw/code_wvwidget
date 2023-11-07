@@ -1,0 +1,67 @@
+//wheelView
+implementation 'com.contrarywind:wheelview:4.0.9'
+//ArrayWheelAdapter
+implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.contrarywind.view.WheelView
+        android:id="@+id/id_wheel_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+
+public class WheelViewActivity extends AppCompatActivity {
+    public static final String TAG = "TAG_ZLZ";
+
+    @BindView(R.id.id_wheel_view)
+    WheelView wheelView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.act_wheel_view);
+        ButterKnife.bind(this);
+
+        initWheelView();
+    }
+
+
+    /**
+     * 示例 1
+     */
+    private void initWheelView() {
+
+        //初始化数据
+        final List<String> countryList = new ArrayList<>();
+        countryList.add("中国");
+        countryList.add("美国");
+        countryList.add("俄罗斯");
+        countryList.add("日本");
+        countryList.add("印度");
+        countryList.add("英国");
+        countryList.add("法国");
+        countryList.add("德国");
+
+        //配置wheelView属性
+        ArrayWheelAdapter adapter = new ArrayWheelAdapter(countryList);
+        wheelView.setAdapter(adapter);
+        wheelView.setCyclic(false); //取消循环显示数据
+        wheelView.setCurrentItem(0); //当前显示第一条
+        wheelView.setItemsVisibleCount(4); //可见范围为4个
+        wheelView.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int index) {
+                Log.i(TAG, countryList.get(index));
+            }
+        });
+    }
+}

@@ -13,6 +13,16 @@
         android:theme="@style/Theme.GroupProject"
         tools:targetApi="31">
         <activity
+            android:name=".demos.ButtonWidget"
+            android:exported="false"
+            android:label="@string/title_activity_button_widget"
+            android:theme="@style/Theme.GroupProject" />
+        <activity
+            android:name=".demos.WheelViewWidget"
+            android:exported="false"
+            android:label="@string/title_activity_wheel_view_widget"
+            android:theme="@style/Theme.GroupProject" />
+        <activity
             android:name=".demos.BoundServiceExample"
             android:exported="false" />
 
