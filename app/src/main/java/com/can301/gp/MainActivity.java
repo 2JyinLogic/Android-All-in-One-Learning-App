@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 )
         );
         cat4Demos.put("Demo10", new Demonstration(
-                        "Demo10", "Demo10 desc",
+                        "Night Mode", "Light and night mode",
                         R.drawable.ic_demo1, EffectExampleNightMode.class,"10"
                 )
         );
