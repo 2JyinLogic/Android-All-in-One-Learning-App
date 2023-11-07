@@ -12,6 +12,8 @@
     <string name="code_link_9">https://developer.android.com/guide/topics/resources/string-resource</string>
     <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
     <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
+    <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
+    <string name="code_link_datepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/DatePickerDialogExample.java</string>
 
     <string name="bg_service_example_desc">
         A background service performs an operation that isn\'t directly noticed by the user.
@@ -27,4 +29,5 @@
         You can bind to the service to control the music play, but even after you unbind, the music is still being played,
         unless you stop the service.
     </string>
+
 </resources>

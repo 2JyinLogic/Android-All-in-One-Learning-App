@@ -16,6 +16,8 @@ import com.can301.gp.demos.EffectExample2;
 import com.can301.gp.demos.EffectExample3;
 import com.can301.gp.demos.EffectExample4;
 import com.can301.gp.demos.EffectExample5;
+import com.can301.gp.demos.AlertDialogExample;
+import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.searchbar.SearchBarMain;
 
 import java.util.ArrayList;
@@ -65,13 +67,21 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ic_services
             ));
 
+        categories.put("Dialogs", new Category(
+                "Dialogs",
+                "Explore a variety of dialog styles and notification methods. " +
+                        "Learn how to grab user attention with modals, pop-ups, toasts, " +
+                        "and more for an engaging user experience.",
+                R.drawable.ic_cat1
+        ));
         HashMap<String, Demonstration> cat1Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat2Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat3Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat4Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> cat5Demos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
-
+        HashMap<String, Demonstration> catDialogsDemos = new HashMap<>();
+        
         // Set up all demos.
         cat1Demos.put("Demo1", new Demonstration(
                 "Demo1", "Demo1",
@@ -136,6 +146,19 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ic_bound_service, BoundServiceExample.class,"boundservice"
         ));
 
+        catDialogsDemos.put("AlertDialog", new Demonstration(
+                "AlertDialog",
+                "Demonstration entry for an AlertDialog example. " +
+                        "This dialog showcases user interaction and informs about " +
+                        "important events. Represented by an icon (R.drawable.ic_demo1) " +
+                        "and uses AlertDialogExample.class",
+                R.drawable.ic_demo1, AlertDialogExample.class,"alertdialog"
+        ));
+        catDialogsDemos.put("DatePickerDialog", new Demonstration(
+                        "DatePickerDialog", "Select a date from a calendar view.",
+                        R.drawable.ic_demo1, DatePickerDialogExample.class,"datepickerdialog"
+                )
+        );
         // Decide which demos go into which category.
         demos.put("Cat1", cat1Demos);
         demos.put("Cat2", cat2Demos);
@@ -143,12 +166,14 @@ public class MainActivity extends AppCompatActivity {
         demos.put("Cat4", cat4Demos);
         demos.put("Cat5", cat5Demos);
         demos.put("Services", catServicesDemos);
+        demos.put("Dialogs", catDialogsDemos);
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
         // highlight services
         highlightedCats.add(5);
-        highlightedCats.add(1);
+        // highlight dialogs
+        highlightedCats.add(6);
         highlightedCats.add(2);
         highlightedCats.add(3);
 

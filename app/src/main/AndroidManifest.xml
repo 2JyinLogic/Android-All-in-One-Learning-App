@@ -32,6 +32,12 @@
             android:name=".demos.EffectExample5"
             android:exported="false" />
         <activity
+            android:name=".demos.DatePickerDialogExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.AlertDialogExample"
+            android:exported="false" />
+        <activity
             android:name=".demos.EffectExample4"
             android:exported="false" />
         <activity
