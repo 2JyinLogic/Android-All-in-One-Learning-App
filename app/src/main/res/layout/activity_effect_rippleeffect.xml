@@ -32,15 +32,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/effectExampleName">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This is example 1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <com.skyfishjy.library.RippleBackground
+            android:id="@+id/rippleBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:rb_radius="32dp"
+            app:rb_rippleAmount="4"
+            app:rb_duration="3000"
+            app:rb_scale="6">
+            <ImageView
+                android:id="@+id/rippleImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ripple_image"/>
+        </com.skyfishjy.library.RippleBackground>
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout

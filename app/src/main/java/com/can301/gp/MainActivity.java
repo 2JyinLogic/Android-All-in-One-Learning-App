@@ -20,6 +20,8 @@ import com.can301.gp.demos.AlertDialogExample;
 import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.demos.AnimationsExample;
 import com.can301.gp.demos.NavigationExample;
+import com.can301.gp.demos.EffectExampleNightMode;
+import com.can301.gp.demos.EffectExampleRippleEffect;
 import com.can301.gp.searchbar.SearchBarMain;
 
 import java.util.ArrayList;
@@ -135,7 +137,19 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.ic_demo1, EffectExample5.class, "9"
                 )
         );
-        catServicesDemos.put("Background Services", new Demonstration(
+
+        cat4Demos.put("Demo10", new Demonstration(
+                        "Night Mode", "Light and night mode",
+                        R.drawable.ic_demo1, EffectExampleNightMode.class,"10"
+                )
+        );
+        cat4Demos.put("Demo11", new Demonstration(
+                        "Ripple Effect", "Ripple effect",
+                        R.drawable.ic_demo1, EffectExampleRippleEffect.class,"11"
+                )
+        );
+
+        catServicesDemos.put("Services", new Demonstration(
                 "Background Services",
                 "A background service performs an operation that isn\\'t directly noticed by the user.\n" +
                         "        In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.\n" +

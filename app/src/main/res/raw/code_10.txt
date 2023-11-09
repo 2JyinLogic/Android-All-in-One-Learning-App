@@ -1,0 +1,64 @@
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Change here to the layout name
+        setContentView(R.layout.activity_effect_darkmode);
+
+        Switch switcher = findViewById(R.id.nightModeSwitch);
+        Button effectButton = findViewById(R.id.effectBottomButton);
+        Button codeButton = findViewById(R.id.codeBottomButton);
+        effectButton.setEnabled(false);
+        codeButton.setEnabled(true);
+
+        // Handling parameters
+        Intent inIntent = getIntent();
+        if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_TITLE_KEY)) {
+            throw new RuntimeException("Give me the effect title!");
+        }
+        if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY)) {
+            throw new RuntimeException("Give me the code ID!");
+        }
+        demoTitle = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_TITLE_KEY);
+        codeId = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY);
+
+        // Set information about this effect
+        TextView effectTextView = findViewById(R.id.effectExampleName);
+        effectTextView.setText(demoTitle);
+
+        // Go to the corresponding code page
+        codeButton.setOnClickListener(v -> goToCodePage());
+
+        switcher.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // switch on night mode
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    buttonView.setText("Night Mode");
+                } else {
+                    // switch off night mode
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    buttonView.setText("Light Mode");
+                }
+            }
+        });
+
+        // Set default mode
+        boolean isNightModeOn = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES;
+        switcher.setChecked(isNightModeOn);
+        if (isNightModeOn) {
+            switcher.setText("Night Mode");
+        } else {
+            switcher.setText("Light Mode");
+        }
+    }
+
+    // fade in and out animation
+    @Override
+    public void recreate(){
+        finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        startActivity(getIntent());
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }

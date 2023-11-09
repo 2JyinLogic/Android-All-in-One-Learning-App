@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject"
+
         tools:targetApi="31">
         <activity
             android:name=".demos.BoundServiceExample"
@@ -32,7 +33,13 @@
             android:name=".demos.NavigationExample"
             android:exported="false" />
         <activity
+            android:name=".demos.EffectExampleNightMode"
+            android:exported="false" />
+        <activity
             android:name=".demos.AnimationsExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.EffectExampleRippleEffect"
             android:exported="false" />
         <activity
             android:name=".demos.EffectExample5"
