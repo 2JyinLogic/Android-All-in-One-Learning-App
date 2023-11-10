@@ -33,6 +33,7 @@ android {
 
 dependencies {
 
+    implementation("com.facebook.shimmer:shimmer:0.1.0@aar") // for loading effect
     implementation("com.skyfishjy.ripplebackground:library:1.0.1") // for ripple effect
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("androidx.appcompat:appcompat:1.6.1")

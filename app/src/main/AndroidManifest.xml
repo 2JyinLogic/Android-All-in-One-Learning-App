@@ -56,6 +56,9 @@
             android:name=".demos.EffectExampleNightMode"
             android:exported="false" />
         <activity
+            android:name=".demos.EffectExampleLoadingEffect"
+            android:exported="false" />
+        <activity
             android:name=".demos.AnimationsExample"
             android:exported="false" />
         <activity

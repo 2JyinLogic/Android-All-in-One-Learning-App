@@ -14,6 +14,7 @@ import com.can301.gp.demos.BoundServiceExample;
 import com.can301.gp.demos.AlertDialogExample;
 import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.demos.AnimationsExample;
+import com.can301.gp.demos.EffectExampleLoadingEffect;
 import com.can301.gp.demos.FGServiceExample;
 import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
@@ -89,13 +90,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up all demos.
         catEffectsDemos.put("Night Mode", new Demonstration(
-                        "Night Mode", "Light and night mode",
-                        R.drawable.ic_demo1, EffectExampleNightMode.class,"nightmode"
+                        "Night Mode", getString(R.string.night_mode_example_desc),
+                R.drawable.baseline_home_24, EffectExampleNightMode.class,"nightmode"
                 )
         );
         catEffectsDemos.put("Ripple Effect", new Demonstration(
-                        "Ripple Effect", "Ripple effect",
-                        R.drawable.ic_demo1, EffectExampleRippleEffect.class,"rippleeffect"
+                        "Ripple Effect", getString(R.string.ripple_effect_example_desc),
+                android.R.drawable.ic_menu_mylocation, EffectExampleRippleEffect.class,"rippleeffect"
+                )
+        );
+        catEffectsDemos.put("Placeholder Loading Effect", new Demonstration(
+                        "Placeholder Loading Effect", getString(R.string.loading_effect_example_desc),
+                android.R.drawable.ic_popup_sync, EffectExampleLoadingEffect.class,"loadingeffect"
                 )
         );
         catServicesDemos.put("Background Service", new Demonstration(
