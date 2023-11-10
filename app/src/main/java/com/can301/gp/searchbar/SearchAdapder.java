@@ -78,6 +78,7 @@ public class SearchAdapder extends BaseAdapter implements Filterable {
         final Demonstration item = (Demonstration)getItem(position);
 
         holder.ui_name.setText(item.title);
+        holder.ui_name.setCompoundDrawablesWithIntrinsicBounds(item.iconId, 0, 0, 0);
         holder.ui_description.setText(item.description);
 
 
