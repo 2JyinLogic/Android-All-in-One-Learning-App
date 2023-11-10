@@ -5,7 +5,7 @@
     style="@style/Screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".demos.EffectExample1">
+    tools:context=".demos.EffectExampleNightMode">
 
     <TextView
         android:id="@+id/effectExampleName"

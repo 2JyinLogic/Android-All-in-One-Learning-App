@@ -23,6 +23,11 @@ public class BGServiceExampleService extends Service {
     public static final String SLEEP_TIME_KEY = "Sleep time";
     public static final String START_NEW_THREAD_KEY = "New thread";
 
+    Thread workThread = new Thread(() -> {
+        // Do the work in the thread
+        work();
+    });
+
     /**
      * The work of increasing the integer.
      */
@@ -50,13 +55,7 @@ public class BGServiceExampleService extends Service {
         startNewThread = intent.getBooleanExtra(START_NEW_THREAD_KEY, true);
 
         if(startNewThread) {
-            // start a new thread to do the work
-            new Thread(new Runnable() {
-                public void run() {
-                    // Do the work in the thread
-                    work();
-                }
-            }).start();
+            workThread.start();
         }
         else {
             // do the work in the thread
@@ -75,6 +74,9 @@ public class BGServiceExampleService extends Service {
 
     @Override
     public void onDestroy() {
+        // Stop the thread, or the service won't stop.
+        workThread.interrupt();
+
         super.onDestroy();
     }
 }

@@ -1,18 +1,25 @@
-// Don't change START
 package com.can301.gp.demos;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
+import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.can301.gp.Demonstration;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 
-public class EffectExample2 extends AppCompatActivity {
+public class FGServiceExample extends AppCompatActivity {
 
     private String demoTitle;
     // codeId is needed for the code page to load the corresponding code
@@ -29,16 +36,21 @@ public class EffectExample2 extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Start Service Button
+    Button startSvcBtn;
+    // Stop Service Button
+    Button stopSvcBtn;
+
 // Don't change END
 
     // Change this to exactly the string as in the AndroidManifest.xml
-    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExample2";
+    public static final String EFFECT_ACTIVITY_NAME = ".demos.FGServiceExample";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Change here to the corresponding layout name
-        setContentView(R.layout.activity_effect_example2);
+        // Change here to the layout name
+        setContentView(R.layout.activity_fgservice_example);
 
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
@@ -63,8 +75,26 @@ public class EffectExample2 extends AppCompatActivity {
         // Go to the corresponding code page
         codeButton.setOnClickListener(v -> goToCodePage());
 
-        // Put your custom code here
+        // The service example related
+        {
+            startSvcBtn = findViewById(R.id.startSvcBtn);
+            stopSvcBtn = findViewById(R.id.stopSvcBtn);
+
+            startSvcBtn.setOnClickListener(v -> startExampleService());
+            stopSvcBtn.setOnClickListener(v -> stopExampleService());
+
+
+        }
     }
 
-    // Put your custom code here
+    void startExampleService() {
+        Intent intent = new Intent(this, FGServiceExampleService.class);
+        ContextCompat.startForegroundService(this, intent);
+    }
+
+    void stopExampleService() {
+        Intent intent = new Intent(this, FGServiceExampleService.class);
+        stopService(intent);
+    }
+
 }

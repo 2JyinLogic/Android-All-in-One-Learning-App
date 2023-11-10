@@ -121,7 +121,6 @@ public class BoundServiceExampleService extends Service {
     public void onDestroy() {
         // The service is no longer used and is being destroyed
         // Clean the resource
-        player.stop();
-        player.reset();
+        player.release();
     }
 }

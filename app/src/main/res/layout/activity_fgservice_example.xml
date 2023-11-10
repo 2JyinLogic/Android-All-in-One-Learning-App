@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".demos.EffectExample2">
+    tools:context=".demos.FGServiceExample">
 
     <TextView
         android:id="@+id/effectExampleName"
@@ -14,11 +13,11 @@
         android:background="#6750A3"
         android:gravity="center"
         android:padding="16dp"
-        android:textSize="22sp"
         android:textColor="#FFFFFF"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/effectContainer"
@@ -34,14 +33,37 @@
         app:layout_constraintTop_toBottomOf="@+id/effectExampleName">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/startSvcBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="This is example 2"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="32dp"
+            android:text="Start Service"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <Button
+            android:id="@+id/stopSvcBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Stop Service"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startSvcBtn" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/fg_service_example_desc" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -58,18 +80,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/bottom_button_style"
             android:text="Effect"
-            android:textSize="22sp"
-            android:background="@drawable/bottom_button_style"/>
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/codeBottomButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/bottom_button_style"
             android:text="Code"
-            android:textSize="22sp"
-            android:background="@drawable/bottom_button_style"/>
+            android:textSize="22sp" />
 
     </LinearLayout>
 

@@ -1,21 +1,8 @@
 <resources>
     <string name="app_name">GroupProject</string>
 
-    <string name="code_link_1">https://developer.android.com/studio/run/emulator</string>
-    <string name="code_link_2">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_3">https://developer.android.com/studio/run/emulator</string>
-    <string name="code_link_4">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_5">https://developer.android.com/studio/run/emulator</string>
-    <string name="code_link_6">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_7">https://developer.android.com/studio/run/emulator</string>
-    <string name="code_link_8">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_9">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_10">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_11">https://developer.android.com/guide/topics/resources/string-resource</string>
-    <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
-    <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
-    <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
-    <string name="code_link_datepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/DatePickerDialogExample.java</string>
+    <string name="fg_example_channel_name">FG Example Channel</string>
+    <string name="fg_example_channel_desc">The channel for the Foreground Service example.</string>
 
     <string name="bg_service_example_desc">
         A background service performs an operation that isn\'t directly noticed by the user.
@@ -31,10 +18,25 @@
         You can bind to the service to control the music play, but even after you unbind, the music is still being played,
         unless you stop the service.
     </string>
+    <string name="fg_service_example_desc">
+        Foreground services perform operations that are noticeable to the user.
+        Foreground services show a status bar notification to make users aware
+        that the app is performing a task in the foreground and is consuming system resources.
+
+        In this example, a foreground service will be created to show the user a message,
+        and the user can interact with the message (e.g. reply to, dismiss) on the notification
+        even when the app is closed.
+    </string>
+
+    <string name="code_link_nightmode">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleNightMode.java</string>
+    <string name="code_link_rippleeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleRippleEffect.java</string>
+    <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
+    <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
+    <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
+    <string name="code_link_datepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/DatePickerDialogExample.java</string>
     <string name="code_link_navigation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationExample.java</string>
     <string name="code_link_animation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AnimationsExample.java</string>
-
-
+    <string name="code_link_fgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FGServiceExampleService.java</string>
 
     <string name="night_mode_text">
         Some text for testing night mode...

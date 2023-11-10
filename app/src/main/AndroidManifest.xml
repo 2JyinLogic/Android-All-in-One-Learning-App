@@ -2,6 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,8 +22,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject"
-
         tools:targetApi="31">
+        <activity
+            android:name=".demos.FGServiceExample"
+            android:exported="false" />
+
+        <service
+            android:name=".demos.FGServiceExampleService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
         <activity
             android:name=".demos.BoundServiceExample"
             android:exported="false" />
@@ -42,28 +62,13 @@
             android:name=".demos.EffectExampleRippleEffect"
             android:exported="false" />
         <activity
-            android:name=".demos.EffectExample5"
-            android:exported="false" />
-        <activity
             android:name=".demos.DatePickerDialogExample"
             android:exported="false" />
         <activity
             android:name=".demos.AlertDialogExample"
             android:exported="false" />
         <activity
-            android:name=".demos.EffectExample4"
-            android:exported="false" />
-        <activity
-            android:name=".demos.EffectExample3"
-            android:exported="false" />
-        <activity
-            android:name=".demos.EffectExample2"
-            android:exported="false" />
-        <activity
             android:name=".codepage.CodePage"
-            android:exported="false" />
-        <activity
-            android:name=".demos.EffectExample1"
             android:exported="false" />
         <activity
             android:name=".catviewer.CatViewMain"
