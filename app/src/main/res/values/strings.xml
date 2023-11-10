@@ -38,6 +38,16 @@
     <string name="code_link_animation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AnimationsExample.java</string>
     <string name="code_link_fgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FGServiceExampleService.java</string>
 
+    <string name="doc_link_nightmode">https://developer.android.com/develop/ui/views/theming/darktheme</string>
+    <string name="doc_link_rippleeffect">https://developer.android.com/reference/android/graphics/drawable/RippleDrawable</string>
+    <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>
+    <string name="doc_link_boundservice">https://developer.android.com/guide/components/services#CreatingBoundService</string>
+    <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
+    <string name="doc_link_datepickerdialog">https://developer.android.com/develop/ui/views/components/pickers#DatePicker</string>
+    <string name="doc_link_navigation1">https://developer.android.com/guide/navigation</string>
+    <string name="doc_link_animation1">https://developer.android.com/develop/ui/views/animations/overview</string>
+    <string name="doc_link_fgservice">https://developer.android.com/guide/components/foreground-services</string>
+
     <string name="night_mode_text">
         Some text for testing night mode...
     </string>

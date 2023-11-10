@@ -96,7 +96,17 @@
         app:layout_constraintTop_toBottomOf="@+id/effectExampleName"
         app:layout_constraintVertical_bias="0.873" />
 
-
+    <Button
+        android:id="@+id/docLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:drawableLeft="@drawable/ic_view_documentation"
+        android:text="View Documentation"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

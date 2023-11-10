@@ -29,6 +29,10 @@ public final class Demonstration {
     public static final String EFFECT_DEMO_TITLE_KEY = "demo title";
     public static final String EFFECT_DEMO_CODE_ID_KEY = "code id";
 
+    public static String codeIdToDocLinkStringId(String id) {
+        return "doc_link_" + id;
+    }
+
     Demonstration(
             String title, String description,
             int iconId,

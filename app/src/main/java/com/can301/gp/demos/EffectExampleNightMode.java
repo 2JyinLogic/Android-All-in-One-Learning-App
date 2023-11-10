@@ -2,9 +2,13 @@
 package com.can301.gp.demos;
 
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +17,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -37,6 +42,38 @@ public class EffectExampleNightMode extends AppCompatActivity {
         intent.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, demoTitle);
 
         startActivity(intent);
+    }
+
+    /**
+     * Opens the browser with the link to the documentation
+     * (execute when the user clicks the view button)
+     * @param link to the documentation
+     */
+    private void viewDocumentationPage(String link) {
+        // See https://developer.android.com/guide/components/intents-common#ViewUrl
+        Uri linkUri = Uri.parse(link);
+        Intent intent = new Intent(Intent.ACTION_VIEW, linkUri);
+        // Note: getPackageManager queries packages installed, which is filtered and limited since
+        // API level 30. To make the kind of packages visible, declare the queries in the manifest.
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+        else {
+            // Show the user that it cannot be done.
+            // See https://developer.android.com/develop/ui/views/components/dialogs
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Cannot open website");
+            builder.setMessage("Cannot redirect you to the documentation website " +
+                    "because a browser cannot be found.");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Do nothing, which dismisses the dialog\
+                }
+            });
+            Dialog diag = builder.create();
+            diag.show();
+        }
     }
 
 // Don't change END
@@ -73,6 +110,15 @@ public class EffectExampleNightMode extends AppCompatActivity {
 
         // Go to the corresponding code page
         codeButton.setOnClickListener(v -> goToCodePage());
+
+        // Get the documentation link
+        Resources resources = getResources();
+        // equivalent to R.string.doclinkstringid
+        int docLinkStringId = resources.getIdentifier(Demonstration.codeIdToDocLinkStringId(codeId), "string", getPackageName());
+        String docLinkString = getString(docLinkStringId);
+
+        Button docLinkBtn = findViewById(R.id.docLink);
+        docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
 
         switcher.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
