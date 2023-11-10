@@ -4,6 +4,7 @@ import android.app.ForegroundServiceStartNotAllowedException;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.pm.ServiceInfo;
@@ -13,6 +14,7 @@ import android.os.IBinder;
 
 import androidx.core.app.NotificationCompat;
 
+import com.can301.gp.Demonstration;
 import com.can301.gp.R;
 
 public class FGServiceExampleService extends Service {
@@ -25,8 +27,10 @@ public class FGServiceExampleService extends Service {
     // Used for the notification channel.
     public static final String NOTIFICATION_CHANNEL_ID = "Music Play";
     // Used for the action buttons on the notification.
-    public static final String ACTION_REPLY = "action reply";
+    public static final String ACTION_AGREE = "action agree";
     public static final String ACTION_DISMISS = "action dismiss";
+    // Used for ACTION_REPLY's message
+    public static final String REPLY_MSG_KEY = "reply message";
 
     // The notification channel. As it is always the same,
     // it will be static.
@@ -35,6 +39,8 @@ public class FGServiceExampleService extends Service {
     // If the service is currently in foreground.
     // If it is not, it will be brought to foreground in onStartCommand()
     boolean in_fg = false;
+    // The ID used to identify the notification so that it can be later modified or cancelled.
+    int notification_id = 100;
 
     public FGServiceExampleService() {}
 
@@ -111,11 +117,20 @@ public class FGServiceExampleService extends Service {
     void createNotificationAndGoFG() {
         try
         {
+            // Create the AGREE action
+            PendingIntent agreePendingIntent = buildAgreeMessageIntent();
+            // Create the DISMISS action
+            PendingIntent dismissPendingIntent = buildDismissMessageIntent();
+            // Create the Notification
             NotificationCompat.Builder builder =
                     new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
                             .setSmallIcon(R.drawable.ic_fg_service)
-                            .setContentTitle("Title")
-                            .setContentText("Description.")
+                            .setContentTitle("Love Request")
+                            .setContentText("Your secret admirer wants to ask you out.")
+                            .addAction(R.drawable.ic_action_agree, "AGREE",
+                                    agreePendingIntent)
+                            .addAction(R.drawable.ic_action_dismiss, "DISMISS",
+                                    dismissPendingIntent)
                             .setPriority(NotificationCompat.PRIORITY_HIGH);
             Notification notification = builder.build();
 
@@ -127,7 +142,7 @@ public class FGServiceExampleService extends Service {
                 // (although it does not in this example)
                 type = ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC;
             }
-            this.startForeground(100, notification, type);
+            this.startForeground(notification_id, notification, type);
         } catch (Exception e) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
                     e instanceof ForegroundServiceStartNotAllowedException
@@ -138,6 +153,34 @@ public class FGServiceExampleService extends Service {
             }
             // ...
         }
+    }
+
+    /**
+     * Builds the PendingIntent for the user's click on REPLY on the notification.
+     * @return the PendingIntent built
+     */
+    PendingIntent buildAgreeMessageIntent() {
+        // Go to the effect activity for the foreground service.
+        Intent replyIntent = new Intent(this, FGServiceExample.class);
+        replyIntent.setAction(ACTION_AGREE);
+        replyIntent.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, "Foreground Service");
+        replyIntent.putExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY, "fgservice");
+        return PendingIntent.getActivity(
+                this, 0, replyIntent, PendingIntent.FLAG_IMMUTABLE);
+    }
+
+    /**
+     * Builds the PendingIntent for the user's click on DISSMISS on the notification.
+     * @return the PendingIntent built
+     */
+    PendingIntent buildDismissMessageIntent() {
+        // Go to the effect activity for the foreground service.
+        Intent replyIntent = new Intent(this, FGServiceExample.class);
+        replyIntent.setAction(ACTION_DISMISS);
+        replyIntent.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, "Foreground Service");
+        replyIntent.putExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY, "fgservice");
+        return PendingIntent.getActivity(
+                this, 0, replyIntent, PendingIntent.FLAG_IMMUTABLE);
     }
 
     /**

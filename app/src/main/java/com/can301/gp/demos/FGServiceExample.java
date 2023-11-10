@@ -3,6 +3,7 @@ package com.can301.gp.demos;
 import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.RemoteInput;
 import androidx.core.content.ContextCompat;
 
 import android.content.ComponentName;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 import com.can301.gp.Demonstration;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
+
+import org.w3c.dom.Text;
 
 public class FGServiceExample extends AppCompatActivity {
 
@@ -40,6 +43,8 @@ public class FGServiceExample extends AppCompatActivity {
     Button startSvcBtn;
     // Stop Service Button
     Button stopSvcBtn;
+    // Show the user's response to the notification.
+    TextView msgResponseText;
 
 // Don't change END
 
@@ -77,13 +82,29 @@ public class FGServiceExample extends AppCompatActivity {
 
         // The service example related
         {
+            String responseStatusText = "";
+            // If the action is not null, then it's because the user responded to the notification.
+            if(inIntent.getAction() != null) {
+                switch (inIntent.getAction()) {
+                    case FGServiceExampleService.ACTION_AGREE:
+                        responseStatusText = "The user agreed the love request.";
+                        break;
+                    case FGServiceExampleService.ACTION_DISMISS:
+                        responseStatusText = "The user refused the love request.";
+                        break;
+                    default:
+                        responseStatusText = "Waiting for response to the message...";
+                }
+            }
+
             startSvcBtn = findViewById(R.id.startSvcBtn);
             stopSvcBtn = findViewById(R.id.stopSvcBtn);
 
             startSvcBtn.setOnClickListener(v -> startExampleService());
             stopSvcBtn.setOnClickListener(v -> stopExampleService());
 
-
+            msgResponseText = findViewById(R.id.msgResponseText);
+            msgResponseText.setText(responseStatusText);
         }
     }
 
