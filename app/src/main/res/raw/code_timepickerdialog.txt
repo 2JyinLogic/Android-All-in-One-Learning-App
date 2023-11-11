@@ -1,0 +1,19 @@
+//TimePickerDialog method
+private void showTimePickerDialog() {
+    // Get the current time as the initial value
+    Calendar calendar = Calendar.getInstance();
+    int hour = calendar.get(Calendar.HOUR_OF_DAY);
+    int minute = calendar.get(Calendar.MINUTE);
+
+    // Create and display the TimePickerDialog
+    new TimePickerDialog(this,
+            (view, hourOfDay, minuteOfHour) -> {
+                // Handle the logic after time selection here
+                // For example: Display the selected time
+                // String selectedTime = hourOfDay + ":" + minuteOfHour;
+            },
+            hour,
+            minute,
+            true  // Whether it's in 24-hour format
+    ).show();
+}

@@ -1,0 +1,30 @@
+/**
+ * Shows a ProgressDialog with a "Loading..." message if it's not already visible.
+ * The ProgressDialog is set to be cancelable, allowing the user to dismiss it.
+ * It also registers an onCancelListener to perform specific actions when the ProgressDialog is canceled,
+ * such as canceling network requests or other long-running operations.
+ */
+private void showProgressDialog() {
+    if (progressDialog == null) {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading..."); // Set loading message
+        progressDialog.setCancelable(true); // Set as cancelable
+        progressDialog.setOnCancelListener(dialog -> {
+            // Perform corresponding actions when the ProgressDialog is canceled
+            // For example: Cancel network requests or other long-running operations
+            // You can add your cancellation logic here
+            dismissProgressDialog(); // Close the ProgressDialog
+        });
+    }
+
+    progressDialog.show();
+}
+
+/**
+ * Dismisses the ProgressDialog if it is currently visible.
+ */
+private void dismissProgressDialog() {
+    if (progressDialog != null && progressDialog.isShowing()) {
+        progressDialog.dismiss();
+    }
+}

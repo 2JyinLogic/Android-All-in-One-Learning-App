@@ -24,9 +24,20 @@
         android:theme="@style/Theme.GroupProject"
         tools:targetApi="31">
         <activity
+            android:name=".demos.TimePickerDialogExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.PopupWindowExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.BottomSheetDialogExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.ProgressDialogExample"
+            android:exported="false" />
+        <activity
             android:name=".demos.FGServiceExample"
             android:exported="false" />
-
         <service
             android:name=".demos.FGServiceExampleService"
             android:enabled="true"

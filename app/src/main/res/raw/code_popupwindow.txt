@@ -1,0 +1,20 @@
+private void showPopupWindow() {
+        // Inflate the popup Layout
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.layout_popup_window, null);
+
+        // Create new popup window
+        PopupWindow popupWindow = new PopupWindow(
+                popupView,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+
+        // Set if the popup can be dismissed by clicking outside
+        popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(true);
+
+        // Show the popup window
+        // As an example, show the popup window on the button click location
+        popupWindow.showAsDropDown(findViewById(R.id.popupwindowButton));
+    }

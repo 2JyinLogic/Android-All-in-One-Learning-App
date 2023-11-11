@@ -19,6 +19,10 @@ import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
 import com.can301.gp.searchbar.SearchBarMain;
+import com.can301.gp.demos.PopupWindowExample;
+import com.can301.gp.demos.BottomSheetDialogExample;
+import com.can301.gp.demos.ProgressDialogExample;
+import com.can301.gp.demos.TimePickerDialogExample;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 "Explore a variety of dialog styles and notification methods. " +
                         "Learn how to grab user attention with modals, pop-ups, toasts, " +
                         "and more for an engaging user experience.",
-                R.drawable.ic_cat1
+                R.drawable.baseline_chat_24
         ));
         categories.put("Effects", new Category(
                 "Effects",
@@ -133,7 +137,30 @@ public class MainActivity extends AppCompatActivity {
         catAnimationsDemos.put("Animations",new Demonstration(
                 "Animations","description of Animations",R.drawable.baseline_music_note_24, AnimationsExample.class,"animation1"
         ));
-
+        catDialogsDemos.put("PopupWindow", new Demonstration(
+                        "PopupWindow",
+                        getString(R.string.popupwindow_example_desc),
+                        R.drawable.ic_demo1, PopupWindowExample.class,"popupwindow"
+                )
+        );
+        catDialogsDemos.put("BottomSheetDialog", new Demonstration(
+                        "BottomSheetDialog",
+                getString(R.string.bottomsheetdialog_example_desc),
+                        R.drawable.ic_demo1, BottomSheetDialogExample.class,"bottomsheetdialog"
+                )
+        );
+        catDialogsDemos.put("TimePickerDialog", new Demonstration(
+                        "TimePickerDialog",
+                        getString(R.string.timepickerdialog_example_desc),
+                        R.drawable.ic_demo1, TimePickerDialogExample.class,"timepickerdialog"
+                )
+        );
+        catDialogsDemos.put("ProgressDialog", new Demonstration(
+                        "ProgressDialog",
+                        getString(R.string.progressdialog_example_desc),
+                        R.drawable.ic_demo1, ProgressDialogExample.class,"progressdialog"
+                )
+        );
         // Decide which demos go into which category.
         demos.put("Services", catServicesDemos);
         demos.put("Dialogs", catDialogsDemos);

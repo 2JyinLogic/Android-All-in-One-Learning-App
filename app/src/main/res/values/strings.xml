@@ -27,6 +27,19 @@
         and the user can interact with the message (e.g. reply to, dismiss) on the notification
         even when the app is closed.
     </string>
+    <string name="popupwindow_example_desc">
+       A small pop-up window used to appear at the top of the screen, usually to display additional information or options.
+    </string>
+    <string name="bottomsheetdialog_example_desc">
+       BottomsheetDialog used to display a drawer-style dialog box at the bottom, usually containing action options or other content.
+    </string>
+    <string name="progressdialog_example_desc">
+       ProgressDialog used to display a progress bar or loading indicator, typically used when performing a long task to notify the user that the task is in progress.
+    </string>
+    <string name="timepickerdialog_example_desc">
+       Select a date from a calendar view.
+    </string>
+
 
     <string name="code_link_nightmode">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleNightMode.java</string>
     <string name="code_link_rippleeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleRippleEffect.java</string>
@@ -37,7 +50,16 @@
     <string name="code_link_navigation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationExample.java</string>
     <string name="code_link_animation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AnimationsExample.java</string>
     <string name="code_link_fgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FGServiceExampleService.java</string>
+    <string name="code_link_popupwindow">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/PopupWindowExample.java</string>
+    <string name="code_link_bottomsheetdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BottomSheetExample.java</string>
+    <string name="code_link_timepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/TimePickerDialogExample.java</string>
+    <string name="code_link_progressdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressDialogExample.java</string>
 
+
+    <string name="doc_link_timepickerdialog">https://developer.android.com/reference/android/app/TimePickerDialog</string>
+    <string name="doc_link_progressdialog">https://developer.android.com/reference/android/app/ProgressDialog</string>
+    <string name="doc_link_bottomsheetdialog">https://developer.android.com/reference/com/google/android/material/bottomsheet/BottomSheetDialogFragment</string>
+    <string name="doc_link_popupwindow">https://developer.android.com/reference/android/widget/PopupWindow</string>
     <string name="doc_link_nightmode">https://developer.android.com/develop/ui/views/theming/darktheme</string>
     <string name="doc_link_rippleeffect">https://developer.android.com/reference/android/graphics/drawable/RippleDrawable</string>
     <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>

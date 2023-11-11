@@ -1,0 +1,35 @@
+public class BottomSheetDialogExample extends AppCompatActivity {
+    private String demoTitle;
+    private String codeId;
+
+    // ... Existing methods ...
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_bottomsheetdialog_example);
+
+        Button showDialogButton = findViewById(R.id.buttomsheetButton);
+        showDialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheetDialog();
+            }
+        });
+
+        // ... Rest of your onCreate method ...
+    }
+
+    private void showBottomSheetDialog() {
+        // Create a BottomSheetDialog
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet_dialog); // Set your layout here
+        bottomSheetDialog.setCanceledOnTouchOutside(true); // Close dialog when touching outside
+
+        // Add any additional setup and event handlers for the dialog
+
+        bottomSheetDialog.show(); // Display the dialog
+    }
+
+    // ... Rest of your class ...
+}
