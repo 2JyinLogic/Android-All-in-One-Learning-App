@@ -41,6 +41,7 @@
 
     <string name="doc_link_nightmode">https://developer.android.com/develop/ui/views/theming/darktheme</string>
     <string name="doc_link_rippleeffect">https://developer.android.com/reference/android/graphics/drawable/RippleDrawable</string>
+    <string name="doc_link_loadingeffect">https://developer.android.com/develop/ui/views/launch/splash-screen/migrate</string>
     <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>
     <string name="doc_link_boundservice">https://developer.android.com/guide/components/services#CreatingBoundService</string>
     <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
