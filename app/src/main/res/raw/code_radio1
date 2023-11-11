@@ -1,0 +1,17 @@
+RadioGroup AradioGroup = findViewById(R.id.radioGroup);
+        TextView display = findViewById(R.id.textView8);
+        AradioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.radioButton){
+                    display.setText("You have chosen radio button 1");
+                }
+                else if(checkedId == R.id.radioButton2){
+                    display.setText("You have chosen radio button 2");
+                }
+                else if(checkedId == R.id.radioButton5){
+                    display.setText("You have chosen radio button 3");
+                }
+            }
+        });
+    }

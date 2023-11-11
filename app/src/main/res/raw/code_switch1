@@ -1,0 +1,13 @@
+Switch ASwitch = findViewById(R.id.switch1);
+        TextView display = findViewById(R.id.textView6);
+        ASwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    display.setText("The switch is being turned on");
+                }
+                else {
+                    display.setText("The switch is being turned off");
+                }
+            }
+        });

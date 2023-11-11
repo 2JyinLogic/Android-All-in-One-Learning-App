@@ -1,0 +1,15 @@
+Button buttonLeft = findViewById(R.id.button);
+        Button buttonRight = findViewById(R.id.button);
+        TextView display = findViewById(R.id.textView5);
+        buttonLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText("You clicked the button on the left");
+            }
+        });
+        buttonRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText("You clicked the button on the Right");
+            }
+        });
