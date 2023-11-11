@@ -123,11 +123,11 @@ public class MainActivity extends AppCompatActivity {
                         "This dialog showcases user interaction and informs about " +
                         "important events. Represented by an icon (R.drawable.ic_demo1) " +
                         "and uses AlertDialogExample.class",
-                R.drawable.ic_demo1, AlertDialogExample.class,"alertdialog"
+                R.drawable.baseline_chat_24, AlertDialogExample.class,"alertdialog"
         ));
         catDialogsDemos.put("DatePickerDialog", new Demonstration(
                         "DatePickerDialog", "Select a date from a calendar view.",
-                        R.drawable.ic_demo1, DatePickerDialogExample.class,"datepickerdialog"
+                        R.drawable.baseline_chat_24, DatePickerDialogExample.class,"datepickerdialog"
                 )
         );
         catNavigationDemos.put("navigation", new Demonstration(
@@ -140,25 +140,25 @@ public class MainActivity extends AppCompatActivity {
         catDialogsDemos.put("PopupWindow", new Demonstration(
                         "PopupWindow",
                         getString(R.string.popupwindow_example_desc),
-                        R.drawable.ic_demo1, PopupWindowExample.class,"popupwindow"
+                        R.drawable.baseline_chat_24, PopupWindowExample.class,"popupwindow"
                 )
         );
         catDialogsDemos.put("BottomSheetDialog", new Demonstration(
                         "BottomSheetDialog",
                 getString(R.string.bottomsheetdialog_example_desc),
-                        R.drawable.ic_demo1, BottomSheetDialogExample.class,"bottomsheetdialog"
+                        R.drawable.baseline_chat_24, BottomSheetDialogExample.class,"bottomsheetdialog"
                 )
         );
         catDialogsDemos.put("TimePickerDialog", new Demonstration(
                         "TimePickerDialog",
                         getString(R.string.timepickerdialog_example_desc),
-                        R.drawable.ic_demo1, TimePickerDialogExample.class,"timepickerdialog"
+                        R.drawable.baseline_chat_24, TimePickerDialogExample.class,"timepickerdialog"
                 )
         );
         catDialogsDemos.put("ProgressDialog", new Demonstration(
                         "ProgressDialog",
                         getString(R.string.progressdialog_example_desc),
-                        R.drawable.ic_demo1, ProgressDialogExample.class,"progressdialog"
+                        R.drawable.baseline_chat_24, ProgressDialogExample.class,"progressdialog"
                 )
         );
         // Decide which demos go into which category.
