@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         categories.put("Widgets", new Category(
                 "Widgets",
                 "Shows various widgets.",
-                R.drawable.ic_cat_effect
+                R.drawable.ic_widgets
         ));
 
         HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
@@ -177,13 +177,13 @@ public class MainActivity extends AppCompatActivity {
                 )
         );
         catWidgetsDemos.put("Button", new Demonstration(
-                "Button","button",R.drawable.ic_demo1, ButtonWidget.class, "button1"
+                "Button","A common type of widget which is the simplest way to interact with an application. Users can click it in order to transmit their instructions.",R.drawable.ic_button, ButtonWidget.class, "button1"
         ));
         catWidgetsDemos.put("Switch", new Demonstration(
-                "Switch","switch",R.drawable.ic_demo1, SwitchWidget.class, "switch1"
+                "Switch","A common type of widget. It has two states, on and off. The two states of the widget represent two states of the application. The layout will change according to the change of the state of a switch.",R.drawable.ic_switch, SwitchWidget.class, "switch1"
         ));
         catWidgetsDemos.put("Radio Group", new Demonstration(
-                "Radio Group","radio group",R.drawable.ic_demo1, RadioGroupWidget.class, "radio1"
+                "Radio Group","A group of buttons, but only one button of them can be chosen.",R.drawable.ic_radio, RadioGroupWidget.class, "radio1"
         ));
 
         // Decide which demos go into which category.
