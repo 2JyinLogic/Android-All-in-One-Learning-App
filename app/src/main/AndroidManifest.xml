@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
+
             <data android:scheme="https" />
         </intent>
     </queries>
@@ -34,6 +35,15 @@
             android:exported="false" />
         <activity
             android:name=".demos.ProgressDialogExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.RadioGroupWidget"
+            android:exported="false" />
+        <activity
+            android:name=".demos.SwitchWidget"
+            android:exported="false" />
+        <activity
+            android:name=".demos.ButtonWidget"
             android:exported="false" />
         <activity
             android:name=".demos.FGServiceExample"

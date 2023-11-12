@@ -12,6 +12,7 @@ import com.can301.gp.catviewer.CatViewMain;
 import com.can301.gp.demos.BGServiceExample;
 import com.can301.gp.demos.BoundServiceExample;
 import com.can301.gp.demos.AlertDialogExample;
+import com.can301.gp.demos.ButtonWidget;
 import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.demos.AnimationsExample;
 import com.can301.gp.demos.EffectExampleLoadingEffect;
@@ -19,6 +20,8 @@ import com.can301.gp.demos.FGServiceExample;
 import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
+import com.can301.gp.demos.RadioGroupWidget;
+import com.can301.gp.demos.SwitchWidget;
 import com.can301.gp.searchbar.SearchBarMain;
 import com.can301.gp.demos.PopupWindowExample;
 import com.can301.gp.demos.BottomSheetDialogExample;
@@ -85,12 +88,18 @@ public class MainActivity extends AppCompatActivity {
                 "Shows various effects.",
                 R.drawable.ic_cat_effect
         ));
+        categories.put("Widgets", new Category(
+                "Widgets",
+                "Shows various widgets.",
+                R.drawable.ic_cat_effect
+        ));
 
         HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> catDialogsDemos = new HashMap<>();
         HashMap<String, Demonstration> catNavigationDemos = new HashMap<>();
         HashMap<String, Demonstration> catAnimationsDemos = new HashMap<>();
         HashMap<String, Demonstration> catEffectsDemos = new HashMap<>();
+        HashMap<String, Demonstration> catWidgetsDemos = new HashMap<>();
 
         // Set up all demos.
         catEffectsDemos.put("Night Mode", new Demonstration(
@@ -167,12 +176,23 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.baseline_chat_24, ProgressDialogExample.class,"progressdialog"
                 )
         );
+        catWidgetsDemos.put("Button", new Demonstration(
+                "Button","button",R.drawable.ic_demo1, ButtonWidget.class, "button1"
+        ));
+        catWidgetsDemos.put("Switch", new Demonstration(
+                "Switch","switch",R.drawable.ic_demo1, SwitchWidget.class, "switch1"
+        ));
+        catWidgetsDemos.put("Radio Group", new Demonstration(
+                "Radio Group","radio group",R.drawable.ic_demo1, RadioGroupWidget.class, "radio1"
+        ));
+
         // Decide which demos go into which category.
         demos.put("Services", catServicesDemos);
         demos.put("Dialogs", catDialogsDemos);
         demos.put("Navigation", catNavigationDemos);
         demos.put("Animations",catAnimationsDemos);
         demos.put("Effects",catEffectsDemos);
+        demos.put("Widgets",catWidgetsDemos);
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
