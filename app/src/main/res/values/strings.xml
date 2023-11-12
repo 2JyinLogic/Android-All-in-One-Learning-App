@@ -43,6 +43,7 @@
 
     <string name="code_link_nightmode">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleNightMode.java</string>
     <string name="code_link_rippleeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleRippleEffect.java</string>
+    <string name="code_link_loadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleLoadingEffect.java</string>
     <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
     <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
     <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
@@ -62,6 +63,7 @@
     <string name="doc_link_popupwindow">https://developer.android.com/reference/android/widget/PopupWindow</string>
     <string name="doc_link_nightmode">https://developer.android.com/develop/ui/views/theming/darktheme</string>
     <string name="doc_link_rippleeffect">https://developer.android.com/reference/android/graphics/drawable/RippleDrawable</string>
+    <string name="doc_link_loadingeffect">https://developer.android.com/develop/ui/views/launch/splash-screen/migrate</string>
     <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>
     <string name="doc_link_boundservice">https://developer.android.com/guide/components/services#CreatingBoundService</string>
     <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
@@ -70,7 +72,24 @@
     <string name="doc_link_animation1">https://developer.android.com/develop/ui/views/animations/overview</string>
     <string name="doc_link_fgservice">https://developer.android.com/guide/components/foreground-services</string>
 
-    <string name="night_mode_text">
-        Some text for testing night mode...
+    <string name="night_mode_example_desc">
+        During bright daylight conditions, utilize the "Light Mode," and switch to the "Night Mode"
+        when the lighting is dim during the night.
+
+        In this example, with just a simple tap on the switch, you can experience a seamless transition
+        between light and night modes with this intuitive UI switch.
+    </string>
+    <string name="ripple_effect_example_desc">
+        Ripple effects are commonly employed in various scenarios,
+        such as signal retrieval and button clicks, to enhance the user\'s visual experience.
+        In this example, you can initiate the ripple effect by clicking on the character icon.
+        Clicking on the blank area halts the ripple effect,
+        providing a dynamic and interactive visual feedback mechanism.
+    </string>
+    <string name="loading_effect_example_desc">
+        Placeholder Loading is a technique employed during data loading to provide user feedback.
+        It utilizes grayed-out areas or icons to simulate the layout of the content that is about to load,
+        allowing users to perceive that the page is in the process of loading.
+        This approach helps alleviate user anxiety during data loading by providing a visual indication of ongoing activity.
     </string>
 </resources>

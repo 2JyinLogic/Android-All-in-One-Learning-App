@@ -1,4 +1,8 @@
-@Override
+    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleRippleEffect";
+
+    RippleBackground rippleBackground;
+    ImageView imageView;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Change here to the layout name
@@ -6,10 +10,6 @@
 
         rippleBackground = findViewById(R.id.rippleBackground);
         imageView = findViewById(R.id.rippleImage);
-        Button effectButton = findViewById(R.id.effectBottomButton);
-        Button codeButton = findViewById(R.id.codeBottomButton);
-        effectButton.setEnabled(false);
-        codeButton.setEnabled(true);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,26 +21,7 @@
         rippleBackground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("aaa","aaa");
                 rippleBackground.stopRippleAnimation();
             }
         });
-
-        // Handling parameters
-        Intent inIntent = getIntent();
-        if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_TITLE_KEY)) {
-            throw new RuntimeException("Give me the effect title!");
-        }
-        if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY)) {
-            throw new RuntimeException("Give me the code ID!");
-        }
-        demoTitle = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_TITLE_KEY);
-        codeId = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY);
-
-        // Set information about this effect
-        TextView effectTextView = findViewById(R.id.effectExampleName);
-        effectTextView.setText(demoTitle);
-
-        // Go to the corresponding code page
-        codeButton.setOnClickListener(v -> goToCodePage());
     }
