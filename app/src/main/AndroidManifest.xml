@@ -74,6 +74,9 @@
             android:name=".demos.NavigationExample"
             android:exported="false" />
         <activity
+            android:name=".demos.AttributeAnimationsExample"
+            android:exported="false" />
+        <activity
             android:name=".demos.EffectExampleNightMode"
             android:exported="false" />
         <activity
@@ -81,6 +84,9 @@
             android:exported="false" />
         <activity
             android:name=".demos.AnimationsExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.FrameAnimationsExample"
             android:exported="false" />
         <activity
             android:name=".demos.EffectExampleRippleEffect"
