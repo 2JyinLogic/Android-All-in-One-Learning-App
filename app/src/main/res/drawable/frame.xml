@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/fly0" android:duration="60"/>
+    <item android:drawable="@drawable/fly1" android:duration="60"/>
+    <item android:drawable="@drawable/fly2" android:duration="60"/>
+    <item android:drawable="@drawable/fly3" android:duration="60"/>
+    <item android:drawable="@drawable/fly4" android:duration="60"/>
+    <item android:drawable="@drawable/fly5" android:duration="60"/>
+    <item android:drawable="@drawable/fly6" android:duration="60"/>
+    <item android:drawable="@drawable/fly7" android:duration="60"/>
+    <item android:drawable="@drawable/fly8" android:duration="60"/>
+    <item android:drawable="@drawable/fly9" android:duration="60"/>
+    <item android:drawable="@drawable/fly10" android:duration="60"/>
+    <item android:drawable="@drawable/fly11" android:duration="60"/>
+    <item android:drawable="@drawable/fly12" android:duration="60"/>
+    <item android:drawable="@drawable/fly13" android:duration="60"/>
+    <item android:drawable="@drawable/fly14" android:duration="60"/>
+    <item android:drawable="@drawable/fly15" android:duration="60"/>
+    <item android:drawable="@drawable/fly16" android:duration="60"/>
+    <item android:drawable="@drawable/fly17" android:duration="60"/>
+    <item android:drawable="@drawable/fly18" android:duration="60"/>
+    <item android:drawable="@drawable/fly19" android:duration="60"/>
+    <item android:drawable="@drawable/fly20" android:duration="60"/>
+    <item android:drawable="@drawable/fly21" android:duration="60"/>
+    <item android:drawable="@drawable/fly22" android:duration="60"/>
+    <item android:drawable="@drawable/fly23" android:duration="60"/>
+    <item android:drawable="@drawable/fly24" android:duration="60"/>
+    <item android:drawable="@drawable/fly25" android:duration="60"/>
+    <item android:drawable="@drawable/fly26" android:duration="60"/>
+    <item android:drawable="@drawable/fly27" android:duration="60"/>
+    <item android:drawable="@drawable/fly28" android:duration="60"/>
+    <item android:drawable="@drawable/fly29" android:duration="60"/>
+    <item android:drawable="@drawable/fly30" android:duration="60"/>
+    <item android:drawable="@drawable/fly31" android:duration="60"/>
+    <item android:drawable="@drawable/fly32" android:duration="60"/>
+    <item android:drawable="@drawable/fly33" android:duration="60"/>
+    <item android:drawable="@drawable/fly34" android:duration="60"/>
+    <item android:drawable="@drawable/fly35" android:duration="60"/>
+    <item android:drawable="@drawable/fly36" android:duration="60"/>
+    <item android:drawable="@drawable/fly37" android:duration="60"/>
+    <item android:drawable="@drawable/fly38" android:duration="60"/>
+    <item android:drawable="@drawable/fly39" android:duration="60"/>
+    <item android:drawable="@drawable/fly40" android:duration="60"/>
+    <item android:drawable="@drawable/fly41" android:duration="60"/>
+
+
+
+</animation-list>

@@ -50,6 +50,8 @@
     <string name="code_link_datepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/DatePickerDialogExample.java</string>
     <string name="code_link_navigation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationExample.java</string>
     <string name="code_link_animation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AnimationsExample.java</string>
+    <string name="code_link_frameanimation">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FrameAnimationsExample.java</string>
+    <string name="code_link_attributeanimation">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AttributeAnimationsExample.java</string>
     <string name="code_link_fgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FGServiceExampleService.java</string>
     <string name="code_link_popupwindow">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/PopupWindowExample.java</string>
     <string name="code_link_bottomsheetdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BottomSheetExample.java</string>
@@ -73,6 +75,8 @@
     <string name="doc_link_datepickerdialog">https://developer.android.com/develop/ui/views/components/pickers#DatePicker</string>
     <string name="doc_link_navigation1">https://developer.android.com/guide/navigation</string>
     <string name="doc_link_animation1">https://developer.android.com/develop/ui/views/animations/overview</string>
+    <string name="doc_link_frameanimation">https://developer.android.com/develop/ui/views/animations/overview</string>
+    <string name="doc_link_attributeanimation">https://developer.android.com/develop/ui/views/animations/overview</string>
     <string name="doc_link_fgservice">https://developer.android.com/guide/components/foreground-services</string>
     <string name="doc_link_button1">https://developer.android.com/reference/android/widget/Button</string>
     <string name="doc_link_switch1">https://developer.android.com/reference/android/widget/Switch</string>
@@ -98,4 +102,15 @@
         allowing users to perceive that the page is in the process of loading.
         This approach helps alleviate user anxiety during data loading by providing a visual indication of ongoing activity.
     </string>
+    <string name="frame_animations_example_desc">
+        Frame animation splices a series of pictures through a frame file in drawable, sets the display time of each picture,
+        and then displays it by calling @ drawable/frame in layout
+        click the button, it will show from the first frame, this makes it look like a continuous animation.
+    </string>
+    <string name="attribute_animations_example_desc">
+        Attribute animation provides a more convenient way to operate.
+        By configuring the attributes in the Object Animator, you can control all the attributes contained in the image/text,
+        such as "alpha", transparency, scaling, rotation, color change, and so on
+    </string>
+
 </resources>

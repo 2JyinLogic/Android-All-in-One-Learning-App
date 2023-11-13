@@ -18,6 +18,9 @@ import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.demos.AnimationsExample;
 import com.can301.gp.demos.EffectExampleLoadingEffect;
 import com.can301.gp.demos.FGServiceExample;
+
+import com.can301.gp.demos.FrameAnimationsExample;
+import com.can301.gp.demos.AttributeAnimationsExample;
 import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
@@ -82,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ic_services
         ));
         categories.put("Navagation", new Category(
-                "Navigation", "navigation", R.drawable.ic_cat2
+                "Navigation", "navigation", R.drawable.baseline_gps_fixed_24
         ));
         categories.put("Animations", new Category(
-                "Animations", "description of Animations", R.drawable.baseline_music_note_24
+                "Animations", "description of Animations", R.drawable.baseline_image_24
         ));
         categories.put("Dialogs", new Category(
                 "Dialogs",
@@ -157,12 +160,23 @@ public class MainActivity extends AppCompatActivity {
                 )
         );
         catNavigationDemos.put("navigation", new Demonstration(
-                "navigation", "navigation description", R.drawable.ic_demo1, NavigationExample.class, "navigation1"
+                "navigation", "Show the effect of bottom navigation bar and switching", R.drawable.ic_demo1, NavigationExample.class, "navigation1"
         ));
 
+
         catAnimationsDemos.put("Animations",new Demonstration(
-                "Animations","description of Animations",R.drawable.baseline_music_note_24, AnimationsExample.class,"animation1"
+                "Animations","show the alpha, rotate, scale and translate of images",R.drawable.baseline_image_24, AnimationsExample.class,"animation1"
         ));
+        catAnimationsDemos.put("FrameAnimations",new Demonstration(
+                "FrameAnimations","Show how to create animation through frames-by-frames",R.drawable.baseline_animation_24, FrameAnimationsExample.class,"frameanimation"
+        ));
+        catAnimationsDemos.put("AttributeAnimations",new Demonstration(
+                "AttributeAnimations","Show how to create animation through using different attributes",R.drawable.baseline_keyboard_double_arrow_right_24, AttributeAnimationsExample.class,"attributeanimation"
+        ));
+
+
+
+
         catDialogsDemos.put("PopupWindow", new Demonstration(
                         "PopupWindow",
                         getString(R.string.popupwindow_example_desc),
