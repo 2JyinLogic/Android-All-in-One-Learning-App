@@ -13,10 +13,12 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.can301.gp.Demonstration;
+import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 
 import java.io.BufferedReader;
@@ -55,6 +57,14 @@ public class CodePage extends AppCompatActivity {
 
     public static final String CODE_ID_KEY = "code ID";
     public static final String CODE_CLASS_NAME_KEY = "code class name";
+
+    /**
+     * Go home when the user clicks the home button.
+     * @param view
+     */
+    public void goHome(View view) {
+        MainActivity.goBackToHomePage(this);
+    }
 
     /**
      * Opens the browser with the link to the source code

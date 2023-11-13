@@ -74,6 +74,9 @@
     <string name="doc_link_navigation1">https://developer.android.com/guide/navigation</string>
     <string name="doc_link_animation1">https://developer.android.com/develop/ui/views/animations/overview</string>
     <string name="doc_link_fgservice">https://developer.android.com/guide/components/foreground-services</string>
+    <string name="doc_link_button1">https://developer.android.com/reference/android/widget/Button</string>
+    <string name="doc_link_switch1">https://developer.android.com/reference/android/widget/Switch</string>
+    <string name="doc_link_radio1">https://developer.android.com/reference/android/widget/RadioGroup</string>
 
     <string name="night_mode_example_desc">
         During bright daylight conditions, utilize the "Light Mode," and switch to the "Night Mode"

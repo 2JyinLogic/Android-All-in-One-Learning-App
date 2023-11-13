@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.can301.gp.MainActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog; // Import BottomSheetDialog
 
 import androidx.appcompat.app.AlertDialog;
@@ -67,6 +69,15 @@ public class BottomSheetDialogExample extends AppCompatActivity {
             diag.show();
         }
     }
+
+    /**
+     * Go home when the user clicks the home button.
+     * @param view
+     */
+    public void goHome(View view) {
+        MainActivity.goBackToHomePage(this);
+    }
+
 
 // Don't change END
 

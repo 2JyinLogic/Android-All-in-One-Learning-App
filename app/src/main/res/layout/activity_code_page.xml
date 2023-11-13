@@ -48,13 +48,13 @@
         android:id="@+id/codeLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="10dp"
         android:drawableLeft="@drawable/ic_action_view_github_source_foreground"
         android:text="View Source Code"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -83,5 +83,17 @@
             android:textSize="22sp"
             android:background="@drawable/bottom_button_style"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:drawableLeft="@drawable/ic_home_button"
+        android:onClick="goHome"
+        android:text="Home"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/codeLink"
+        app:layout_constraintTop_toTopOf="@+id/codeLink" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

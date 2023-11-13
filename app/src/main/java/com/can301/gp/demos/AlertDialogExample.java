@@ -8,12 +8,14 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
 import com.can301.gp.Demonstration;
+import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 
@@ -65,6 +67,15 @@ public class AlertDialogExample extends AppCompatActivity {
             diag.show();
         }
     }
+
+    /**
+     * Go home when the user clicks the home button.
+     * @param view
+     */
+    public void goHome(View view) {
+        MainActivity.goBackToHomePage(this);
+    }
+
 
 // Don't change END
 

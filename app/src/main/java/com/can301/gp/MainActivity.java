@@ -2,6 +2,7 @@ package com.can301.gp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -48,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Demonstration> demoList = null;
 
     public static final int numHighlighedCats = 4;
+
+    /**
+     * Used for the Home button of other pages.
+     * Click that button to go back to this activity.
+     * @param context the context of that page.
+     */
+    static public void goBackToHomePage(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
 
     /**
      * What we will need to do by hand,

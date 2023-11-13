@@ -19,6 +19,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.can301.gp.Demonstration;
+import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -72,6 +73,15 @@ public class EffectExampleLoadingEffect extends AppCompatActivity {
             diag.show();
         }
     }
+
+    /**
+     * Go home when the user clicks the home button.
+     * @param view
+     */
+    public void goHome(View view) {
+        MainActivity.goBackToHomePage(this);
+    }
+
 
 // Don't change END
 
