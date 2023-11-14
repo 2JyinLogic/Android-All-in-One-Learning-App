@@ -1,0 +1,82 @@
+    requestPermissionLauncher =
+    registerForActivityResult(new ActivityResultContracts.RequestPermission(),
+        isGranted -> {
+            String resultStr;
+            if (isGranted) {
+                resultStr = "You have granted the permission.";
+            } else {
+                resultStr = "You have refused to grant the permission.";
+            }
+    
+        });
+
+/**
+     * Request for the corresponding permission when the user clicks the related button.
+     *
+     * 1. Check if the app already has the permission. If it does, then notify the user about that.
+     * 2. If the app does not have the permission and a rationale as to why the permission is needed
+     * is suggested by the system, then display it.
+     * 3. Otherwise, directly request the permission.
+     *
+     * @param permission Manifest.permission.xxx
+     */
+    void requestPermission(String permission) {
+        // 1. Check if the app already has the permission.
+        if (PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(
+                this, permission)) {
+            // Granted
+            // Show the user that the app already has the permission
+            // See https://developer.android.com/develop/ui/views/components/dialogs
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Already has the permission");
+            builder.setMessage("The app already has the permission granted. " +
+                    "To see the demonstration of asking for it, " +
+                    "withdraw the permission in Settings first");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Do nothing, which dismisses the dialog
+                }
+            });
+            Dialog diag = builder.create();
+            diag.show();
+            return;
+        }
+        else {
+            // Not granted
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this, permission)) {
+                // The system thinks we should show a rationale.
+
+                // Show the user the reason for the permission
+                // See https://developer.android.com/develop/ui/views/components/dialogs
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Why the permission is needed");
+                builder.setMessage("Explain to your user why you need this permission " +
+                        "for your app to work." +
+                        "You should give the user a way to refuse. In this example, " +
+                        "if your refuse, the permission will not be requested.");
+                builder.setPositiveButton("Agree",  (diag, which) -> {
+                    // Ask for the permission.
+                    requestPermissionLauncher.launch(permission);
+                    });
+                builder.setNegativeButton("Refuse", (diag, which) -> {
+                    resultTxtView.setText("You have refused the rationale.");
+                    });
+                Dialog diag = builder.create();
+                diag.show();
+
+            }
+            else {
+                // Ask for the permission.
+                requestPermissionLauncher.launch(permission);
+            }
+        }
+    }
+
+            locationBtn.setOnClickListener(
+                v -> requestPermission(Manifest.permission.ACCESS_COARSE_LOCATION));
+            fileBtn.setOnClickListener(
+                v -> requestPermission(Manifest.permission.READ_CONTACTS));
+            notificationBtn.setOnClickListener(
+                v -> requestPermission(Manifest.permission.POST_NOTIFICATIONS));

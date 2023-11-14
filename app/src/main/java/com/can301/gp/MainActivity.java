@@ -25,6 +25,7 @@ import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
 import com.can301.gp.demos.RadioGroupWidget;
+import com.can301.gp.demos.RequestPermissionExample;
 import com.can301.gp.demos.SwitchWidget;
 import com.can301.gp.searchbar.SearchBarMain;
 import com.can301.gp.demos.PopupWindowExample;
@@ -84,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
                         "including foreground, bound, and background services",
                 R.drawable.ic_services
         ));
+        categories.put("System", new Category(
+                "System",
+                "Demonstrates how you can interact with the Android system. " +
+                        "For example, asking for permissions",
+                R.drawable.ic_cat_system
+        ));
         categories.put("Navagation", new Category(
                 "Navigation", "navigation", R.drawable.baseline_gps_fixed_24
         ));
@@ -109,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         ));
 
         HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
+        HashMap<String, Demonstration> catSystemDemos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> catDialogsDemos = new HashMap<>();
         HashMap<String, Demonstration> catNavigationDemos = new HashMap<>();
         HashMap<String, Demonstration> catAnimationsDemos = new HashMap<>();
@@ -131,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 android.R.drawable.ic_popup_sync, EffectExampleLoadingEffect.class,"loadingeffect"
                 )
         );
+
         catServicesDemos.put("Background Service", new Demonstration(
                 "Background Service",
                 getString(R.string.bg_service_example_desc),
@@ -146,6 +155,13 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.fg_service_example_desc),
                 R.drawable.ic_fg_service, FGServiceExample.class, "fgservice"
         ));
+
+        catSystemDemos.put("Request Permissions", new Demonstration(
+                "Request Permissions",
+                getString(R.string.request_permission_example_desc),
+                R.drawable.ic_request_permission, RequestPermissionExample.class, "reqpermission"
+        ));
+
         catDialogsDemos.put("AlertDialog", new Demonstration(
                 "AlertDialog",
                 "Demonstration entry for an AlertDialog example. " +
@@ -163,7 +179,6 @@ public class MainActivity extends AppCompatActivity {
                 "navigation", "Show the effect of bottom navigation bar and switching", R.drawable.ic_demo1, NavigationExample.class, "navigation1"
         ));
 
-
         catAnimationsDemos.put("Animations",new Demonstration(
                 "Animations","show the alpha, rotate, scale and translate of images",R.drawable.baseline_image_24, AnimationsExample.class,"animation1"
         ));
@@ -173,9 +188,6 @@ public class MainActivity extends AppCompatActivity {
         catAnimationsDemos.put("AttributeAnimations",new Demonstration(
                 "AttributeAnimations","Show how to create animation through using different attributes",R.drawable.baseline_keyboard_double_arrow_right_24, AttributeAnimationsExample.class,"attributeanimation"
         ));
-
-
-
 
         catDialogsDemos.put("PopupWindow", new Demonstration(
                         "PopupWindow",
@@ -201,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.baseline_chat_24, ProgressDialogExample.class,"progressdialog"
                 )
         );
+
         catWidgetsDemos.put("Button", new Demonstration(
                 "Button","A common type of widget which is the simplest way to interact with an application. Users can click it in order to transmit their instructions.",R.drawable.ic_button, ButtonWidget.class, "button1"
         ));
@@ -213,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Decide which demos go into which category.
         demos.put("Services", catServicesDemos);
+        demos.put("System", catSystemDemos);
         demos.put("Dialogs", catDialogsDemos);
         demos.put("Navigation", catNavigationDemos);
         demos.put("Animations",catAnimationsDemos);
@@ -221,13 +235,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
-        // highlight services
+        // highlight xxx
         highlightedCats.add(0);
-        // highlight dialogs
+        // highlight xxx
         highlightedCats.add(1);
-        // highlight navigation
+        // highlight xxx
         highlightedCats.add(2);
-        // highlight animation
+        // highlight xxx
         highlightedCats.add(3);
 
         // Fill in the lists
