@@ -70,7 +70,7 @@ public class SearchBarMain extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
-                Demonstration demo = MainActivity.demoList.get(position);
+                Demonstration demo = (Demonstration)my_list.getItemAtPosition(position);
                 demo.goToEffectActivity(ctx);
             }
         });
