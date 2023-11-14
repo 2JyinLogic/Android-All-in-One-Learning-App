@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -20,7 +23,7 @@ import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 
-public class ButtonWidget extends AppCompatActivity {
+public class ProgressBarWidget extends AppCompatActivity {
 
     private String demoTitle;
     // codeId is needed for the code page to load the corresponding code
@@ -80,13 +83,13 @@ public class ButtonWidget extends AppCompatActivity {
 // Don't change END
 
     // Change this to exactly the string as in the AndroidManifest.xml
-    public static final String EFFECT_ACTIVITY_NAME = ".demos.ButtonWidget";
+    public static final String EFFECT_ACTIVITY_NAME = ".demos.ProgressBarWidget";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Change here to the layout name
-        setContentView(R.layout.activity_button_widget);
+        setContentView(R.layout.activity_progress_bar_widget);
 
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
@@ -121,21 +124,21 @@ public class ButtonWidget extends AppCompatActivity {
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
 
         //effect
-        Button buttonLeft = findViewById(R.id.button);
-        Button buttonRight = findViewById(R.id.button2);
-        TextView display = findViewById(R.id.textView5);
-        buttonLeft.setOnClickListener(new View.OnClickListener() {
+        EditText editText = findViewById(R.id.editTextText2);
+        ProgressBar progressBar2 = findViewById(R.id.progressBar2);
+        Button button3 = findViewById(R.id.button3);
+
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                display.setText("You clicked the button on the left");
+                String s = editText.getText().toString();
+                if(TextUtils.isEmpty(s)){
+                    s = "0";
+                }
+                progressBar2.setProgress(Integer.valueOf(s));
             }
         });
-        buttonRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                display.setText("You clicked the button on the Right");
-            }
-        });
+
     }
 
 }

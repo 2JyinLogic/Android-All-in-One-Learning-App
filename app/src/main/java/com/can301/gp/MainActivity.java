@@ -24,6 +24,7 @@ import com.can301.gp.demos.AttributeAnimationsExample;
 import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
+import com.can301.gp.demos.ProgressBarWidget;
 import com.can301.gp.demos.RadioGroupWidget;
 import com.can301.gp.demos.RequestPermissionExample;
 import com.can301.gp.demos.SwitchWidget;
@@ -222,6 +223,9 @@ public class MainActivity extends AppCompatActivity {
         ));
         catWidgetsDemos.put("Radio Group", new Demonstration(
                 "Radio Group","A group of buttons, but only one button of them can be chosen.",R.drawable.ic_radio, RadioGroupWidget.class, "radio1"
+        ));
+        catWidgetsDemos.put("Progress bar", new Demonstration(
+                "Progress bar","A type of widget to show the progress of the program in order to give the users an approximate waiting time.",R.drawable.ic_progress, ProgressBarWidget.class, "progress1"
         ));
 
         // Decide which demos go into which category.

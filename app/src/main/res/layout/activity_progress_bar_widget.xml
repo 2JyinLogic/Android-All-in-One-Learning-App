@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".demos.SwitchWidget">
+    tools:context=".demos.ProgressBarWidget">
 
     <TextView
         android:id="@+id/effectExampleName"
@@ -13,11 +13,11 @@
         android:background="#6750A3"
         android:gravity="center"
         android:padding="16dp"
-        android:textSize="22sp"
         android:textColor="#FFFFFF"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/effectContainer"
@@ -32,48 +32,59 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/effectExampleName"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="152dp"
-            android:layout_height="51dp"
-            android:text="Switch"
-            android:textSize="25dp"
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="232dp"
+            android:layout_height="59dp"
+            android:ems="10"
+            android:hint="Input progress (0-100)"
+            android:inputType="text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25" />
+            app:layout_constraintVertical_bias="0.1" />
 
-        <TextView
-            android:id="@+id/textView6"
+        <Button
+            android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="The switch is being turned off"
-            android:textSize="20dp"
+            android:text="Confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45" />
+            app:layout_constraintVertical_bias="0.3" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/switch_desc"
+            android:text="@string/progress_desc"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8" />
+            app:layout_constraintVertical_bias="0.75" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <Button
         android:id="@+id/docLink"
@@ -113,18 +124,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/bottom_button_style"
             android:text="Effect"
-            android:textSize="22sp"
-            android:background="@drawable/bottom_button_style"/>
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/codeBottomButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/bottom_button_style"
             android:text="Code"
-            android:textSize="22sp"
-            android:background="@drawable/bottom_button_style"/>
+            android:textSize="22sp" />
 
     </LinearLayout>
 
