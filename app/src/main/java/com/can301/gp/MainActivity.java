@@ -17,6 +17,7 @@ import com.can301.gp.demos.ButtonWidget;
 import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.demos.AnimationsExample;
 import com.can301.gp.demos.EffectExampleLoadingEffect;
+import com.can301.gp.demos.EffectExampleProgressBarLoadingEffect;
 import com.can301.gp.demos.FGServiceExample;
 
 import com.can301.gp.demos.FrameAnimationsExample;
@@ -134,9 +135,14 @@ public class MainActivity extends AppCompatActivity {
                 android.R.drawable.ic_menu_mylocation, EffectExampleRippleEffect.class,"rippleeffect"
                 )
         );
-        catEffectsDemos.put("Placeholder Loading Effect", new Demonstration(
-                        "Placeholder Loading Effect", getString(R.string.loading_effect_example_desc),
-                android.R.drawable.ic_popup_sync, EffectExampleLoadingEffect.class,"loadingeffect"
+        catEffectsDemos.put("Shimmer Loading Effect", new Demonstration(
+                        "Shimmer Loading Effect", getString(R.string.loading_effect_example_desc),
+                R.drawable.baseline_image_24, EffectExampleLoadingEffect.class,"loadingeffect"
+                )
+        );
+        catEffectsDemos.put("Progress Bar Loading Effect", new Demonstration(
+                        "Progress Bar Loading Effect", getString(R.string.progress_bar_effect_example_desc),
+                R.drawable.baseline_image_24, EffectExampleProgressBarLoadingEffect.class,"progressbareffect"
                 )
         );
 
