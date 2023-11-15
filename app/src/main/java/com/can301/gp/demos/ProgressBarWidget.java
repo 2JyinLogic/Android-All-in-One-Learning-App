@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Switch;
@@ -125,7 +126,8 @@ public class ProgressBarWidget extends AppCompatActivity {
 
         //effect
         EditText editText = findViewById(R.id.editTextText2);
-        ProgressBar progressBar2 = findViewById(R.id.progressBar2);
+        ProgressBar horProgressBar = findViewById(R.id.progressBar2);
+        ProgressBar cirProgressBar = findViewById(R.id.progressBar);
         Button button3 = findViewById(R.id.button3);
 
         button3.setOnClickListener(new View.OnClickListener() {
@@ -135,9 +137,26 @@ public class ProgressBarWidget extends AppCompatActivity {
                 if(TextUtils.isEmpty(s)){
                     s = "0";
                 }
-                progressBar2.setProgress(Integer.valueOf(s));
+                horProgressBar.setProgress(Integer.valueOf(s));
+                cirProgressBar.setProgress(Integer.valueOf(s));
             }
         });
+
+        Switch detSwitch = findViewById(R.id.determinateSwitch);
+
+        detSwitch.setOnCheckedChangeListener(
+            (btn, checked) -> {
+                if(checked) {
+                    horProgressBar.setIndeterminate(false);
+                    cirProgressBar.setIndeterminate(false);
+                }
+                else {
+                    horProgressBar.setIndeterminate(true);
+                    cirProgressBar.setIndeterminate(true);
+                }
+            }
+        );
+
 
     }
 
