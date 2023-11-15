@@ -21,6 +21,7 @@
     <string name="code_link_switch1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SwitchWidget.java</string>
     <string name="code_link_radio1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RadioGroupWidget.java</string>
     <string name="code_link_reqpermission">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RequestPermissionExample.java</string>
+    <string name="code_link_interactcamera">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCameraExample.java</string>
 
 
     <string name="doc_link_timepickerdialog">https://developer.android.com/reference/android/app/TimePickerDialog</string>
@@ -43,7 +44,12 @@
     <string name="doc_link_switch1">https://developer.android.com/reference/android/widget/Switch</string>
     <string name="doc_link_radio1">https://developer.android.com/reference/android/widget/RadioGroup</string>
     <string name="doc_link_reqpermission">https://developer.android.com/training/permissions/requesting</string>
+    <string name="doc_link_interactcamera">https://developer.android.com/training/permissions/requesting</string>
 
+
+    <string name="interactcamera_example_desc">
+       xxxx xxxxxxx
+    </string>
     <string name="night_mode_example_desc">
         During bright daylight conditions, utilize the "Light Mode," and switch to the "Night Mode"
         when the lighting is dim during the night.
