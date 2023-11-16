@@ -35,8 +35,8 @@ public class InteractCameraExample extends AppCompatActivity {
     // and for this activity to load the documentation link
     private String codeId;
     public static final String EFFECT_ACTIVITY_NAME = ".demos.InteractCameraExample";
-    private static final int MY_CAMERA_REQUEST_CODE = 100; // Example request code for camera permission
-    private static final int REQUEST_IMAGE_CAPTURE = 101; // Example request code for image capture
+    //private static final int MY_CAMERA_REQUEST_CODE = 100; // Example request code for camera permission
+    private static final int REQUEST_IMAGE_CAPTURE = 1; // Example request code for image capture
 
     void goToCodePage() {
         Intent intent = new Intent(this, CodePage.class);
@@ -101,7 +101,7 @@ public class InteractCameraExample extends AppCompatActivity {
 
         // Camera permission check
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, REQUEST_IMAGE_CAPTURE);
         }
         // Camera button setup
         Button cameraButton = findViewById(R.id.cameraButton);
@@ -112,7 +112,6 @@ public class InteractCameraExample extends AppCompatActivity {
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
         });
-
 
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
@@ -150,10 +149,10 @@ public class InteractCameraExample extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == MY_CAMERA_REQUEST_CODE) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission was granted
-                openCamera();  // Example method to open the camera
+                //openCamera();  // Example method to open the camera
                 // Optionally enable camera-related features or notify the user
                 // Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show();
             } else {
