@@ -15,3 +15,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "GroupProject"
 include(":app")
+dependencyResolutionManagement {
+    repositories {
+        maven { url = uri("https://jitpack.io") }
+    }
+}

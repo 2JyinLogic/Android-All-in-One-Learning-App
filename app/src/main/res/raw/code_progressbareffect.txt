@@ -1,0 +1,45 @@
+    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleProgressBarLoadingEffect";
+    Button increaseBtn, decreaseBtn;
+    ArcProgress arcProgress;
+    DonutProgress donutProgress;
+    CircleProgress circleProgress;
+    int progress;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Change here to the layout name
+        setContentView(R.layout.activity_effect_progress_bar_loading);
+
+        increaseBtn = findViewById(R.id.increaseBtn);
+        decreaseBtn = findViewById(R.id.decreaseBtn);
+        arcProgress = findViewById(R.id.arcProgress);
+        donutProgress = findViewById(R.id.dountProgress);
+        circleProgress = findViewById(R.id.circleProgress);
+
+        increaseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (progress <= 100) {
+                    progress += 5;
+                    updateProgressBar();
+                }
+            }
+        });
+
+       decreaseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (progress >= 0) {
+                    progress -= 5;
+                    updateProgressBar();
+                }
+            }
+        });
+    }
+
+    private void updateProgressBar() {
+        donutProgress.setDonut_progress(String.valueOf(progress));
+        arcProgress.setProgress(progress);
+        circleProgress.setProgress(progress);
+    }

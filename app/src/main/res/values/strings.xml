@@ -4,6 +4,7 @@
     <string name="code_link_nightmode">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleNightMode.java</string>
     <string name="code_link_rippleeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleRippleEffect.java</string>
     <string name="code_link_loadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleLoadingEffect.java</string>
+    <string name="code_link_progressbareffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleProgressBarLoadingEffect.java</string>
     <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
     <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
     <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
@@ -31,6 +32,7 @@
     <string name="doc_link_nightmode">https://developer.android.com/develop/ui/views/theming/darktheme</string>
     <string name="doc_link_rippleeffect">https://developer.android.com/reference/android/graphics/drawable/RippleDrawable</string>
     <string name="doc_link_loadingeffect">https://developer.android.com/develop/ui/views/launch/splash-screen/migrate</string>
+    <string name="doc_link_progressbareffect">https://developer.android.com/reference/android/widget/ProgressBar</string>
     <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>
     <string name="doc_link_boundservice">https://developer.android.com/guide/components/services#CreatingBoundService</string>
     <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
@@ -61,10 +63,15 @@
         providing a dynamic and interactive visual feedback mechanism.
     </string>
     <string name="loading_effect_example_desc">
-        Placeholder Loading is a technique employed during data loading to provide user feedback.
+        Shimmer Loading is a technique employed during data loading to provide user feedback.
         It utilizes grayed-out areas or icons to simulate the layout of the content that is about to load,
         allowing users to perceive that the page is in the process of loading.
         This approach helps alleviate user anxiety during data loading by providing a visual indication of ongoing activity.
+    </string>
+    <string name="progress_bar_effect_example_desc">
+        Progress bar is a dynamic loading indicator designed to enhance user experience during data retrieval.
+        It employs a pulsating animation or color change to signify ongoing loading, offering users a visual cue of the process.
+        This subtle yet effective technique minimizes user apprehension, ensuring a seamless and informed navigation experience.
     </string>
     <string name="frame_animations_example_desc">
         Frame animation splices a series of pictures through a frame file in drawable, sets the display time of each picture,
