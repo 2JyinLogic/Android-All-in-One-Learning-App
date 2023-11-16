@@ -20,13 +20,18 @@ import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 
+
 import android.provider.MediaStore;
 import android.graphics.Bitmap;
 import android.Manifest;
 import androidx.core.app.ActivityCompat;
+
+
 import android.content.pm.PackageManager;
 import android.widget.Toast;
 import android.util.Log;
+
+
 
 public class InteractCameraExample extends AppCompatActivity {
 
@@ -34,6 +39,7 @@ public class InteractCameraExample extends AppCompatActivity {
     // codeId is needed for the code page to load the corresponding code
     // and for this activity to load the documentation link
     private String codeId;
+
     public static final String EFFECT_ACTIVITY_NAME = ".demos.InteractCameraExample";
     //private static final int MY_CAMERA_REQUEST_CODE = 100; // Example request code for camera permission
     private static final int REQUEST_IMAGE_CAPTURE = 1; // Example request code for image capture
@@ -168,16 +174,21 @@ public class InteractCameraExample extends AppCompatActivity {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+//          Log.d("BitmapInfo", "Width: " + imageBitmap.getWidth() + ", Height: " + imageBitmap.getHeight());
             ImageView capturedImageView = findViewById(R.id.capturedImage);
             capturedImageView.setImageBitmap(imageBitmap);
         }
+
     }
+
 
 
 }

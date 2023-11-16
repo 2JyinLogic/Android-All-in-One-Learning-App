@@ -1,1 +1,40 @@
-xxxxxx
+@Override
+public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    if (requestCode == REQUEST_IMAGE_CAPTURE) {
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // Camera permission granted
+            // You can now open the camera
+            openCamera();
+        } else {
+            // Camera permission denied
+            Toast.makeText(this, "Camera permission is required to use this feature", Toast.LENGTH_LONG).show();
+        }
+    }
+}
+
+private void openCamera() {
+    // Create an intent to open the camera for image capture
+    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+        // Start the camera activity and specify REQUEST_IMAGE_CAPTURE as the request code
+        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+    }
+}
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+        // The image capture was successful
+        Bundle extras = data.getExtras();
+        Bitmap imageBitmap = (Bitmap) extras.get("data");
+
+        // Log the width and height of the captured image
+        Log.d("BitmapInfo", "Width: " + imageBitmap.getWidth() + ", Height: " + imageBitmap.getHeight());
+
+        // Display the captured image in the ImageView
+        ImageView capturedImageView = findViewById(R.id.capturedImage);
+        capturedImageView.setImageBitmap(imageBitmap);
+    }
+}

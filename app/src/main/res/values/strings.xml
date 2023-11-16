@@ -44,12 +44,13 @@
     <string name="doc_link_switch1">https://developer.android.com/reference/android/widget/Switch</string>
     <string name="doc_link_radio1">https://developer.android.com/reference/android/widget/RadioGroup</string>
     <string name="doc_link_reqpermission">https://developer.android.com/training/permissions/requesting</string>
-    <string name="doc_link_interactcamera">https://developer.android.com/training/permissions/requesting</string>
+    <string name="doc_link_interactcamera">https://developer.android.com/training/camera/photobasics</string>
 
 
     <string name="interactcamera_example_desc">
-       xxxx xxxxxxx
+    This example demonstrates how to interact with the camera in your Android app. You can take pictures, request camera permissions, and display captured images.
     </string>
+
     <string name="night_mode_example_desc">
         During bright daylight conditions, utilize the "Light Mode," and switch to the "Night Mode"
         when the lighting is dim during the night.

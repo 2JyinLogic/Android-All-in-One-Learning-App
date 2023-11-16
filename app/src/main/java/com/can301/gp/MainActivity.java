@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         catSystemDemos.put("Camera Interaction", new Demonstration(
                 "Camera Interaction",
                 getString(R.string.interactcamera_example_desc),
-                R.drawable.ic_request_permission, InteractCameraExample.class, "interactcamera"
+                R.drawable.baseline_photo_camera_24, InteractCameraExample.class, "interactcamera"
         ));
         catDialogsDemos.put("AlertDialog", new Demonstration(
                 "AlertDialog",
