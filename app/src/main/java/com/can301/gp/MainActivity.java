@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         );
         catEffectsDemos.put("Progress Bar Loading Effect", new Demonstration(
                         "Progress Bar Loading Effect", getString(R.string.progress_bar_effect_example_desc),
-                R.drawable.baseline_image_24, EffectExampleProgressBarLoadingEffect.class,"progressbareffect"
+                R.drawable.ic_progress_bar, EffectExampleProgressBarLoadingEffect.class,"progressbareffect"
                 )
         );
 
