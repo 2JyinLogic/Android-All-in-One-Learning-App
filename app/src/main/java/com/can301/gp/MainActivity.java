@@ -22,6 +22,7 @@ import com.can301.gp.demos.FGServiceExample;
 
 import com.can301.gp.demos.FrameAnimationsExample;
 import com.can301.gp.demos.AttributeAnimationsExample;
+import com.can301.gp.demos.GoSystemSettingsExample;
 import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 "Services",
                 "Demonstrates how you can implement different kinds of system services," +
                         "including foreground, bound, and background services",
-                R.drawable.ic_services
+                R.drawable.ic_cat_services
         ));
         categories.put("System", new Category(
                 "System",
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ic_cat_system
         ));
         categories.put("Navagation", new Category(
-                "Navigation", "navigation", R.drawable.baseline_gps_fixed_24
+                "Navigation", "navigation", R.drawable.ic_cat_navigation
         ));
         categories.put("Animations", new Category(
                 "Animations", "description of Animations", R.drawable.baseline_image_24
@@ -168,6 +169,11 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.request_permission_example_desc),
                 R.drawable.ic_request_permission, RequestPermissionExample.class, "reqpermission"
         ));
+        catSystemDemos.put("Go To System Settings", new Demonstration(
+                "Go To System Settings",
+                getString(R.string.go_system_settings_example_desc),
+                R.drawable.ic_demo_settings, GoSystemSettingsExample.class, "systemsettings"
+        ));
 
         catDialogsDemos.put("AlertDialog", new Demonstration(
                 "AlertDialog",
@@ -183,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 )
         );
         catNavigationDemos.put("navigation", new Demonstration(
-                "navigation", "Show the effect of bottom navigation bar and switching", R.drawable.ic_demo1, NavigationExample.class, "navigation1"
+                "navigation", "Show the effect of bottom navigation bar and switching", R.drawable.ic_cat_navigation, NavigationExample.class, "navigation1"
         ));
 
         catAnimationsDemos.put("Animations",new Demonstration(

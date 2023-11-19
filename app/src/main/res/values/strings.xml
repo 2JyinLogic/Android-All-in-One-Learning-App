@@ -23,6 +23,7 @@
     <string name="code_link_radio1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RadioGroupWidget.java</string>
     <string name="code_link_progress1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressBarWidget.java</string>
     <string name="code_link_reqpermission">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RequestPermissionExample.java</string>
+    <string name="code_link_systemsettings">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/GoSystemSettingsExample.java</string>
 
 
     <string name="doc_link_timepickerdialog">https://developer.android.com/reference/android/app/TimePickerDialog</string>
@@ -47,6 +48,7 @@
     <string name="doc_link_radio1">https://developer.android.com/reference/android/widget/RadioGroup</string>
     <string name="doc_link_progress1">https://developer.android.com/reference/android/widget/ProgressBar</string>
     <string name="doc_link_reqpermission">https://developer.android.com/training/permissions/requesting</string>
+    <string name="doc_link_systemsettings">https://developer.android.com/reference/android/provider/Settings</string>
 
     <string name="night_mode_example_desc">
         During bright daylight conditions, utilize the "Light Mode," and switch to the "Night Mode"
@@ -95,6 +97,7 @@
     </string>
     <string name="bg_service_example_desc">
         A background service performs an operation that isn\'t directly noticed by the user.
+
         In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.
         Note how running the service in the UI thread will freeze the UI and eventually leads to the app being killed.
     </string>
@@ -115,6 +118,15 @@
         In this example, a foreground service will be created to show the user a message,
         and the user can interact with the message (e.g. reply to, dismiss) on the notification
         even when the app is closed.
+    </string>
+    <string name="go_system_settings_example_desc">
+        The system settings app on every Android device is a place where the user can adjust nearly
+        every setting about the system, about the user, and about each app. However, because there
+        are so many entries, a novice user can be easily confused by where to look when he needs to
+        alter a specific setting.
+
+        In this example, you can learn to navigate the user to MANY specific settings entries in the
+        system settings app.
     </string>
     <string name="popupwindow_example_desc">
        A small pop-up window used to appear at the top of the screen, usually to display additional information or options.

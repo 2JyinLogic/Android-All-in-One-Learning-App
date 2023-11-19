@@ -144,7 +144,7 @@ public class RequestPermissionExample extends AppCompatActivity {
         Button docLinkBtn = findViewById(R.id.docLink);
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
 
-        // The service example related
+        // The example related
         {
             requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(),
@@ -173,8 +173,8 @@ public class RequestPermissionExample extends AppCompatActivity {
             resultTxtView = findViewById(R.id.resultView);
             resultTxtView.setText(permissionRequestResult);
 
-            Button locationBtn = findViewById(R.id.permission1Btn);
-            Button fileBtn = findViewById(R.id.permission2Btn);
+            Button locationBtn = findViewById(R.id.connectionBtn);
+            Button fileBtn = findViewById(R.id.appsBtn);
             Button notificationBtn = findViewById(R.id.permission3Btn);
 
             locationBtn.setOnClickListener(

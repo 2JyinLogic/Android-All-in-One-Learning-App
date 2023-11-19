@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".demos.RequestPermissionExample">
+    tools:context=".demos.GoSystemSettingsExample">
 
     <TextView
         android:id="@+id/effectExampleName"
@@ -41,7 +41,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="5dp"
-            android:text="@string/request_permission_example_desc"
+            android:text="@string/go_system_settings_example_desc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -50,55 +50,90 @@
             android:id="@+id/connectionBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
-            android:text="Location"
+            android:text="Connection Settings"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/description" />
 
         <Button
             android:id="@+id/appsBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:text="View Contacts"
+            android:layout_marginEnd="16dp"
+            android:text="Apps Settings"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/connectionBtn" />
 
-        <Button
-            android:id="@+id/permission3Btn"
+        <Spinner
+            android:id="@+id/connectionSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Post Notification"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/connectionBtn"
             app:layout_constraintTop_toBottomOf="@+id/connectionBtn" />
 
-        <TextView
-            android:id="@+id/resultView"
+        <Spinner
+            android:id="@+id/appsSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/permission3Btn"
-            tools:text="Click a button to see the result" />
+            android:layout_marginStart="-16dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/appsBtn"
+            app:layout_constraintTop_toBottomOf="@+id/appsBtn" />
 
-        <TextView
-            android:id="@+id/textView7"
+        <Button
+            android:id="@+id/miscBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="NOTE: After refusing twice a permission will always be denied. Reset this in settings."
-            android:textColor="#F44336"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:text="Misc Settings"
+            app:layout_constraintStart_toStartOf="@+id/connectionSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/connectionSpinner" />
+
+        <Spinner
+            android:id="@+id/miscSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/miscBtn"
+            app:layout_constraintTop_toBottomOf="@+id/miscBtn" />
+
+        <Button
+            android:id="@+id/storageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Storage Settings"
+            app:layout_constraintEnd_toEndOf="@+id/appsBtn"
+            app:layout_constraintTop_toTopOf="@+id/miscBtn" />
+
+        <Spinner
+            android:id="@+id/storageSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/storageBtn"
+            app:layout_constraintTop_toBottomOf="@+id/storageBtn" />
+
+        <Button
+            android:id="@+id/thisAppBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="This App Settings"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description" />
+            app:layout_constraintTop_toBottomOf="@+id/storageSpinner" />
+
+        <Spinner
+            android:id="@+id/thisAppSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thisAppBtn" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
