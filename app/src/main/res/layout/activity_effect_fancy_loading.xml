@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".demos.EffectExampleFancyLoadingEffect">
+
+    <TextView
+        android:id="@+id/effectExampleName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6750A3"
+        style="@style/effectName"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/effectContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/docLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/effectExampleName"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/fancyLaodingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/fancy_loading_effect_example_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/FancyLoadingEffect"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/effectContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fancyLaodingTextView">
+
+            <!-- 第一行 -->
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit1"
+                style="@style/SpinKitView.Large.PulseRing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#FFC107"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/spin_kit2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/spin_kit4"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit2"
+                style="@style/SpinKitView.Large.ThreeBounce"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#673AB7"
+                app:layout_constraintStart_toEndOf="@+id/spin_kit1"
+                app:layout_constraintEnd_toStartOf="@+id/spin_kit3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/spin_kit5"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit3"
+                style="@style/SpinKitView.Large.WanderingCubes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#03A9F4"
+                app:layout_constraintStart_toEndOf="@+id/spin_kit2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/spin_kit6"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <!-- 第二行 -->
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit4"
+                style="@style/SpinKitView.Large.Wave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#009688"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/spin_kit5"
+                app:layout_constraintTop_toBottomOf="@+id/spin_kit1"
+                app:layout_constraintBottom_toTopOf="@+id/spin_kit7"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit5"
+                style="@style/SpinKitView.Large.FadingCircle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#E91E63"
+                app:layout_constraintStart_toEndOf="@+id/spin_kit4"
+                app:layout_constraintEnd_toStartOf="@+id/spin_kit6"
+                app:layout_constraintTop_toBottomOf="@+id/spin_kit2"
+                app:layout_constraintBottom_toTopOf="@+id/spin_kit8"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit6"
+                style="@style/SpinKitView.Large.MultiplePulseRing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#8BC34A"
+                app:layout_constraintStart_toEndOf="@+id/spin_kit5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spin_kit3"
+                app:layout_constraintBottom_toTopOf="@+id/spin_kit9"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <!-- 第三行 -->
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit7"
+                style="@style/SpinKitView.Large.RotatingPlane"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#E7B0F1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/spin_kit8"
+                app:layout_constraintTop_toBottomOf="@+id/spin_kit4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit8"
+                style="@style/SpinKitView.Large.ChasingDots"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#FF9800"
+                app:layout_constraintStart_toEndOf="@+id/spin_kit7"
+                app:layout_constraintEnd_toEndOf="@+id/spin_kit9"
+                app:layout_constraintTop_toBottomOf="@+id/spin_kit5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit9"
+                style="@style/SpinKitView.Large.FoldingCube"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="#9C27B0"
+                app:layout_constraintStart_toEndOf="@+id/spin_kit8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spin_kit6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintVertical_bias="0.33" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/docLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:drawableLeft="@drawable/ic_view_documentation"
+        android:text="View Documentation"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:drawableLeft="@drawable/ic_home_button"
+        android:onClick="goHome"
+        android:text="Home"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/docLink"
+        app:layout_constraintTop_toTopOf="@+id/docLink" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/effectBottomButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_button_style"
+            android:text="Effect"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/codeBottomButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_button_style"
+            android:text="Code"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
