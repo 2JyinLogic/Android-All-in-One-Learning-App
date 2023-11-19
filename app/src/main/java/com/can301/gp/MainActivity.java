@@ -26,6 +26,7 @@ import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
 import com.can301.gp.demos.RadioGroupWidget;
 import com.can301.gp.demos.RequestPermissionExample;
+import com.can301.gp.demos.SeekBarWidget;
 import com.can301.gp.demos.SwitchWidget;
 import com.can301.gp.searchbar.SearchBarMain;
 import com.can301.gp.demos.PopupWindowExample;
@@ -222,6 +223,9 @@ public class MainActivity extends AppCompatActivity {
         ));
         catWidgetsDemos.put("Radio Group", new Demonstration(
                 "Radio Group","A group of buttons, but only one button of them can be chosen.",R.drawable.ic_radio, RadioGroupWidget.class, "radio1"
+        ));
+        catWidgetsDemos.put("Seek Bar", new Demonstration(
+                "Seek Bar","A type of widget to let the users choose a number by drag the bar.",R.drawable.ic_seek_bar, SeekBarWidget.class, "seek1"
         ));
 
         // Decide which demos go into which category.
