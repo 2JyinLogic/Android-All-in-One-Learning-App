@@ -29,7 +29,6 @@ import androidx.core.app.ActivityCompat;
 
 import android.content.pm.PackageManager;
 import android.widget.Toast;
-import android.util.Log;
 
 
 
@@ -41,7 +40,7 @@ public class InteractCameraExample extends AppCompatActivity {
     private String codeId;
 
     public static final String EFFECT_ACTIVITY_NAME = ".demos.InteractCameraExample";
-    //private static final int MY_CAMERA_REQUEST_CODE = 100; // Example request code for camera permission
+    private static final int MY_CAMERA_REQUEST_CODE = 100; // Example request code for camera permission
     private static final int REQUEST_IMAGE_CAPTURE = 1; // Example request code for image capture
 
     void goToCodePage() {
@@ -157,10 +156,10 @@ public class InteractCameraExample extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_IMAGE_CAPTURE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission was granted
-                //openCamera();  // Example method to open the camera
-                // Optionally enable camera-related features or notify the user
-                // Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show();
+//                 Permission was granted
+                openCamera();  // Example method to open the camera
+//                 Optionally enable camera-related features or notify the user
+                Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show();
             } else {
                 // permission denied
                 Toast.makeText(this, "Camera permission is required to use this feature", Toast.LENGTH_LONG).show();
