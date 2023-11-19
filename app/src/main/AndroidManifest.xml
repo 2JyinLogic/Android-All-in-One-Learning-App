@@ -86,6 +86,9 @@
             android:name=".demos.NavigationExample"
             android:exported="false" />
         <activity
+            android:name=".demos.NavigationDrawerExample"
+            android:exported="false" />
+        <activity
             android:name=".demos.AttributeAnimationsExample"
             android:exported="false" />
         <activity

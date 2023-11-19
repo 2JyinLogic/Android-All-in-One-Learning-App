@@ -23,6 +23,7 @@ import com.can301.gp.demos.FGServiceExample;
 import com.can301.gp.demos.FrameAnimationsExample;
 import com.can301.gp.demos.AttributeAnimationsExample;
 import com.can301.gp.demos.GoSystemSettingsExample;
+import com.can301.gp.demos.NavigationDrawerExample;
 import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
@@ -189,7 +190,10 @@ public class MainActivity extends AppCompatActivity {
                 )
         );
         catNavigationDemos.put("navigation", new Demonstration(
-                "navigation", "Show the effect of bottom navigation bar and switching", R.drawable.ic_cat_navigation, NavigationExample.class, "navigation1"
+                "navigation", "Show the effect of bottom navigation bar and switching", R.drawable.baseline_navigation_24, NavigationExample.class, "navigation1"
+        ));
+        catNavigationDemos.put("drawernavigation", new Demonstration(
+                "drawernavigation", "Show the effect of drawer navigation bar and switching", R.drawable.baseline_navigation_24, NavigationDrawerExample.class, "navigation2"
         ));
 
         catAnimationsDemos.put("Animations",new Demonstration(
