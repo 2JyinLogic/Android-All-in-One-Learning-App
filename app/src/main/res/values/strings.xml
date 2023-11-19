@@ -10,6 +10,7 @@
     <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
     <string name="code_link_datepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/DatePickerDialogExample.java</string>
     <string name="code_link_navigation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationExample.java</string>
+    <string name="code_link_navigation2">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationDrawerExample.java</string>
     <string name="code_link_animation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AnimationsExample.java</string>
     <string name="code_link_frameanimation">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FrameAnimationsExample.java</string>
     <string name="code_link_attributeanimation">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AttributeAnimationsExample.java</string>
@@ -38,6 +39,7 @@
     <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
     <string name="doc_link_datepickerdialog">https://developer.android.com/develop/ui/views/components/pickers#DatePicker</string>
     <string name="doc_link_navigation1">https://developer.android.com/guide/navigation</string>
+    <string name="doc_link_navigation2">https://developer.android.com/guide/navigation</string>
     <string name="doc_link_animation1">https://developer.android.com/develop/ui/views/animations/overview</string>
     <string name="doc_link_frameanimation">https://developer.android.com/develop/ui/views/animations/overview</string>
     <string name="doc_link_attributeanimation">https://developer.android.com/develop/ui/views/animations/overview</string>
@@ -143,5 +145,20 @@
 
     <string name="fg_example_channel_name">FG Example Channel</string>
     <string name="fg_example_channel_desc">The channel for the Foreground Service example.</string>
+    <string name="animations_example_desc">
+    The tweens animation only needs to set the two states and duration before and after,
+    and the software automatically completes the middle process. Below, using alpha, rotate, scale,
+    and translate as examples, we will demonstrate how to use onclicklistening to achieve element changes.
+    </string>
+    <string name="navigation_example_desc">
+    The bottom navigation bar is generally used for page transitions, making it easy to build an overall framework,
+    highlight core functions, simplify workflow, and facilitate user page switching
+    In addition, the selection status and other statuses can be customized in the settings,
+    making it easy to highlight the current page.
+    </string>
+    <string name="navigation_drawer_example_desc">
+    Press and hold the left edge or drag to display the drawer navigation bar.
+    </string>
+
 
 </resources>
