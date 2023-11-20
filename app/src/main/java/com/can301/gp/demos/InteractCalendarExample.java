@@ -2,6 +2,7 @@ package com.can301.gp.demos;
 
 import android.Manifest;
 import android.app.Dialog;
+import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -12,10 +13,10 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.ContentResolver;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -27,9 +28,10 @@ import com.can301.gp.Demonstration;
 import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
+import android.provider.CalendarContract;
 import android.widget.Toast;
-import java.util.TimeZone;
 
+import java.util.TimeZone;
 
 
 public class InteractCalendarExample extends AppCompatActivity {
@@ -38,7 +40,7 @@ public class InteractCalendarExample extends AppCompatActivity {
     // and for this activity to load the documentation link
     private String codeId;
     private static final int PERMISSIONS_REQUEST_CALENDAR = 1;
-
+    private static final String TAG = "CalendarExample";
 
     public static final String EFFECT_ACTIVITY_NAME = ".demos.InteractCalendarExample";
 
@@ -94,8 +96,15 @@ public class InteractCalendarExample extends AppCompatActivity {
 
     // Add a method to check and request calendar permissions
     private void checkAndRequestCalendarPermissions() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CALENDAR}, PERMISSIONS_REQUEST_CALENDAR);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.WRITE_CALENDAR,
+                    Manifest.permission.READ_CALENDAR
+            }, PERMISSIONS_REQUEST_CALENDAR);
+        } else {
+            // Permissions have already been granted. You can proceed with your calendar operation
+            setupCalendarButton();
         }
     }
 
@@ -109,23 +118,13 @@ public class InteractCalendarExample extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interactcalendar_example);
-        checkAndRequestCalendarPermissions();
+        checkAndRequestCalendarPermissions(); // Consolidated permission check and request
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CALENDAR}, PERMISSIONS_REQUEST_CALENDAR);
         }
 
-        // Calendar button setup
-        Button calendarButton = findViewById(R.id.calendarButton);
-        calendarButton.setOnClickListener(v -> {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED) {
-                long beginTime = System.currentTimeMillis();
-                long endTime = beginTime + 2 * 60 * 60 * 1000; // For example, 2 hours later
-                addEventToCalendar("New Event", "Location", beginTime, endTime);
-            } else {
-                Toast.makeText(this, "Calendar permission is required to add events.", Toast.LENGTH_LONG).show();
-            }
-        });
+
 
 
         Button effectButton = findViewById(R.id.effectBottomButton);
@@ -161,17 +160,34 @@ public class InteractCalendarExample extends AppCompatActivity {
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
     }
 
+
+    private void setupCalendarButton() {
+        // Calendar button setup
+        Button calendarButton = findViewById(R.id.calendarButton);
+        calendarButton.setOnClickListener(v -> {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED) {
+                long beginTime = System.currentTimeMillis();
+                long endTime = beginTime + 2 * 60 * 60 * 1000; // For example, 2 hours later
+                addEventToCalendar("New Event", "Location", beginTime, endTime);
+            } else {
+                Toast.makeText(this, "Calendar permission is required to add events.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSIONS_REQUEST_CALENDAR) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Calendar permission granted.", Toast.LENGTH_SHORT).show();
+            if (grantResults.length > 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Calendar read/write permission granted.", Toast.LENGTH_SHORT).show();
+                setupCalendarButton(); // Set up the calendar button now that permission is granted
             } else {
-                Toast.makeText(this, "Calendar permission denied.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Calendar read/write permission denied.", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
 
     // Helper method to add an event to the calendar
     private void addEventToCalendar(String title, String location, long beginTime, long endTime) {
@@ -230,7 +246,6 @@ public class InteractCalendarExample extends AppCompatActivity {
         // Return a default ID if no primary calendar is found or columns are missing
         return 1;
     }
-
 
     private void openCalendarApp() {
         long startMillis = System.currentTimeMillis();
