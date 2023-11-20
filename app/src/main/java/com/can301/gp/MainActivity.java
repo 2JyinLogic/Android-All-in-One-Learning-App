@@ -27,6 +27,7 @@ import com.can301.gp.demos.FrameAnimationsExample;
 import com.can301.gp.demos.AttributeAnimationsExample;
 import com.can301.gp.demos.GoSystemSettingsExample;
 import com.can301.gp.demos.NavigationDrawerExample;
+import com.can301.gp.demos.InteractCalendarExample;
 import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
@@ -158,6 +159,11 @@ public class MainActivity extends AppCompatActivity {
                 "Request Permissions",
                 getString(R.string.request_permission_example_desc),
                 R.drawable.ic_request_permission, RequestPermissionExample.class, "reqpermission"
+        ));
+        catSystemDemos.put("Calendar Interaction", new Demonstration(
+                "Calendar Interaction",
+                getString(R.string.interactcalendar_example_desc),
+                R.drawable.baseline_edit_calendar_24, InteractCalendarExample.class, "interactcalendar"
         ));
         catSystemDemos.put("Go To System Settings", new Demonstration(
                 "Go To System Settings",

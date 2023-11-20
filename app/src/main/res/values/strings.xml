@@ -28,6 +28,7 @@
     <string name="code_link_reqpermission">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RequestPermissionExample.java</string>
     <string name="code_link_systemsettings">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/GoSystemSettingsExample.java</string>
     <string name="code_link_interactcamera">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCameraExample.java</string>
+    <string name="code_link_interactcalendar">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCalendarExample.java</string>
 
 
     <string name="doc_link_timepickerdialog">https://developer.android.com/reference/android/app/TimePickerDialog</string>
@@ -57,10 +58,13 @@
     <string name="doc_link_reqpermission">https://developer.android.com/training/permissions/requesting</string>
     <string name="doc_link_systemsettings">https://developer.android.com/reference/android/provider/Settings</string>
     <string name="doc_link_interactcamera">https://developer.android.com/training/camera/photobasics</string>
-
+    <string name="doc_link_interactcalendar">https://developer.android.com/reference/android/provider/CalendarContract</string>
 
     <string name="interactcamera_example_desc">
     This example demonstrates how to interact with the camera in your Android app. You can take pictures, request camera permissions, and display captured images.
+    </string>
+    <string name="interactcalendar_example_desc">
+    This example demonstrates how to add events to the user\'s calendar from an Android application. Integrating calendar functionality enhances user engagement by seamlessly managing their schedule within your app.
     </string>
 
     <string name="night_mode_example_desc">
