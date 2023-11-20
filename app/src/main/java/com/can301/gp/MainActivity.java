@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                 )
         );
         catEffectsDemos.put("Fancy Loading Effect", new Demonstration(
-                        "Fancy Loading Effect", getString(R.string.progress_bar_effect_example_desc),
+                        "Fancy Loading Effect", getString(R.string.fancy_loading_effect_example_desc),
                         R.drawable.ic_progress_bar, EffectExampleFancyLoadingEffect.class,"fancyloadingeffect"
                 )
         );
