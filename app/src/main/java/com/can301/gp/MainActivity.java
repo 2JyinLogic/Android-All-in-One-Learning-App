@@ -30,6 +30,7 @@ import com.can301.gp.demos.EffectExampleRippleEffect;
 import com.can301.gp.demos.ProgressBarWidget;
 import com.can301.gp.demos.RadioGroupWidget;
 import com.can301.gp.demos.RequestPermissionExample;
+import com.can301.gp.demos.SeekBarWidget;
 import com.can301.gp.demos.SwitchWidget;
 import com.can301.gp.searchbar.SearchBarMain;
 import com.can301.gp.demos.PopupWindowExample;
@@ -242,6 +243,8 @@ public class MainActivity extends AppCompatActivity {
         ));
         catWidgetsDemos.put("Progress bar", new Demonstration(
                 "Progress bar","A type of widget to show the progress of the program in order to give the users an approximate waiting time.",R.drawable.ic_progress, ProgressBarWidget.class, "progress1"
+        catWidgetsDemos.put("Seek Bar", new Demonstration(
+                "Seek Bar","A type of widget to let the users choose a number by drag the bar.",R.drawable.ic_seek_bar, SeekBarWidget.class, "seek1"
         ));
 
         // Decide which demos go into which category.

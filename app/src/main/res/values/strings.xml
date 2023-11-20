@@ -23,6 +23,7 @@
     <string name="code_link_switch1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SwitchWidget.java</string>
     <string name="code_link_radio1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RadioGroupWidget.java</string>
     <string name="code_link_progress1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressBarWidget.java</string>
+    <string name="code_link_seek1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SeekBarWidget.java</string>
     <string name="code_link_reqpermission">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RequestPermissionExample.java</string>
     <string name="code_link_systemsettings">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/GoSystemSettingsExample.java</string>
 
@@ -49,6 +50,7 @@
     <string name="doc_link_switch1">https://developer.android.com/reference/android/widget/Switch</string>
     <string name="doc_link_radio1">https://developer.android.com/reference/android/widget/RadioGroup</string>
     <string name="doc_link_progress1">https://developer.android.com/reference/android/widget/ProgressBar</string>
+    <string name="doc_link_seek1">https://developer.android.com/reference/android/widget/SeekBar</string>
     <string name="doc_link_reqpermission">https://developer.android.com/training/permissions/requesting</string>
     <string name="doc_link_systemsettings">https://developer.android.com/reference/android/provider/Settings</string>
 
@@ -153,6 +155,8 @@
     </string>
     <string name="progress_desc">
       A type of widget to show the progress of the program in order to give the users an approximate waiting time.
+    <string name="seek_desc">
+       Drag the seek bars and the text will be changed according to the state of the seek bar.
     </string>
 
     <string name="fg_example_channel_name">FG Example Channel</string>

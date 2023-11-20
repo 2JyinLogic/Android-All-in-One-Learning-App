@@ -33,6 +33,9 @@
             android:name=".demos.ProgressBarWidget"
             android:exported="false" />
         <activity
+            android:name=".demos.SeekBarWidget"
+            android:exported="false" />
+        <activity
             android:name=".demos.RequestPermissionExample"
             android:exported="false" />
         <activity
