@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.can301.gp.Category;
 import com.can301.gp.Demonstration;
+import com.can301.gp.GlobalData;
 import com.can301.gp.MainActivity;
 
 import java.util.ArrayList;
@@ -57,8 +58,8 @@ public class CatViewFragment extends Fragment {
         Bundle b = getArguments();
         if (b != null) {
             Integer catInd = b.getInt(CAT_INDEX_PARAM_KEY);
-            category = MainActivity.catList.get(catInd);
-            demos = new ArrayList<Demonstration>(MainActivity.demos.get(category.title).values());
+            category = GlobalData.catList.get(catInd);
+            demos = new ArrayList<Demonstration>(GlobalData.demos.get(category.title).values());
         }
         else {
             throw new RuntimeException("You must pass the category name to me.");

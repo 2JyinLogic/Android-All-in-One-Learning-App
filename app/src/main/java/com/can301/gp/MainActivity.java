@@ -1,5 +1,7 @@
 package com.can301.gp;
 
+import static com.can301.gp.GlobalData.*;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -49,34 +51,13 @@ public class MainActivity extends AppCompatActivity {
         return this.getResources().getDrawable(Id);
     }
 
-    public static HashMap<String, Category> categories = null;
-    public static HashMap<String, HashMap<String, Demonstration>> demos = null;
-    // Those that will be displayed on the main page
-    public static ArrayList<Integer> highlightedCats = null;
-
-    // For the sake of the selectors that only know about indices,
-    // also store cats and demos in lists, so that they can be accessed in order
-    public static ArrayList<Category> catList = null;
-    public static ArrayList<Demonstration> demoList = null;
-
-    public static final int numHighlighedCats = 4;
-
     /**
-     * Used for the Home button of other pages.
-     * Click that button to go back to this activity.
-     * @param context the context of that page.
+     * Init global data when this launcher activity starts
+     * if the global data has not been inited.
      */
-    static public void goBackToHomePage(Context context) {
-        Intent intent = new Intent(context, MainActivity.class);
-        context.startActivity(intent);
-    }
-
-    /**
-     * What we will need to do by hand,
-     */
-    public void setupCatsAndDemos() {
+    public void setupGlobalData() {
         // Only initialise them once
-        if (categories != null) {
+        if (!categories.isEmpty()) {
             return;
         }
 
@@ -133,22 +114,22 @@ public class MainActivity extends AppCompatActivity {
         // Set up all demos.
         catEffectsDemos.put("Night Mode", new Demonstration(
                         "Night Mode", getString(R.string.night_mode_example_desc),
-                R.drawable.baseline_home_24, EffectExampleNightMode.class,"nightmode"
+                        R.drawable.baseline_home_24, EffectExampleNightMode.class,"nightmode"
                 )
         );
         catEffectsDemos.put("Ripple Effect", new Demonstration(
                         "Ripple Effect", getString(R.string.ripple_effect_example_desc),
-                android.R.drawable.ic_menu_mylocation, EffectExampleRippleEffect.class,"rippleeffect"
+                        android.R.drawable.ic_menu_mylocation, EffectExampleRippleEffect.class,"rippleeffect"
                 )
         );
         catEffectsDemos.put("Shimmer Loading Effect", new Demonstration(
                         "Shimmer Loading Effect", getString(R.string.loading_effect_example_desc),
-                R.drawable.baseline_image_24, EffectExampleLoadingEffect.class,"loadingeffect"
+                        R.drawable.baseline_image_24, EffectExampleLoadingEffect.class,"loadingeffect"
                 )
         );
         catEffectsDemos.put("Progress Bar Loading Effect", new Demonstration(
                         "Progress Bar Loading Effect", getString(R.string.progress_bar_effect_example_desc),
-                R.drawable.ic_progress_bar, EffectExampleProgressBarLoadingEffect.class,"progressbareffect"
+                        R.drawable.ic_progress_bar, EffectExampleProgressBarLoadingEffect.class,"progressbareffect"
                 )
         );
         catEffectsDemos.put("Fancy Loading Effect", new Demonstration(
@@ -188,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.interactcamera_example_desc),
                 R.drawable.baseline_photo_camera_24, InteractCameraExample.class, "interactcamera"
         ));
-        
+
         catDialogsDemos.put("AlertDialog", new Demonstration(
                 "AlertDialog",
                 "Demonstration entry for an AlertDialog example. " +
@@ -227,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
         );
         catDialogsDemos.put("BottomSheetDialog", new Demonstration(
                         "BottomSheetDialog",
-                getString(R.string.bottomsheetdialog_example_desc),
+                        getString(R.string.bottomsheetdialog_example_desc),
                         R.drawable.baseline_chat_24, BottomSheetDialogExample.class,"bottomsheetdialog"
                 )
         );
@@ -255,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
         ));
         catWidgetsDemos.put("Progress bar", new Demonstration(
                 "Progress bar","A type of widget to show the progress of the program in order to give the users an approximate waiting time.",R.drawable.ic_progress, ProgressBarWidget.class, "progress1"
+        ));
         catWidgetsDemos.put("Seek Bar", new Demonstration(
                 "Seek Bar","A type of widget to let the users choose a number by drag the bar.",R.drawable.ic_seek_bar, SeekBarWidget.class, "seek1"
         ));
@@ -288,6 +270,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Used for the Home button of other pages.
+     * Click that button to go back to this activity.
+     * @param context the context of that page.
+     */
+    static public void goBackToHomePage(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
      * Called when the user clicks the search bar on the main activity.
      */
     void goToSearchActivity() {
@@ -316,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setupCatsAndDemos();
+        setupGlobalData();
 
         setContentView(R.layout.activity_main);
 

@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.can301.gp.Demonstration;
+import com.can301.gp.GlobalData;
 import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 
@@ -31,7 +32,7 @@ public class SearchBarMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_bar_main);
 
-        myAdapter = new SearchAdapder(this, MainActivity.demoList);
+        myAdapter = new SearchAdapder(this, GlobalData.demoList);
 
         initView();
         initComponent();

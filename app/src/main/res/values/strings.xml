@@ -170,6 +170,7 @@
     </string>
     <string name="progress_desc">
       A type of widget to show the progress of the program in order to give the users an approximate waiting time.
+    </string>
     <string name="seek_desc">
        Drag the seek bars and the text will be changed according to the state of the seek bar.
     </string>
