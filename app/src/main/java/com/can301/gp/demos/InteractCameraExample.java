@@ -112,10 +112,7 @@ public class InteractCameraExample extends AppCompatActivity {
         Button cameraButton = findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(v -> {
             // Call method to open camera here
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-            }
+            openCamera();
         });
 
         Button effectButton = findViewById(R.id.effectBottomButton);
@@ -157,7 +154,7 @@ public class InteractCameraExample extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 //                 Permission was granted
-                openCamera();  // Example method to open the camera
+                //openCamera();  // Example method to open the camera
 //                 Optionally enable camera-related features or notify the user
                 Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show();
             } else {
