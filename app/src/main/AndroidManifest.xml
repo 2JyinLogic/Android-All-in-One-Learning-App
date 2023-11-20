@@ -104,6 +104,10 @@
             android:name=".demos.EffectExampleProgressBarLoadingEffect"
             android:exported="false" />
         <activity
+            android:name=".demos.EffectExampleFancyLoadingEffect"
+            android:exported="false" />
+
+        <activity
             android:name=".demos.AnimationsExample"
             android:exported="false" />
         <activity

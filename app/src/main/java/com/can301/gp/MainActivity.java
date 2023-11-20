@@ -16,6 +16,7 @@ import com.can301.gp.demos.AlertDialogExample;
 import com.can301.gp.demos.ButtonWidget;
 import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.demos.AnimationsExample;
+import com.can301.gp.demos.EffectExampleFancyLoadingEffect;
 import com.can301.gp.demos.EffectExampleLoadingEffect;
 import com.can301.gp.demos.EffectExampleProgressBarLoadingEffect;
 import com.can301.gp.demos.FGServiceExample;
@@ -147,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
         catEffectsDemos.put("Progress Bar Loading Effect", new Demonstration(
                         "Progress Bar Loading Effect", getString(R.string.progress_bar_effect_example_desc),
                 R.drawable.ic_progress_bar, EffectExampleProgressBarLoadingEffect.class,"progressbareffect"
+                )
+        );
+        catEffectsDemos.put("Fancy Loading Effect", new Demonstration(
+                        "Fancy Loading Effect", getString(R.string.fancy_loading_effect_example_desc),
+                        R.drawable.ic_progress_bar, EffectExampleFancyLoadingEffect.class,"fancyloadingeffect"
                 )
         );
 
