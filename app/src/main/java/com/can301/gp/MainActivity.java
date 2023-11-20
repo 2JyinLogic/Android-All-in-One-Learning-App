@@ -38,6 +38,7 @@ import com.can301.gp.demos.PopupWindowExample;
 import com.can301.gp.demos.BottomSheetDialogExample;
 import com.can301.gp.demos.ProgressDialogExample;
 import com.can301.gp.demos.TimePickerDialogExample;
+import com.can301.gp.demos.InteractCameraExample;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -91,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
                         "including foreground, bound, and background services",
                 R.drawable.ic_cat_services
         ));
-        categories.put("System", new Category(
-                "System",
+        categories.put("System Interaction", new Category(
+                "System Interaction",
                 "Demonstrates how you can interact with the Android system. " +
                         "For example, asking for permissions",
                 R.drawable.ic_cat_system
@@ -182,7 +183,12 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.go_system_settings_example_desc),
                 R.drawable.ic_demo_settings, GoSystemSettingsExample.class, "systemsettings"
         ));
-
+        catSystemDemos.put("Camera Interaction", new Demonstration(
+                "Camera Interaction",
+                getString(R.string.interactcamera_example_desc),
+                R.drawable.baseline_photo_camera_24, InteractCameraExample.class, "interactcamera"
+        ));
+        
         catDialogsDemos.put("AlertDialog", new Demonstration(
                 "AlertDialog",
                 "Demonstration entry for an AlertDialog example. " +
@@ -255,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Decide which demos go into which category.
         demos.put("Services", catServicesDemos);
-        demos.put("System", catSystemDemos);
+        demos.put("System Interaction", catSystemDemos);
         demos.put("Dialogs", catDialogsDemos);
         demos.put("Navigation", catNavigationDemos);
         demos.put("Animations",catAnimationsDemos);
