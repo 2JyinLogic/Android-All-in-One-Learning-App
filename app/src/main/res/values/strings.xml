@@ -6,6 +6,7 @@
     <string name="code_link_loadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleLoadingEffect.java</string>
     <string name="code_link_progressbareffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleProgressBarLoadingEffect.java</string>
     <string name="code_link_fancyloadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleFancyLoadingEffect.java</string>
+    <string name="code_link_zooming">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleZooming.java</string>
     <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
     <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
     <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
@@ -40,6 +41,7 @@
     <string name="doc_link_loadingeffect">https://developer.android.com/develop/ui/views/launch/splash-screen/migrate</string>
     <string name="doc_link_progressbareffect">https://developer.android.com/reference/android/widget/ProgressBar</string>
     <string name="doc_link_fancyloadingeffect">https://developer.android.com/jetpack/compose/components/progress</string>
+    <string name="doc_link_zooming">https://developer.android.com/jetpack/compose/touch-input/pointer-input/multi-touch</string>
     <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>
     <string name="doc_link_boundservice">https://developer.android.com/guide/components/services#CreatingBoundService</string>
     <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
@@ -97,6 +99,13 @@
         enriching the user experience throughout various processes.
         These visually appealing animations transcend conventional loading bars, introducing a delightful view to user interfaces.
         Here are nine fancy loading effects that elevate the user experience:
+    </string>
+    <string name="zooming_example_desc">
+        Image zooming is a transformative feature that enhances the user experience when interacting with visual content.
+        It goes beyond the conventional static display,
+        offering users an immersive and dynamic exploration of images.
+        This engaging functionality allows users to zoom in and out,
+        providing a closer look at details and creating a more interactive and personalized viewing experience.
     </string>
     <string name="frame_animations_example_desc">
         Frame animation splices a series of pictures through a frame file in drawable, sets the display time of each picture,
