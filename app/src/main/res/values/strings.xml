@@ -151,6 +151,15 @@
         In this example, you can learn to navigate the user to MANY specific settings entries in the
         system settings app.
     </string>
+    <string name="app_specific_files_example_desc">
+        In many cases, your app creates files that other apps don\'t need to access,
+        or shouldn\'t access. The system provides the following locations for storing such app-specific files:
+        Internal storage directories and
+        External storage directories. You can create both persistent and cache files.
+
+        In this example, you can create persistent and cache files in any of the directories and check
+        if a file exists.
+    </string>
     <string name="popupwindow_example_desc">
        A small pop-up window used to appear at the top of the screen, usually to display additional information or options.
     </string>
