@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.can301.gp.catviewer.CatViewMain;
+import com.can301.gp.demos.AppSpecificFilesExample;
 import com.can301.gp.demos.BGServiceExample;
 import com.can301.gp.demos.BoundServiceExample;
 import com.can301.gp.demos.AlertDialogExample;
@@ -80,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
                         "For example, asking for permissions",
                 R.drawable.ic_cat_system
         ));
+        categories.put("Storage", new Category(
+                "Storage",
+                "Learn how to preserve your app and user data via, for example, " +
+                        "persistent or cached files on external or internal storage.",
+                R.drawable.ic_cat_storage
+        ));
         categories.put("Navagation", new Category(
                 "Navigation", "navigation", R.drawable.ic_cat_navigation
         ));
@@ -106,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> catSystemDemos = new HashMap<String, Demonstration>();
+        HashMap<String, Demonstration> catStorageDemos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> catDialogsDemos = new HashMap<>();
         HashMap<String, Demonstration> catNavigationDemos = new HashMap<>();
         HashMap<String, Demonstration> catAnimationsDemos = new HashMap<>();
@@ -176,6 +184,11 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.baseline_photo_camera_24, InteractCameraExample.class, "interactcamera"
         ));
 
+        catStorageDemos.put("App-specific Files", new Demonstration(
+                "App-specific Files",
+                getString(R.string.app_specific_files_example_desc),
+                R.drawable.ic_app_specific_files, AppSpecificFilesExample.class, "appspecific"
+        ));
         catDialogsDemos.put("AlertDialog", new Demonstration(
                 "AlertDialog",
                 "Demonstration entry for an AlertDialog example. " +
@@ -250,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
         // Decide which demos go into which category.
         demos.put("Services", catServicesDemos);
         demos.put("System Interaction", catSystemDemos);
+        demos.put("Storage", catStorageDemos);
         demos.put("Dialogs", catDialogsDemos);
         demos.put("Navigation", catNavigationDemos);
         demos.put("Animations",catAnimationsDemos);

@@ -82,30 +82,30 @@
             android:layout_marginTop="4dp"
             android:ems="10"
             android:inputType="text"
-            android:text="FileName"
+            android:text="File Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cacheCheckbox" />
 
         <Button
-            android:id="@+id/checkInternalBtn"
+            android:id="@+id/readInternalBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Check Internal"
+            android:text="Read Internal"
             app:layout_constraintStart_toStartOf="@+id/createInternalBtn"
-            app:layout_constraintTop_toBottomOf="@+id/fileNameText" />
+            app:layout_constraintTop_toBottomOf="@+id/fileContentText" />
 
         <Button
-            android:id="@+id/checkExternalBtn"
+            android:id="@+id/readExternalBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Check External"
+            android:text="Read External"
             app:layout_constraintEnd_toEndOf="@+id/createExternalBtn"
-            app:layout_constraintTop_toTopOf="@+id/checkInternalBtn" />
+            app:layout_constraintTop_toTopOf="@+id/readInternalBtn" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/messageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -115,7 +115,18 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkInternalBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/readInternalBtn" />
+
+        <EditText
+            android:id="@+id/fileContentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="File Content"
+            app:layout_constraintStart_toStartOf="@+id/fileNameText"
+            app:layout_constraintTop_toBottomOf="@+id/fileNameText" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
