@@ -22,6 +22,7 @@ import com.can301.gp.demos.AnimationsExample;
 import com.can301.gp.demos.EffectExampleFancyLoadingEffect;
 import com.can301.gp.demos.EffectExampleLoadingEffect;
 import com.can301.gp.demos.EffectExampleProgressBarLoadingEffect;
+import com.can301.gp.demos.EffectExampleZooming;
 import com.can301.gp.demos.FGServiceExample;
 
 import com.can301.gp.demos.FrameAnimationsExample;
@@ -110,6 +111,11 @@ public class MainActivity extends AppCompatActivity {
                 "Shows various widgets.",
                 R.drawable.ic_widgets
         ));
+        categories.put("Gestures", new Category(
+                "Gestures",
+                "Shows various gestures interacting with the system.",
+                R.drawable.ic_gesture
+        ));
 
         HashMap<String, Demonstration> catServicesDemos = new HashMap<String, Demonstration>();
         HashMap<String, Demonstration> catSystemDemos = new HashMap<String, Demonstration>();
@@ -119,16 +125,17 @@ public class MainActivity extends AppCompatActivity {
         HashMap<String, Demonstration> catAnimationsDemos = new HashMap<>();
         HashMap<String, Demonstration> catEffectsDemos = new HashMap<>();
         HashMap<String, Demonstration> catWidgetsDemos = new HashMap<>();
+        HashMap<String, Demonstration> catGesturesDemos = new HashMap<>();
 
         // Set up all demos.
         catEffectsDemos.put("Night Mode", new Demonstration(
                         "Night Mode", getString(R.string.night_mode_example_desc),
-                        R.drawable.baseline_home_24, EffectExampleNightMode.class,"nightmode"
+                R.drawable.ic_night, EffectExampleNightMode.class,"nightmode"
                 )
         );
         catEffectsDemos.put("Ripple Effect", new Demonstration(
                         "Ripple Effect", getString(R.string.ripple_effect_example_desc),
-                        android.R.drawable.ic_menu_mylocation, EffectExampleRippleEffect.class,"rippleeffect"
+                R.drawable.ic_water, EffectExampleRippleEffect.class,"rippleeffect"
                 )
         );
         catEffectsDemos.put("Shimmer Loading Effect", new Demonstration(
@@ -144,6 +151,11 @@ public class MainActivity extends AppCompatActivity {
         catEffectsDemos.put("Fancy Loading Effect", new Demonstration(
                         "Fancy Loading Effect", getString(R.string.fancy_loading_effect_example_desc),
                         R.drawable.ic_progress_bar, EffectExampleFancyLoadingEffect.class,"fancyloadingeffect"
+                )
+        );
+        catGesturesDemos.put("Zooming", new Demonstration(
+                        "Zooming", getString(R.string.zooming_example_desc),
+                R.drawable.ic_zooming, EffectExampleZooming.class,"zooming"
                 )
         );
 
@@ -269,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
         demos.put("Animations",catAnimationsDemos);
         demos.put("Effects",catEffectsDemos);
         demos.put("Widgets",catWidgetsDemos);
+        demos.put("Gestures",catGesturesDemos);
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
