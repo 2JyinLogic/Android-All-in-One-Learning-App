@@ -65,6 +65,11 @@
     <string name="doc_link_appspecific">https://developer.android.com/training/data-storage/app-specific</string>
 
 
+
+    <string name="alertdialog_example_desc">
+    This example demonstrates how to use AlertDialogs in Android to show pop-up messages or get user input. It covers creating alert dialogs with buttons, custom layouts, and handling user responses.
+    </string>
+
     <string name="interactcamera_example_desc">
     This example demonstrates how to interact with the camera in your Android app. You can take pictures, request camera permissions, and display captured images.
     </string>

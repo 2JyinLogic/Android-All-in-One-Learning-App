@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.view.Gravity;
@@ -133,12 +134,23 @@ public class PopupWindowExample extends AppCompatActivity {
     }
     //New method to show PopupWindow
     private void showPopupWindow() {
+        // Find views in the activity layout for user inputs
+        final EditText editTextPopupContent = findViewById(R.id.editTextPopupContent); // User input for PopupWindow content
+
+        // Get user input
+        String popupContent = editTextPopupContent.getText().toString();
+
         // Inflate the popup Layout
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.layout_popup_window, null);
 
         // Assuming the root layout of the popupView is LinearLayout
         LinearLayout popupLayout = (LinearLayout) popupView;
+
+        // Add user-defined content to the popup layout
+        TextView contentTextView = new TextView(this);
+        contentTextView.setText(popupContent.isEmpty() ? "Default Content" : popupContent);
+        popupLayout.addView(contentTextView);
 
         // Create new popup window
         PopupWindow popupWindow = new PopupWindow(
@@ -151,15 +163,16 @@ public class PopupWindowExample extends AppCompatActivity {
         Button closeButton = new Button(this);
         closeButton.setText("Close");
 
-        // Set Layout Parameters for the Button
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+// Set Layout Parameters for the Button
+        LinearLayout.LayoutParams closeButtonLayoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.gravity = Gravity.RIGHT;
-        closeButton.setLayoutParams(layoutParams);
+        closeButtonLayoutParams.gravity = Gravity.END;  // 右对齐
+        closeButton.setLayoutParams(closeButtonLayoutParams);
 
-        // Add button to popupLayout
+// Add button to popupLayout
         popupLayout.addView(closeButton);
+
 
         // Set if the popup can be dismissed by clicking outside
         popupWindow.setFocusable(true);
@@ -172,6 +185,7 @@ public class PopupWindowExample extends AppCompatActivity {
         // As an example, show the popup window on the button click location
         popupWindow.showAsDropDown(findViewById(R.id.popupwindowButton));
     }
+
 
 
 }
