@@ -17,6 +17,7 @@ import com.can301.gp.demos.BGServiceExample;
 import com.can301.gp.demos.BoundServiceExample;
 import com.can301.gp.demos.AlertDialogExample;
 import com.can301.gp.demos.ButtonWidget;
+import com.can301.gp.demos.CheckBoxWidget;
 import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.demos.AnimationsExample;
 import com.can301.gp.demos.EffectExampleFancyLoadingEffect;
@@ -270,6 +271,9 @@ public class MainActivity extends AppCompatActivity {
         ));
         catWidgetsDemos.put("Seek Bar", new Demonstration(
                 "Seek Bar","A type of widget to let the users choose a number by drag the bar.",R.drawable.ic_seek_bar, SeekBarWidget.class, "seek1"
+        ));
+        catWidgetsDemos.put("Check Box", new Demonstration(
+                "Check Box","A type of widget to let the users make multiple choices.",R.drawable.ic_check, CheckBoxWidget.class, "check1"
         ));
 
         // Decide which demos go into which category.

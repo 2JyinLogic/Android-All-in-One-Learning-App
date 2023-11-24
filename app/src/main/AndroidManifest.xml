@@ -36,6 +36,9 @@
         android:theme="@style/Theme.GroupProject"
         tools:targetApi="31">
         <activity
+            android:name=".demos.CheckBoxWidget"
+            android:exported="false" />
+        <activity
             android:name=".demos.AppSpecificFilesExample"
             android:exported="false" />
         <activity

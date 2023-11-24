@@ -1,0 +1,44 @@
+ CheckBox checkBox1 = findViewById(R.id.checkBox);
+        CheckBox checkBox2 = findViewById(R.id.checkBox2);
+        CheckBox checkBox3 = findViewById(R.id.checkBox3);
+        TextView display1 = findViewById(R.id.textView17);
+        TextView display2 = findViewById(R.id.textViewa);
+        TextView display3 = findViewById(R.id.textViewb);
+
+        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    display1.setText("You have chosen Check Box 1");
+                }
+                else{
+                    display1.setText("Check Box 1 has not been chosen");
+                }
+            }
+        });
+
+        checkBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    display2.setText("You have chosen Check Box 2");
+                }
+                else{
+                    display2.setText("Check Box 2 has not been chosen");
+                }
+            }
+        });
+
+        checkBox3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    display3.setText("You have chosen Check Box 3");
+                }
+                else{
+                    display3.setText("Check Box 3 has not been chosen");
+                }
+            }
+        });
+
+    }
