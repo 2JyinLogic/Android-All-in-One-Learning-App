@@ -35,7 +35,6 @@ import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
 import com.can301.gp.demos.ProgressBarWidget;
 import com.can301.gp.demos.QRcodeGenerateExample;
-import com.can301.gp.demos.QRcodeScanExample;
 import com.can301.gp.demos.RadioGroupWidget;
 import com.can301.gp.demos.RequestPermissionExample;
 import com.can301.gp.demos.SeekBarWidget;
@@ -289,9 +288,6 @@ public class MainActivity extends AppCompatActivity {
         ));
         catQrcodeDemos.put("QRcodeGenerate",new Demonstration(
                 "QRgenerate","generate QRcode",R.id.qr_code_image, QRcodeGenerateExample.class,"qrcode1"
-        ));
-        catQrcodeDemos.put("QRcodeScan",new Demonstration(
-                "QRscan","scan QRcode",R.id.scan_button, QRcodeScanExample.class,"qrcode2"
         ));
 
         // Decide which demos go into which category.

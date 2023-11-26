@@ -124,9 +124,6 @@
             android:name=".demos.QRcodeGenerateExample"
             android:exported="false" />
         <activity
-            android:name=".demos.QRcodeScanExample"
-            android:exported="false" />
-        <activity
             android:name=".demos.TimerExample"
             android:exported="false" />
 
