@@ -31,6 +31,9 @@
     <string name="code_link_interactcamera">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCameraExample.java</string>
     <string name="code_link_interactcalendar">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCalendarExample.java</string>
     <string name="code_link_appspecific">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AppSpecificFilesExample.java</string>
+    <string name="code_link_qrcode1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/QRcodeGenerateExamole.java</string>
+    <string name="code_link_qrcode2">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/QRcodeScanExamole.java</string>
+    <string name="code_link_timer">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/TimerExamole.java</string>
 
 
     <string name="doc_link_timepickerdialog">https://developer.android.com/reference/android/app/TimePickerDialog</string>
@@ -63,6 +66,10 @@
     <string name="doc_link_interactcamera">https://developer.android.com/training/camera/photobasics</string>
     <string name="doc_link_interactcalendar">https://developer.android.com/reference/android/provider/CalendarContract</string>
     <string name="doc_link_appspecific">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_qrcode1">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_qrcode2">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_timer">https://developer.android.com/training/data-storage/app-specific</string>
+
 
 
 
@@ -204,6 +211,12 @@
     <string name="seek_desc">
        Drag the seek bars and the text will be changed according to the state of the seek bar.
     </string>
+    <string name="qrcode_generate_desc">
+       Show how to generate QRcodes. Input message here.
+    </string>
+    <string name="qrcode_scan_desc">
+       Show how to scan QRcodes.
+    </string>
 
     <string name="fg_example_channel_name">FG Example Channel</string>
     <string name="fg_example_channel_desc">The channel for the Foreground Service example.</string>
@@ -220,6 +233,9 @@
     </string>
     <string name="navigation_drawer_example_desc">
     Press and hold the left edge or drag to display the drawer navigation bar.
+    </string>
+    <string name="timer_example_desc">
+    Set a countdown and prompt after the time has ended.
     </string>
 
 

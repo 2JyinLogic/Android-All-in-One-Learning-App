@@ -34,10 +34,13 @@ import com.can301.gp.demos.NavigationExample;
 import com.can301.gp.demos.EffectExampleNightMode;
 import com.can301.gp.demos.EffectExampleRippleEffect;
 import com.can301.gp.demos.ProgressBarWidget;
+import com.can301.gp.demos.QRcodeGenerateExample;
+import com.can301.gp.demos.QRcodeScanExample;
 import com.can301.gp.demos.RadioGroupWidget;
 import com.can301.gp.demos.RequestPermissionExample;
 import com.can301.gp.demos.SeekBarWidget;
 import com.can301.gp.demos.SwitchWidget;
+import com.can301.gp.demos.TimerExample;
 import com.can301.gp.searchbar.SearchBarMain;
 import com.can301.gp.demos.PopupWindowExample;
 import com.can301.gp.demos.BottomSheetDialogExample;
@@ -75,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
                 "Demonstrates how you can implement different kinds of system services," +
                         "including foreground, bound, and background services",
                 R.drawable.ic_cat_services
+        ));
+        categories.put("QRcode", new Category(
+                "QRcode",
+                "Demonstrates activities about QRcode like scanning, creating",
+                R.drawable.baseline_qr_code_24
         ));
         categories.put("System Interaction", new Category(
                 "System Interaction",
@@ -126,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         HashMap<String, Demonstration> catEffectsDemos = new HashMap<>();
         HashMap<String, Demonstration> catWidgetsDemos = new HashMap<>();
         HashMap<String, Demonstration> catGesturesDemos = new HashMap<>();
+        HashMap<String, Demonstration> catQrcodeDemos = new HashMap<>();
 
         // Set up all demos.
         catEffectsDemos.put("Night Mode", new Demonstration(
@@ -249,6 +258,13 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.baseline_chat_24, TimePickerDialogExample.class,"timepickerdialog"
                 )
         );
+        catDialogsDemos.put("TimerExample", new Demonstration(
+                        "TimerExample",
+                        "set countdown",
+                        R.drawable.baseline_hourglass_top_24, TimerExample.class,"timer"
+                )
+        );
+
         catDialogsDemos.put("ProgressDialog", new Demonstration(
                         "ProgressDialog",
                         getString(R.string.progressdialog_example_desc),
@@ -271,6 +287,12 @@ public class MainActivity extends AppCompatActivity {
         catWidgetsDemos.put("Seek Bar", new Demonstration(
                 "Seek Bar","A type of widget to let the users choose a number by drag the bar.",R.drawable.ic_seek_bar, SeekBarWidget.class, "seek1"
         ));
+        catQrcodeDemos.put("QRcodeGenerate",new Demonstration(
+                "QRgenerate","generate QRcode",R.id.qr_code_image, QRcodeGenerateExample.class,"qrcode1"
+        ));
+        catQrcodeDemos.put("QRcodeScan",new Demonstration(
+                "QRscan","scan QRcode",R.id.scan_button, QRcodeScanExample.class,"qrcode2"
+        ));
 
         // Decide which demos go into which category.
         demos.put("Services", catServicesDemos);
@@ -282,6 +304,7 @@ public class MainActivity extends AppCompatActivity {
         demos.put("Effects",catEffectsDemos);
         demos.put("Widgets",catWidgetsDemos);
         demos.put("Gestures",catGesturesDemos);
+        demos.put("QRcode",catQrcodeDemos);
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();

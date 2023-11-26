@@ -35,7 +35,7 @@ android {
 
 dependencies {
 
-    //implementation ("com.github.MikeOrtiz:TouchImageView:1.4.1")
+    implementation ("com.github.MikeOrtiz:TouchImageView:1.4.1")
     implementation ("com.github.ybq:Android-SpinKit:1.4.0") // for fancy loading anifation
     implementation("com.github.lzyzsd:circleprogress:1.2.1") // for progress bar loading
     implementation("com.facebook.shimmer:shimmer:0.1.0@aar") // for shimmer laoding
@@ -48,9 +48,13 @@ dependencies {
     implementation("com.makeramen:roundedimageview:2.3.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
+    implementation("com.journeyapps:zxing-android-embedded:3.6.0"){setTransitive(false)}
+    implementation("com.google.zxing:core:3.3.3")
+    implementation("com.google.zxing:javase:3.0.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 }
+
