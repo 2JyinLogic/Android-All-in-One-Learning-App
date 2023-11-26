@@ -1,0 +1,32 @@
+    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleZooming";
+    private ImageView image;
+    private ScaleGestureDetector scaleGestureDetector;
+    private float scaleFactor = 1.0f;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Change here to the layout name
+        setContentView(R.layout.activity_effect_zooing);
+
+        image = findViewById(R.id.zoomingImage);
+        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+
+        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+    }
+
+    // Detect touch on the entire view
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return scaleGestureDetector.onTouchEvent(event);
+    }
+
+    // Setup the scale factor and apply to the image
+    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(@NonNull ScaleGestureDetector detector) {
+            scaleFactor *= scaleGestureDetector.getScaleFactor();
+            image.setScaleX(scaleFactor);
+            image.setScaleY(scaleFactor);
+            return true;
+        }
+    }

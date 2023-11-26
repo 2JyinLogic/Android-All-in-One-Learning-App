@@ -32,8 +32,8 @@ public class CategoriesPage extends AppCompatActivity {
         {
             LinearLayout catsContainer = findViewById(R.id.categoryContainer);
 
-            for (int i = 0; i < MainActivity.catList.size(); ++i) {
-                Category c = MainActivity.catList.get(i);
+            for (int i = 0; i < GlobalData.catList.size(); ++i) {
+                Category c = GlobalData.catList.get(i);
 
                 Button catBtn = new Button(this);
                 catBtn.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));

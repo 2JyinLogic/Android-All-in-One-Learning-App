@@ -1,0 +1,18 @@
+    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleFancyLoadingEffect";
+    private SpinKitView spinKit1, spinKit2, spinKit3, spinKit4, spinKit5, spinKit6, spinKit7, spinKit8, spinKit9;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Change here to the layout name
+        setContentView(R.layout.activity_effect_fancy_loading);
+
+        spinKit1 = findViewById(R.id.spin_kit1);
+        spinKit2 = findViewById(R.id.spin_kit2);
+        spinKit3 = findViewById(R.id.spin_kit3);
+        spinKit4 = findViewById(R.id.spin_kit4);
+        spinKit5 = findViewById(R.id.spin_kit5);
+        spinKit6 = findViewById(R.id.spin_kit6);
+        spinKit7 = findViewById(R.id.spin_kit7);
+        spinKit8 = findViewById(R.id.spin_kit8);
+        spinKit9 = findViewById(R.id.spin_kit9);
+    }

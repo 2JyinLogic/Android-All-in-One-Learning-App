@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import com.can301.gp.Demonstration;
 import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
+import android.view.LayoutInflater;
 
 public class AlertDialogExample extends AppCompatActivity {
 
@@ -89,7 +91,7 @@ public class AlertDialogExample extends AppCompatActivity {
 
         //alertDialogButton
         Button alertDialogButton = findViewById(R.id.alertDialogButton);
-        alertDialogButton.setOnClickListener(v -> showAlertDialog());
+        alertDialogButton.setOnClickListener(v -> showCustomAlertDialog());
 
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
@@ -125,11 +127,23 @@ public class AlertDialogExample extends AppCompatActivity {
     }
     // New method to show AlertDialog
 
-        private void showAlertDialog() {
-            new AlertDialog.Builder(this)
-                    .setTitle("Tips")
-                    .setMessage("This is an example AlertDialog")
-                    .setPositiveButton("Confirm", (dialog, which) -> dialog.dismiss())
-                    .show();
-        }
+    private void showCustomAlertDialog() {
+        // Find views in the activity layout for user inputs
+        final EditText editTextTitle = findViewById(R.id.editTextTitle); // User input for dialog title
+        final EditText editTextMessage = findViewById(R.id.editTextMessage); // User input for dialog message
+        final EditText editTextButton = findViewById(R.id.editTextButton); // User input for dialog button text
+
+        // Get user input
+        String title = editTextTitle.getText().toString();
+        String message = editTextMessage.getText().toString();
+        String buttonText = editTextButton.getText().toString();
+
+        // Create and show the AlertDialog with user-defined settings
+        new AlertDialog.Builder(AlertDialogExample.this)
+                .setTitle(title.isEmpty() ? "Default Title" : title)
+                .setMessage(message.isEmpty() ? "Default Message" : message)
+                .setPositiveButton(buttonText.isEmpty() ? "Confirm" : buttonText, (dialog, which) -> dialog.dismiss())
+                .show();
+    }
+
 }

@@ -1,0 +1,61 @@
+//To interact with the calendar, include the following permissions in your AndroidManifest.xml:
+<manifest ...>
+    <!-- Permissions for calendar access -->
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+</manifest>
+
+//Before performing any calendar operations, check and request calendar permissions at runtime:
+// Inside your Activity class
+private static final int PERMISSIONS_REQUEST_CALENDAR = 100;
+
+private void checkCalendarPermission() {
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CALENDAR}, PERMISSIONS_REQUEST_CALENDAR);
+    }
+}
+
+//Adding Events to the Calendar
+private void addEventToCalendar(String title, String location, long begin, long end) {
+    ContentValues values = new ContentValues();
+    values.put(CalendarContract.Events.CALENDAR_ID, 1); // Ensure this matches a valid calendar ID on the device
+    values.put(CalendarContract.Events.TITLE, title);
+    values.put(CalendarContract.Events.EVENT_LOCATION, location);
+    values.put(CalendarContract.Events.DTSTART, begin);
+    values.put(CalendarContract.Events.DTEND, end);
+    values.put(CalendarContract.Events.ALL_DAY, 0);
+    values.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().getID());
+
+    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED) {
+        Uri eventUri = getContentResolver().insert(CalendarContract.Events.CONTENT_URI, values);
+        // Check if event was successfully added and obtain the event ID
+        if (eventUri != null) {
+            long eventID = Long.parseLong(eventUri.getLastPathSegment());
+            // Inform the user and/or open the calendar app to the new event
+        }
+    } else {
+        // Permission was denied, inform the user appropriately
+    }
+}
+
+//Handling Permission Results
+
+@Override
+public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    if (requestCode == PERMISSIONS_REQUEST_CALENDAR) {
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // Permission was granted, add the event to the calendar
+        } else {
+            // Permission was denied, inform the user that the feature is unavailable without permission
+        }
+    }
+}
+
+//Opening the Calendar App
+private void openCalendarEvent(long eventID) {
+    Uri eventUri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, eventID);
+    Intent intent = new Intent(Intent.ACTION_VIEW)
+        .setData(eventUri)
+        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    startActivity(intent);
+}

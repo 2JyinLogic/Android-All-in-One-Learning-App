@@ -5,6 +5,8 @@
     <string name="code_link_rippleeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleRippleEffect.java</string>
     <string name="code_link_loadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleLoadingEffect.java</string>
     <string name="code_link_progressbareffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleProgressBarLoadingEffect.java</string>
+    <string name="code_link_fancyloadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleFancyLoadingEffect.java</string>
+    <string name="code_link_zooming">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleZooming.java</string>
     <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
     <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
     <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
@@ -23,7 +25,12 @@
     <string name="code_link_switch1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SwitchWidget.java</string>
     <string name="code_link_radio1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RadioGroupWidget.java</string>
     <string name="code_link_progress1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressBarWidget.java</string>
+    <string name="code_link_seek1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SeekBarWidget.java</string>
     <string name="code_link_reqpermission">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RequestPermissionExample.java</string>
+    <string name="code_link_systemsettings">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/GoSystemSettingsExample.java</string>
+    <string name="code_link_interactcamera">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCameraExample.java</string>
+    <string name="code_link_interactcalendar">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCalendarExample.java</string>
+    <string name="code_link_appspecific">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AppSpecificFilesExample.java</string>
 
 
     <string name="doc_link_timepickerdialog">https://developer.android.com/reference/android/app/TimePickerDialog</string>
@@ -34,6 +41,8 @@
     <string name="doc_link_rippleeffect">https://developer.android.com/reference/android/graphics/drawable/RippleDrawable</string>
     <string name="doc_link_loadingeffect">https://developer.android.com/develop/ui/views/launch/splash-screen/migrate</string>
     <string name="doc_link_progressbareffect">https://developer.android.com/reference/android/widget/ProgressBar</string>
+    <string name="doc_link_fancyloadingeffect">https://developer.android.com/jetpack/compose/components/progress</string>
+    <string name="doc_link_zooming">https://developer.android.com/jetpack/compose/touch-input/pointer-input/multi-touch</string>
     <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>
     <string name="doc_link_boundservice">https://developer.android.com/guide/components/services#CreatingBoundService</string>
     <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
@@ -48,7 +57,25 @@
     <string name="doc_link_switch1">https://developer.android.com/reference/android/widget/Switch</string>
     <string name="doc_link_radio1">https://developer.android.com/reference/android/widget/RadioGroup</string>
     <string name="doc_link_progress1">https://developer.android.com/reference/android/widget/ProgressBar</string>
+    <string name="doc_link_seek1">https://developer.android.com/reference/android/widget/SeekBar</string>
     <string name="doc_link_reqpermission">https://developer.android.com/training/permissions/requesting</string>
+    <string name="doc_link_systemsettings">https://developer.android.com/reference/android/provider/Settings</string>
+    <string name="doc_link_interactcamera">https://developer.android.com/training/camera/photobasics</string>
+    <string name="doc_link_interactcalendar">https://developer.android.com/reference/android/provider/CalendarContract</string>
+    <string name="doc_link_appspecific">https://developer.android.com/training/data-storage/app-specific</string>
+
+
+
+    <string name="alertdialog_example_desc">
+    This example demonstrates how to use AlertDialogs in Android to show pop-up messages or get user input. It covers creating alert dialogs with buttons, custom layouts, and handling user responses.
+    </string>
+
+    <string name="interactcamera_example_desc">
+    This example demonstrates how to interact with the camera in your Android app. You can take pictures, request camera permissions, and display captured images.
+    </string>
+    <string name="interactcalendar_example_desc">
+    This example demonstrates how to add events to the user\'s calendar from an Android application. Integrating calendar functionality enhances user engagement by seamlessly managing their schedule within your app.
+    </string>
 
     <string name="night_mode_example_desc">
         During bright daylight conditions, utilize the "Light Mode," and switch to the "Night Mode"
@@ -75,6 +102,19 @@
         It employs a pulsating animation or color change to signify ongoing loading, offering users a visual cue of the process.
         This subtle yet effective technique minimizes user apprehension, ensuring a seamless and informed navigation experience.
     </string>
+    <string name="fancy_loading_effect_example_desc">
+        Fancy loading effects serve as captivating dynamic indicators,
+        enriching the user experience throughout various processes.
+        These visually appealing animations transcend conventional loading bars, introducing a delightful view to user interfaces.
+        Here are nine fancy loading effects that elevate the user experience:
+    </string>
+    <string name="zooming_example_desc">
+        Image zooming is a transformative feature that enhances the user experience when interacting with visual content.
+        It goes beyond the conventional static display,
+        offering users an immersive and dynamic exploration of images.
+        This engaging functionality allows users to zoom in and out,
+        providing a closer look at details and creating a more interactive and personalized viewing experience.
+    </string>
     <string name="frame_animations_example_desc">
         Frame animation splices a series of pictures through a frame file in drawable, sets the display time of each picture,
         and then displays it by calling @ drawable/frame in layout
@@ -97,6 +137,7 @@
     </string>
     <string name="bg_service_example_desc">
         A background service performs an operation that isn\'t directly noticed by the user.
+
         In this example, a BG service will be created to repeatedly increase the value of an integer by 1 and sleep for a few seconds.
         Note how running the service in the UI thread will freeze the UI and eventually leads to the app being killed.
     </string>
@@ -117,6 +158,24 @@
         In this example, a foreground service will be created to show the user a message,
         and the user can interact with the message (e.g. reply to, dismiss) on the notification
         even when the app is closed.
+    </string>
+    <string name="go_system_settings_example_desc">
+        The system settings app on every Android device is a place where the user can adjust nearly
+        every setting about the system, about the user, and about each app. However, because there
+        are so many entries, a novice user can be easily confused by where to look when he needs to
+        alter a specific setting.
+
+        In this example, you can learn to navigate the user to MANY specific settings entries in the
+        system settings app.
+    </string>
+    <string name="app_specific_files_example_desc">
+        In many cases, your app creates files that other apps don\'t need to access,
+        or shouldn\'t access. The system provides the following locations for storing such app-specific files:
+        Internal storage directories and
+        External storage directories. You can create both persistent and cache files.
+
+        In this example, you can create persistent and cache files in any of the directories and check
+        if a file exists.
     </string>
     <string name="popupwindow_example_desc">
        A small pop-up window used to appear at the top of the screen, usually to display additional information or options.
@@ -141,6 +200,9 @@
     </string>
     <string name="progress_desc">
       A type of widget to show the progress of the program in order to give the users an approximate waiting time.
+    </string>
+    <string name="seek_desc">
+       Drag the seek bars and the text will be changed according to the state of the seek bar.
     </string>
 
     <string name="fg_example_channel_name">FG Example Channel</string>

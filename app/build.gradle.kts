@@ -35,8 +35,10 @@ android {
 
 dependencies {
 
-    implementation("com.github.lzyzsd:circleprogress:1.2.1") // for loading effect
-    implementation("com.facebook.shimmer:shimmer:0.1.0@aar") // for loading effect
+    //implementation ("com.github.MikeOrtiz:TouchImageView:1.4.1")
+    implementation ("com.github.ybq:Android-SpinKit:1.4.0") // for fancy loading anifation
+    implementation("com.github.lzyzsd:circleprogress:1.2.1") // for progress bar loading
+    implementation("com.facebook.shimmer:shimmer:0.1.0@aar") // for shimmer laoding
     implementation("com.skyfishjy.ripplebackground:library:1.0.1") // for ripple effect
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("androidx.appcompat:appcompat:1.6.1")

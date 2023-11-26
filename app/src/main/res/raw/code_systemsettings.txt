@@ -1,0 +1,149 @@
+connectionBtn.setOnClickListener(
+    v -> {
+            String selectedText = connectionSpinner.getSelectedItem().toString();
+            switch(selectedText) {
+                case "WiFi":
+                    goToSystemSettingsPage(Settings.ACTION_WIFI_SETTINGS);
+                    break;
+                case "WiFi IP":
+                    goToSystemSettingsPage(Settings.ACTION_WIFI_IP_SETTINGS);
+                    break;
+                case "Wireless":
+                    goToSystemSettingsPage(Settings.ACTION_WIRELESS_SETTINGS);
+                    break;
+                case "Bluetooth":
+                    goToSystemSettingsPage(Settings.ACTION_BLUETOOTH_SETTINGS);
+                    break;
+                case "Airplane Mode":
+                    goToSystemSettingsPage(Settings.ACTION_AIRPLANE_MODE_SETTINGS);
+                    break;
+            }
+    }
+);
+appsBtn.setOnClickListener(
+    v -> {
+        String selectedText = appsSpinner.getSelectedItem().toString();
+        switch(selectedText) {
+            case "Main":
+                goToSystemSettingsPage(Settings.ACTION_APPLICATION_SETTINGS);
+                break;
+            case "Apps Search":
+                goToSystemSettingsPage(Settings.ACTION_APP_SEARCH_SETTINGS);
+                break;
+            case "Battery Saver":
+                goToSystemSettingsPage(Settings.ACTION_BATTERY_SAVER_SETTINGS);
+                break;
+            case "Default Apps":
+                goToSystemSettingsPage(Settings.ACTION_MANAGE_DEFAULT_APPS_SETTINGS);
+                break;
+            case "Development":
+                goToSystemSettingsPage(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
+                break;
+        }
+    }
+);
+miscBtn.setOnClickListener(
+    v -> {
+        String selectedText = miscSpinner.getSelectedItem().toString();
+        switch(selectedText) {
+            case "Date":
+                goToSystemSettingsPage(Settings.ACTION_DATE_SETTINGS);
+                break;
+            case "Locale":
+                goToSystemSettingsPage(Settings.ACTION_LOCALE_SETTINGS);
+                break;
+            case "Input Method":
+                goToSystemSettingsPage(Settings.ACTION_INPUT_METHOD_SETTINGS);
+                break;
+            case "Display":
+                goToSystemSettingsPage(Settings.ACTION_DISPLAY_SETTINGS);
+                break;
+            case "Security":
+                goToSystemSettingsPage(Settings.ACTION_SECURITY_SETTINGS);
+                break;
+            case "Location Source":
+                goToSystemSettingsPage(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                break;
+        }
+    }
+);
+storageBtn.setOnClickListener(
+    v -> {
+        String selectedText = storageSpinner.getSelectedItem().toString();
+        switch(selectedText) {
+            case "Interal Storage":
+                goToSystemSettingsPage(Settings.ACTION_INTERNAL_STORAGE_SETTINGS);
+                break;
+            case "Memory Card":
+                goToSystemSettingsPage(Settings.ACTION_MEMORY_CARD_SETTINGS);
+                break;
+        }
+    }
+);
+thisAppBtn.setOnClickListener(
+    v -> {
+        String selectedText = thisAppSpinner.getSelectedItem().toString();
+        switch(selectedText) {
+            case "This App Main":
+                goToThisAppSettingsPage(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                break;
+            case "This App File Access":
+                goToThisAppSettingsPage(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                break;
+            case "This App Fullscreen":
+                goToThisAppSettingsPage(Settings.ACTION_MANAGE_APP_USE_FULL_SCREEN_INTENT);
+                break;
+            case "This App Open By Default":
+                goToThisAppSettingsPage(Settings.ACTION_APP_OPEN_BY_DEFAULT_SETTINGS);
+                break;
+        }
+    }
+);
+    
+/**
+    * Go to a general (in contrast to specific app's)
+    * system settings page
+    * @param whichPage
+    */
+void goToSystemSettingsPage(String whichPage)
+{
+    Intent intent = new Intent(whichPage);
+    if (intent.resolveActivity(getPackageManager()) != null) {
+        startActivity(intent);
+    }
+    else {
+        // Show the user that this page is not there
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Cannot open this setting page");
+        builder.setMessage("Cannot redirect you to this setting page " +
+                "because on this device the settings app does not have this page");
+        builder.setPositiveButton("OK", (diag, which) -> {});
+        Dialog diag = builder.create();
+        diag.show();
+    }
+}
+
+/**
+    * Go to a specific page of this app in the system settings
+    * @param whichPage
+    */
+void goToThisAppSettingsPage(String whichPage)
+{
+    Intent intent = new Intent(whichPage);
+    // Fill this app's package in the intent's data
+    Uri uri = Uri.fromParts("package", getPackageName(), null);
+    intent.setData(uri);
+    if (intent.resolveActivity(getPackageManager()) != null) {
+        startActivity(intent);
+    }
+    else {
+        // Show the user that this page is not there
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Cannot open this setting page");
+        builder.setMessage("Cannot redirect you to this setting page " +
+                "because on this device the settings app does not have this page");
+        builder.setPositiveButton("OK", (diag, which) -> {});
+        Dialog diag = builder.create();
+        diag.show();
+    }
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="connection_settings_array">
+        <item>WiFi</item>
+        <item>WiFi IP</item>
+        <item>Wireless</item>
+        <item>Bluetooth</item>
+        <item>Airplane Mode</item>
+    </string-array>
+
+    <string-array name="apps_settings_array">
+        <item>Main</item>
+        <item>Default Apps</item>
+        <item>Apps Search</item>
+        <item>Battery Saver</item>
+        <item>Development</item>
+    </string-array>
+
+    <string-array name="misc_settings_array">
+        <item>Date</item>
+        <item>Locale</item>
+        <item>Input Method</item>
+        <item>Display</item>
+        <item>Security</item>
+        <item>Location Source</item>
+    </string-array>
+
+    <string-array name="storage_settings_array">
+        <item>Interal Storage</item>
+        <item>Memory Card</item>
+    </string-array>
+
+    <string-array name="this_app_settings_array">
+        <item>This App Main</item>
+        <item>This App File Access</item>
+        <item>This App Fullscreen</item>
+        <item>This App Open By Default</item>
+    </string-array>
+</resources>

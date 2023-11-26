@@ -47,7 +47,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/permission1Btn"
+            android:id="@+id/connectionBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -57,13 +57,13 @@
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <Button
-            android:id="@+id/permission2Btn"
+            android:id="@+id/appsBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:text="View Contacts"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/permission1Btn" />
+            app:layout_constraintTop_toTopOf="@+id/connectionBtn" />
 
         <Button
             android:id="@+id/permission3Btn"
@@ -73,7 +73,7 @@
             android:text="Post Notification"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/permission1Btn" />
+            app:layout_constraintTop_toBottomOf="@+id/connectionBtn" />
 
         <TextView
             android:id="@+id/resultView"

@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.can301.gp.GlobalData;
 import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 
@@ -29,13 +30,13 @@ public class CatViewMain extends AppCompatActivity {
         viewpager = findViewById(R.id.viewpager);
 
         CatViewAdapter adapter = new CatViewAdapter(getSupportFragmentManager());
-        adapter.setCount(MainActivity.catList.size());
+        adapter.setCount(GlobalData.catList.size());
         viewpager.setAdapter(adapter);
-        viewpager.setOffscreenPageLimit(MainActivity.catList.size());
+        viewpager.setOffscreenPageLimit(GlobalData.catList.size());
 
         int curCatIndex = getIntent().getIntExtra(CAT_VIEW_INDEX_KEY, 0);
         viewpager.setCurrentItem(curCatIndex);
-        tv_text.setText(MainActivity.catList.get(curCatIndex).title);
+        tv_text.setText(GlobalData.catList.get(curCatIndex).title);
 
         viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -45,7 +46,7 @@ public class CatViewMain extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                tv_text.setText(MainActivity.catList.get(position).title);
+                tv_text.setText(GlobalData.catList.get(position).title);
             }
 
             @Override

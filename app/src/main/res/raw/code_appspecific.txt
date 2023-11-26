@@ -1,0 +1,225 @@
+    public class AppSpecificFilesExample extends AppCompatActivity {
+    /**
+        * Creates a file in the Internal directories,
+        * with the filename read from the text input and whether or not cache depending on the checkbox.
+        * Sets corresponding messages in the message textview.
+        */
+    void createInternalFile() {
+        // true -> persistent; false -> cache.
+        boolean persistentOrCache = !cacheCheckBox.isChecked();
+        String fileName = fileNameText.getText().toString();
+        // The name of a cached file must be larger than 3.
+        if(fileName.length() < 3) {
+            messageText.setText("The file name must be longer than 3 characters!");
+            return;
+        }
+        String fileContent = fileContentText.getText().toString();
+        if(fileName.isEmpty()) {
+            fileContent = "You entered an empty text as content.";
+        }
+
+        // Create and open the file
+        File file = null;
+        if(persistentOrCache) {
+            // Create a persistent file.
+            file = new File(this.getFilesDir(), fileName);
+        }
+        else {
+            // Create a cache file
+            try {
+                File.createTempFile(fileName, null, this.getCacheDir());
+            } catch (IOException e) {
+                messageText.setText("Error on creating file. Can be because of an invalid file name.");
+                return;
+            }
+            file = new File(this.getCacheDir(), fileName);
+        }
+
+        // Write the content to the file.
+        try (FileOutputStream fos = new FileOutputStream(file)) {
+            fos.write(fileContent.getBytes());
+        } catch (IOException e) {
+            messageText.setText("Error on writing file. Can be because of an invalid file name.");
+            return;
+        }
+
+        String finalMessage = (persistentOrCache ? "Persistent" : "Cache") +
+                " internal file named " + fileName + " created.";
+        messageText.setText(finalMessage);
+
+    }
+
+    /**
+        * Creates a file in the External directories,
+        * with the filename read from the text input and whether or not cache depending on the checkbox.
+        * Sets corresponding messages in the message textview.
+        */
+    void createExternalFile() {
+        // Check if an external drive is available for read and write.
+        if(!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            messageText.setText("No external storage is available for read and write.");
+            return;
+        }
+
+        // true -> persistent; false -> cache.
+        boolean persistentOrCache = !cacheCheckBox.isChecked();
+        String fileName = fileNameText.getText().toString();
+        // The name of a cached file must be larger than 3.
+        if(fileName.length() < 3) {
+            messageText.setText("The file name must be longer than 3 characters!");
+            return;
+        }
+        String fileContent = fileContentText.getText().toString();
+        if(fileName.isEmpty()) {
+            fileContent = "You entered an empty text as content.";
+        }
+
+    //        // Select the first physical external storage location
+    //        File[] externalStorageVolumes =
+    //                ContextCompat.getExternalFilesDirs(getApplicationContext(), null);
+    //        File primaryExternalStorage = externalStorageVolumes[0];
+
+        // Create and open the file
+        File file = null;
+        if(persistentOrCache) {
+            // Create a persistent file.
+            file = new File(this.getExternalFilesDir(null), fileName);
+        }
+        else {
+            // Create a cache file
+            file = new File(this.getExternalCacheDir(), fileName);
+        }
+
+        // Write the content to the file.
+        try (FileOutputStream fos = new FileOutputStream(file)) {
+            fos.write(fileContent.getBytes());
+        } catch (IOException e) {
+            messageText.setText("Error on writing file. Can be because of an invalid file name.");
+            return;
+        }
+
+        String finalMessage = (persistentOrCache ? "Persistent" : "Cache") +
+                " external file named " + fileName + " created.";
+        messageText.setText(finalMessage);
+    }
+
+    /**
+        * Checks if a file exists in the internal directories and reads it,
+        * with the filename read from the text input and whether or not cache depending on the checkbox.
+        * Sets corresponding messages in the message textview.
+        */
+    void readInternalFile() {
+        // true -> persistent; false -> cache.
+        boolean persistentOrCache = !cacheCheckBox.isChecked();
+        String fileName = fileNameText.getText().toString();
+
+        // Open the file
+        File file = null;
+        if(persistentOrCache) {
+            // Open a persistent file.
+            file = new File(this.getFilesDir(), fileName);
+        }
+        else {
+            // Open a cache file
+            file = new File(this.getCacheDir(), fileName);
+        }
+
+        // Read from the file.
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            messageText.setText("Cannot open the file. Perhaps it does not exist.");
+            return;
+        }
+        InputStreamReader inputStreamReader =
+                new InputStreamReader(fis);
+        StringBuilder stringBuilder = new StringBuilder();
+        // Read line by line.
+        try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
+            String line = reader.readLine();
+            while (line != null) {
+                stringBuilder.append(line).append('\n');
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            messageText.setText("Cannot read from the file. Perhaps the file is suddenly removed.");
+            return;
+        } finally {
+            String content = stringBuilder.toString();
+            String finalMsg = "Opened internal " + (persistentOrCache ? "persistent " : "cache ") +
+                    "file named " + fileName + " with content: " + content;
+            messageText.setText(finalMsg);
+        }
+    }
+
+    /**
+        * Checks if a file exists in the External directories and reads it,
+        * with the filename read from the text input and whether or not cache depending on the checkbox.
+        * Sets corresponding messages in the message textview.
+        */
+    void readExternalFile() {
+        // Check if an external drive is available at least for read
+        if(!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) &&
+            !Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED_READ_ONLY)) {
+            messageText.setText("No external storage is available for read.");
+            return;
+        }
+
+        // true -> persistent; false -> cache.
+        boolean persistentOrCache = !cacheCheckBox.isChecked();
+        String fileName = fileNameText.getText().toString();
+
+        // Open the file
+        File file = null;
+        if(persistentOrCache) {
+            // Open a persistent file.
+            file = new File(this.getExternalFilesDir(null), fileName);
+        }
+        else {
+            // Open a cache file
+            file = new File(this.getExternalCacheDir(), fileName);
+        }
+
+        // Read from the file.
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            messageText.setText("Cannot open the file. Perhaps it does not exist.");
+            return;
+        }
+        InputStreamReader inputStreamReader =
+                new InputStreamReader(fis);
+        StringBuilder stringBuilder = new StringBuilder();
+        // Read line by line.
+        try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
+            String line = reader.readLine();
+            while (line != null) {
+                stringBuilder.append(line).append('\n');
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            messageText.setText("Cannot read from the file. Perhaps the file is suddenly removed.");
+            return;
+        } finally {
+            String content = stringBuilder.toString();
+            String finalMsg = "Opened external " + (persistentOrCache ? "persistent " : "cache ") +
+                    "file named " + fileName + " with content: " + content;
+            messageText.setText(finalMsg);
+        }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        //...
+
+        createInternalBtn.setOnClickListener(v -> createInternalFile());
+        createExternalBtn.setOnClickListener(v -> createExternalFile());
+        readInternalBtn.setOnClickListener(v -> readInternalFile());
+        readExternalBtn.setOnClickListener(v -> readExternalFile());
+
+        //...
+    }
+
+}

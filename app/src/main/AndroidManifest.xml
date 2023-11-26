@@ -7,12 +7,21 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
 
             <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
         </intent>
     </queries>
 
@@ -27,7 +36,22 @@
         android:theme="@style/Theme.GroupProject"
         tools:targetApi="31">
         <activity
+            android:name=".demos.AppSpecificFilesExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.InteractCalendarExample"
+            android:exported="false" />
+        <activity
+            android:name=".demos.GoSystemSettingsExample"
+            android:exported="false" />
+        <activity
             android:name=".demos.ProgressBarWidget"
+            android:exported="false" />
+        <activity
+            android:name=".demos.SeekBarWidget"
+            android:exported="false" />
+        <activity
+            android:name=".demos.InteractCameraExample"
             android:exported="false" />
         <activity
             android:name=".demos.RequestPermissionExample"
@@ -96,6 +120,12 @@
             android:exported="false" />
         <activity
             android:name=".demos.EffectExampleProgressBarLoadingEffect"
+            android:exported="false" />
+        <activity
+            android:name=".demos.EffectExampleFancyLoadingEffect"
+            android:exported="false" />
+        <activity
+            android:name=".demos.EffectExampleZooming"
             android:exported="false" />
         <activity
             android:name=".demos.AnimationsExample"
