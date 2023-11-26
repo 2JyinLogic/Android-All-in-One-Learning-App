@@ -65,7 +65,6 @@
     <string name="doc_link_appspecific">https://developer.android.com/training/data-storage/app-specific</string>
 
 
-
     <string name="alertdialog_example_desc">
     This example demonstrates how to use AlertDialogs in Android to show pop-up messages or get user input. It covers creating alert dialogs with buttons, custom layouts, and handling user responses.
     </string>
@@ -176,6 +175,14 @@
 
         In this example, you can create persistent and cache files in any of the directories and check
         if a file exists.
+    </string>
+    <string name="sensors_example_desc">
+        Most Android-powered devices have built-in sensors that measure motion, orientation, and various environmental conditions.
+        These sensors are capable of providing raw data with high precision and accuracy,
+        and are useful if you want to monitor three-dimensional device movement or positioning,
+        or you want to monitor changes in the ambient environment near a device.
+
+        In this example, you will learn how to get the accuracy and values from different kinds of sensors.
     </string>
     <string name="popupwindow_example_desc">
        A small pop-up window used to appear at the top of the screen, usually to display additional information or options.

@@ -33,6 +33,12 @@ android {
 
 dependencies {
 
+    // For using Zoom
+    val room_version = "2.6.0"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
     //implementation ("com.github.MikeOrtiz:TouchImageView:1.4.1")
     implementation ("com.github.ybq:Android-SpinKit:1.4.0") // for fancy loading anifation
     implementation("com.github.lzyzsd:circleprogress:1.2.1") // for progress bar loading
