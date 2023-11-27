@@ -8,11 +8,13 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
@@ -41,6 +43,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject"
         tools:targetApi="31">
+        <activity
+            android:name=".demos.RatingBarWidget"
+            android:exported="false" />
         <activity
             android:name=".demos.SensorsExampleActivity"
             android:exported="false" />
@@ -124,7 +129,6 @@
         <activity
             android:name=".demos.TimerExample"
             android:exported="false" />
-
         <activity
             android:name=".demos.AttributeAnimationsExample"
             android:exported="false" />
