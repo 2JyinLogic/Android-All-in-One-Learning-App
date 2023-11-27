@@ -19,6 +19,7 @@ import com.can301.gp.demos.AlertDialogExample;
 import com.can301.gp.demos.ButtonWidget;
 import com.can301.gp.demos.DatePickerDialogExample;
 import com.can301.gp.demos.AnimationsExample;
+import com.can301.gp.demos.EffectExampleDragView;
 import com.can301.gp.demos.EffectExampleFancyLoadingEffect;
 import com.can301.gp.demos.EffectExampleLoadingEffect;
 import com.can301.gp.demos.EffectExampleProgressBarLoadingEffect;
@@ -165,6 +166,11 @@ public class MainActivity extends AppCompatActivity {
         catGesturesDemos.put("Zooming", new Demonstration(
                         "Zooming", getString(R.string.zooming_example_desc),
                 R.drawable.ic_zooming, EffectExampleZooming.class,"zooming"
+                )
+        );
+        catGesturesDemos.put("Drag View", new Demonstration(
+                        "Dragging", getString(R.string.dragging_example_desc),
+                R.drawable.ic_dragging, EffectExampleDragView.class,"dragging"
                 )
         );
 

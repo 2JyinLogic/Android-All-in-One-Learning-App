@@ -144,6 +144,9 @@
             android:name=".demos.EffectExampleZooming"
             android:exported="false" />
         <activity
+            android:name=".demos.EffectExampleDragView"
+            android:exported="false" />
+        <activity
             android:name=".demos.AnimationsExample"
             android:exported="false" />
         <activity

@@ -7,6 +7,7 @@
     <string name="code_link_progressbareffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleProgressBarLoadingEffect.java</string>
     <string name="code_link_fancyloadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleFancyLoadingEffect.java</string>
     <string name="code_link_zooming">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleZooming.java</string>
+    <string name="code_link_dragging">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleDragView.java</string>
     <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
     <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
     <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
@@ -47,6 +48,7 @@
     <string name="doc_link_progressbareffect">https://developer.android.com/reference/android/widget/ProgressBar</string>
     <string name="doc_link_fancyloadingeffect">https://developer.android.com/jetpack/compose/components/progress</string>
     <string name="doc_link_zooming">https://developer.android.com/jetpack/compose/touch-input/pointer-input/multi-touch</string>
+    <string name="doc_link_dragging">https://developer.android.com/jetpack/compose/touch-input/pointer-input/drag-swipe-fling</string>
     <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>
     <string name="doc_link_boundservice">https://developer.android.com/guide/components/services#CreatingBoundService</string>
     <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
@@ -123,6 +125,11 @@
         offering users an immersive and dynamic exploration of images.
         This engaging functionality allows users to zoom in and out,
         providing a closer look at details and creating a more interactive and personalized viewing experience.
+    </string>
+    <string name="dragging_example_desc">
+        Image dragging is a dynamic and interactive feature that significantly enhances the user experience when engaging with visual content.
+        Unlike traditional static displays, dragging empowers users to navigate through images seamlessly,
+        offering a more immersive and personalized exploration.
     </string>
     <string name="frame_animations_example_desc">
         Frame animation splices a series of pictures through a frame file in drawable, sets the display time of each picture,

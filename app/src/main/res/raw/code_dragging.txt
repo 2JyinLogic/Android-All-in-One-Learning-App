@@ -1,0 +1,58 @@
+    // Change this to exactly the string as in the AndroidManifest.xml
+    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleDragView";
+    private ImageView imageView;
+    private float xDown = 0, yDown = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Change here to the layout name
+        setContentView(R.layout.activity_dragging);
+
+        imageView = findViewById(R.id.draggingImage);
+
+        Button effectButton = findViewById(R.id.effectBottomButton);
+        Button codeButton = findViewById(R.id.codeBottomButton);
+        effectButton.setEnabled(false);
+        codeButton.setEnabled(true);
+
+        imageView.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getActionMasked()){
+                    case MotionEvent.ACTION_DOWN:
+                        xDown = event.getX();
+                        yDown = event.getY();
+                        break;
+
+                    case MotionEvent.ACTION_MOVE:
+                        float movedX, movedY;
+                        movedX = event.getX();
+                        movedY = event.getY();
+
+                        // calculate how much the user moved his finger
+                        float distanceX = movedX - xDown;
+                        float distanceY = movedY - yDown;
+
+                        // Calculate the new position
+                        float newX = imageView.getX() + distanceX;
+                        float newY = imageView.getY() + distanceY;
+
+                        // Get the parent layout's dimensions
+                        float parentWidth = ((View) imageView.getParent()).getWidth();
+                        float parentHeight = ((View) imageView.getParent()).getHeight();
+
+                        // Ensure the image stays within the parent bounds
+                        if (newX >= 0 && newX + imageView.getWidth() <= parentWidth) {
+                            imageView.setX(newX);
+                        }
+                        if (newY >= 0 && newY + imageView.getHeight() <= parentHeight) {
+                            imageView.setY(newY);
+                        }
+                        break;
+                }
+                return true;
+            }
+        });
+    }
