@@ -181,7 +181,7 @@
        A small pop-up window used to appear at the top of the screen, usually to display additional information or options.
     </string>
     <string name="bottomsheetdialog_example_desc">
-       BottomsheetDialog used to display a drawer-style dialog box at the bottom, usually containing action options or other content.
+    Let BottomSheetDialog support data handling functions, such as getting user input, performing some logical operations, and displaying the results. Here, we use Example: Reverse order the input string
     </string>
     <string name="progressdialog_example_desc">
        ProgressDialog used to display a progress bar or loading indicator, typically used when performing a long task to notify the user that the task is in progress.
