@@ -287,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
                 "Seek Bar","A type of widget to let the users choose a number by drag the bar.",R.drawable.ic_seek_bar, SeekBarWidget.class, "seek1"
         ));
         catQrcodeDemos.put("QRcodeGenerate",new Demonstration(
-                "QRgenerate","generate QRcode",R.id.qr_code_image, QRcodeGenerateExample.class,"qrcode1"
+                "QRcodeGenerate","generate QRcode",R.drawable.baseline_qr_code_24, QRcodeGenerateExample.class,"qrcode1"
         ));
 
         // Decide which demos go into which category.
