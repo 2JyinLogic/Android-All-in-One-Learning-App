@@ -63,26 +63,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Motion Sensor"
+            android:text="Accelerometer Sensor"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView17" />
 
         <TextView
-            android:id="@+id/lightValueText"
+            android:id="@+id/sensor1Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:text="Value:"
             app:layout_constraintStart_toStartOf="@+id/textView17"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/sensor2Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:text="Value:"
             app:layout_constraintStart_toStartOf="@+id/textView18"
             app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -90,11 +90,11 @@
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:text="Pressure Sensor"
+            android:layout_marginTop="32dp"
+            android:text="Proximity Sensor"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/lightValueText"
-            app:layout_constraintTop_toBottomOf="@+id/lightValueText" />
+            app:layout_constraintStart_toStartOf="@+id/sensor1Text"
+            app:layout_constraintTop_toBottomOf="@+id/sensor1AccText" />
 
         <TextView
             android:id="@+id/textView25"
@@ -106,22 +106,92 @@
             app:layout_constraintTop_toTopOf="@+id/textView21" />
 
         <TextView
-            android:id="@+id/pressureValueText"
+            android:id="@+id/sensor3Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:text="Value:"
             app:layout_constraintStart_toStartOf="@+id/textView21"
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <TextView
-            android:id="@+id/TempValueText"
+            android:id="@+id/sensor4Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Value:"
+            app:layout_constraintStart_toStartOf="@+id/textView25"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Number of Sensors on This Device"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sensor3AccText" />
+
+        <TextView
+            android:id="@+id/numSensorsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/textView25"
-            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:id="@+id/sensor1AccText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Acc:"
+            app:layout_constraintStart_toStartOf="@+id/sensor1Text"
+            app:layout_constraintTop_toBottomOf="@+id/sensor1Text" />
+
+        <TextView
+            android:id="@+id/sensor2AccText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Acc:"
+            app:layout_constraintStart_toStartOf="@+id/sensor2Text"
+            app:layout_constraintTop_toBottomOf="@+id/sensor2Text" />
+
+        <TextView
+            android:id="@+id/sensor3AccText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Acc:"
+            app:layout_constraintStart_toStartOf="@+id/sensor3Text"
+            app:layout_constraintTop_toBottomOf="@+id/sensor3Text" />
+
+        <TextView
+            android:id="@+id/sensor4AccText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Acc:"
+            app:layout_constraintStart_toStartOf="@+id/sensor4Text"
+            app:layout_constraintTop_toBottomOf="@+id/sensor4Text" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="NOTE: SENSORS MAY NOT UPDATE ON A SIMULATOR. USE A REAL PHONE."
+            android:textColor="#E91E63"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numSensorsText" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

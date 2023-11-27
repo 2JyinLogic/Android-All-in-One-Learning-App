@@ -31,6 +31,7 @@
     <string name="code_link_interactcamera">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCameraExample.java</string>
     <string name="code_link_interactcalendar">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCalendarExample.java</string>
     <string name="code_link_appspecific">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AppSpecificFilesExample.java</string>
+    <string name="code_link_sensors">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SensorsExampleActivity.java</string>
 
 
     <string name="doc_link_timepickerdialog">https://developer.android.com/reference/android/app/TimePickerDialog</string>
@@ -63,6 +64,7 @@
     <string name="doc_link_interactcamera">https://developer.android.com/training/camera/photobasics</string>
     <string name="doc_link_interactcalendar">https://developer.android.com/reference/android/provider/CalendarContract</string>
     <string name="doc_link_appspecific">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_sensors">https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview#java</string>
 
 
     <string name="alertdialog_example_desc">

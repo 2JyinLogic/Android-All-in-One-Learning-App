@@ -37,6 +37,7 @@ import com.can301.gp.demos.ProgressBarWidget;
 import com.can301.gp.demos.RadioGroupWidget;
 import com.can301.gp.demos.RequestPermissionExample;
 import com.can301.gp.demos.SeekBarWidget;
+import com.can301.gp.demos.SensorsExampleActivity;
 import com.can301.gp.demos.SwitchWidget;
 import com.can301.gp.searchbar.SearchBarMain;
 import com.can301.gp.demos.PopupWindowExample;
@@ -194,6 +195,11 @@ public class MainActivity extends AppCompatActivity {
                 "Camera Interaction",
                 getString(R.string.interactcamera_example_desc),
                 R.drawable.baseline_photo_camera_24, InteractCameraExample.class, "interactcamera"
+        ));
+        catSystemDemos.put("Sensors", new Demonstration(
+                "Sensors",
+                getString(R.string.sensors_example_desc),
+                R.drawable.ic_sensors, SensorsExampleActivity.class, "sensors"
         ));
 
         catStorageDemos.put("App-specific Files", new Demonstration(
