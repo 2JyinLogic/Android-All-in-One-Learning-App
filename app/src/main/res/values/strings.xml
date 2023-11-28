@@ -27,6 +27,7 @@
     <string name="code_link_radio1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RadioGroupWidget.java</string>
     <string name="code_link_progress1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressBarWidget.java</string>
     <string name="code_link_seek1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SeekBarWidget.java</string>
+    <string name="code_link_rating1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RatingBarWidget.java</string>
     <string name="code_link_reqpermission">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RequestPermissionExample.java</string>
     <string name="code_link_systemsettings">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/GoSystemSettingsExample.java</string>
     <string name="code_link_interactcamera">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCameraExample.java</string>
@@ -64,6 +65,7 @@
     <string name="doc_link_radio1">https://developer.android.com/reference/android/widget/RadioGroup</string>
     <string name="doc_link_progress1">https://developer.android.com/reference/android/widget/ProgressBar</string>
     <string name="doc_link_seek1">https://developer.android.com/reference/android/widget/SeekBar</string>
+    <string name="doc_link_rating1">https://developer.android.com/reference/android/widget/RatingBar</string>
     <string name="doc_link_reqpermission">https://developer.android.com/training/permissions/requesting</string>
     <string name="doc_link_systemsettings">https://developer.android.com/reference/android/provider/Settings</string>
     <string name="doc_link_interactcamera">https://developer.android.com/training/camera/photobasics</string>
@@ -73,8 +75,6 @@
     <string name="doc_link_qrcode1">https://developer.android.com/training/data-storage/app-specific</string>
     <string name="doc_link_qrcode2">https://developer.android.com/training/data-storage/app-specific</string>
     <string name="doc_link_timer">https://developer.android.com/training/data-storage/app-specific</string>
-
-
 
 
     <string name="alertdialog_example_desc">
@@ -253,6 +253,9 @@
     </string>
     <string name="timer_example_desc">
     Set a countdown and prompt after the time has ended.
+    </string>
+    <string name="rating_desc">
+    Click on the stars and make your rating, the result will be shown.
     </string>
 
 
