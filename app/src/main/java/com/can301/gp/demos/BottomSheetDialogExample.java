@@ -8,7 +8,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.can301.gp.MainActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog; // Import BottomSheetDialog
@@ -135,15 +137,30 @@ public class BottomSheetDialogExample extends AppCompatActivity {
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
     }
     //ButtomSheetDialog method
+
     private void showBottomSheetDialog() {
-        // Create a BottomSheetDialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-        bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet_dialog); // Set your layout here
-        bottomSheetDialog.setCanceledOnTouchOutside(true); // Close dialog when touching outside
+        bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet_dialog);
+        bottomSheetDialog.setCanceledOnTouchOutside(true);
 
-        // Add any additional setup and event handlers for the dialog
+        EditText inputEditText = findViewById(R.id.inputEditText);
+        Button processButton = bottomSheetDialog.findViewById(R.id.processButton);
 
-        bottomSheetDialog.show(); // Display the dialog
+        processButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userInput = inputEditText.getText().toString();
+                String processedResult = processData(userInput);
+                Toast.makeText(BottomSheetDialogExample.this, processedResult, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        bottomSheetDialog.show();
+    }
+
+    private String processData(String input) {
+        // Add your data processing logic here
+        return new StringBuilder(input).reverse().toString(); // Example: Reverse order the input string
     }
 
 }
