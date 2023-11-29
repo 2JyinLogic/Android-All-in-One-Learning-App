@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -123,10 +124,17 @@ public class RatingBarWidget extends AppCompatActivity {
 
         //effect
         RatingBar ratingBar = findViewById(R.id.ratingBar);
+        ImageView icon = findViewById(R.id.imageView);
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 Toast.makeText(getApplicationContext(),String.valueOf(rating),Toast.LENGTH_SHORT).show();
+                if(rating >= 3){
+                    icon.setImageResource(R.drawable.ic_good);
+                }
+                if(rating < 3){
+                    icon.setImageResource(R.drawable.ic_bad);
+                }
             }
         });
 

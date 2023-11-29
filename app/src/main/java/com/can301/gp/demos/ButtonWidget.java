@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -124,6 +125,8 @@ public class ButtonWidget extends AppCompatActivity {
         Button buttonLeft = findViewById(R.id.button);
         Button buttonRight = findViewById(R.id.button2);
         TextView display = findViewById(R.id.textView5);
+        ImageButton left = findViewById(R.id.imageButton);
+        ImageButton right = findViewById(R.id.imageButton2);
         buttonLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,6 +137,16 @@ public class ButtonWidget extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 display.setText("You clicked the button on the Right");
+            }
+        });
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {display.setText("You clicked the image button on the left");}
+        });
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText("You clicked the image button on the Right");
             }
         });
     }

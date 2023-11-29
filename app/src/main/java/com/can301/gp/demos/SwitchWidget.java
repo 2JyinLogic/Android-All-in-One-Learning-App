@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -123,14 +124,17 @@ public class SwitchWidget extends AppCompatActivity {
 
         Switch ASwitch = findViewById(R.id.switch1);
         TextView display = findViewById(R.id.textView6);
+        ImageView onOff = findViewById(R.id.imageView3);
         ASwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
                     display.setText("The switch is being turned on");
+                    onOff.setImageResource(R.drawable.ic_sun);
                 }
                 else {
                     display.setText("The switch is being turned off");
+                    onOff.setImageResource(R.drawable.ic_moon);
                 }
             }
         });

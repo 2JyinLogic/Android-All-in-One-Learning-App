@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -121,19 +122,25 @@ public class RadioGroupWidget extends AppCompatActivity {
         Button docLinkBtn = findViewById(R.id.docLink);
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
 
+
+        //effect
         RadioGroup AradioGroup = findViewById(R.id.radioGroup);
         TextView display = findViewById(R.id.textView8);
+        ImageView answer = findViewById(R.id.imageView2);
         AradioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId == R.id.radioButton){
-                    display.setText("You have chosen radio button 1");
+                    display.setText("You have chosen a wrong answer");
+                    answer.setImageResource(R.drawable.ic_bad);
                 }
                 else if(checkedId == R.id.radioButton2){
-                    display.setText("You have chosen radio button 2");
+                    display.setText("You have chosen the correctanswer");
+                    answer.setImageResource(R.drawable.ic_good);
                 }
                 else if(checkedId == R.id.radioButton5){
-                    display.setText("You have chosen radio button 3");
+                    display.setText("You have chosen a wrong answer");
+                    answer.setImageResource(R.drawable.ic_bad);
                 }
             }
         });

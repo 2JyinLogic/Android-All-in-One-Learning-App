@@ -1,6 +1,8 @@
 Button buttonLeft = findViewById(R.id.button);
-        Button buttonRight = findViewById(R.id.button);
+        Button buttonRight = findViewById(R.id.button2);
         TextView display = findViewById(R.id.textView5);
+        ImageButton left = findViewById(R.id.imageButton);
+        ImageButton right = findViewById(R.id.imageButton2);
         buttonLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -11,5 +13,15 @@ Button buttonLeft = findViewById(R.id.button);
             @Override
             public void onClick(View v) {
                 display.setText("You clicked the button on the Right");
+            }
+        });
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {display.setText("You clicked the image button on the left");}
+        });
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                display.setText("You clicked the image button on the Right");
             }
         });

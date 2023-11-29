@@ -214,7 +214,7 @@
        Select a date from a calendar view.
     </string>
     <string name="button_desc">
-       Button is a common type of widget which is the simplest way to interact with an application. Users can click it in order to transmit their instructions. Click on the button and the change will be shown.
+       Button is a common type of widget which is the simplest way to interact with an application. Users can click it in order to transmit their instructions. The buttons can also be replaced by images. Click on the button and the change will be shown.
     </string>
     <string name="radio_desc">
        Radio group is a group of buttons, but only one button of them can be chosen. Choose one button and the change will be shown.
