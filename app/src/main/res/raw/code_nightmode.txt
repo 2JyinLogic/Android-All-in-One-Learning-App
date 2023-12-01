@@ -1,4 +1,7 @@
+    // Change this to exactly the string as in the AndroidManifest.xml
     public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleDarkMode";
+    private SwitchCompat switchCompat;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -6,29 +9,37 @@
         // Change here to the layout name
         setContentView(R.layout.activity_effect_darkmode);
 
-        Switch switcher = findViewById(R.id.nightModeSwitch);
+        textView = findViewById(R.id.effectExampleName);
+        switchCompat = findViewById(R.id.modeSwitch);
 
-        switcher.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // switch on night mode
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    buttonView.setText("Night Mode");
+                    buttonView.setText("Night Mode  ");
+                    buttonView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
+                    textView.setBackgroundColor(ContextCompat.getColor(EffectExampleNightMode.this, R.color.lightpurple));
+
                 } else {
                     // switch off night mode
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    buttonView.setText("Light Mode");
+                    buttonView.setText("Light Mode  ");
+                    buttonView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
+
                 }
             }
         });
 
         // Allow to stay in night mode
         boolean isNightModeOn = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES;
-        switcher.setChecked(isNightModeOn);
+        switchCompat.setChecked(isNightModeOn);
         if (isNightModeOn) {
-            switcher.setText("Night Mode");
+            switchCompat.setText("Night Mode  ");
+            switchCompat.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
         } else {
-            switcher.setText("Light Mode");
+            switchCompat.setText("Light Mode  ");
+            switchCompat.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
         }
     }

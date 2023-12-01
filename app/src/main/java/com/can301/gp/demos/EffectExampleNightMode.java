@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -20,6 +21,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.content.ContextCompat;
 
 import com.can301.gp.Demonstration;
 import com.can301.gp.MainActivity;
@@ -90,6 +93,8 @@ public class EffectExampleNightMode extends AppCompatActivity {
 
     // Change this to exactly the string as in the AndroidManifest.xml
     public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleDarkMode";
+    private SwitchCompat switchCompat;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +102,8 @@ public class EffectExampleNightMode extends AppCompatActivity {
         // Change here to the layout name
         setContentView(R.layout.activity_effect_darkmode);
 
-        Switch switcher = findViewById(R.id.nightModeSwitch);
+        textView = findViewById(R.id.effectExampleName);
+        switchCompat = findViewById(R.id.modeSwitch);
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
         effectButton.setEnabled(false);
@@ -130,28 +136,35 @@ public class EffectExampleNightMode extends AppCompatActivity {
         Button docLinkBtn = findViewById(R.id.docLink);
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
 
-        switcher.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // switch on night mode
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    buttonView.setText("Night Mode");
+                    buttonView.setText("Night Mode  ");
+                    buttonView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
+                    textView.setBackgroundColor(ContextCompat.getColor(EffectExampleNightMode.this, R.color.lightpurple));
+
                 } else {
                     // switch off night mode
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    buttonView.setText("Light Mode");
+                    buttonView.setText("Light Mode  ");
+                    buttonView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
+
                 }
             }
         });
 
         // Allow to stay in night mode
         boolean isNightModeOn = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES;
-        switcher.setChecked(isNightModeOn);
+        switchCompat.setChecked(isNightModeOn);
         if (isNightModeOn) {
-            switcher.setText("Night Mode");
+            switchCompat.setText("Night Mode  ");
+            switchCompat.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
         } else {
-            switcher.setText("Light Mode");
+            switchCompat.setText("Light Mode  ");
+            switchCompat.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
         }
     }
 
