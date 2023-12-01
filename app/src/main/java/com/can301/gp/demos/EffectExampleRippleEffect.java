@@ -1,15 +1,19 @@
 package com.can301.gp.demos;
 
 
+import android.animation.Animator;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +25,8 @@ import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 import com.skyfishjy.library.RippleBackground;
+
+import java.lang.reflect.Field;
 
 public class EffectExampleRippleEffect extends AppCompatActivity {
 
@@ -110,7 +116,6 @@ public class EffectExampleRippleEffect extends AppCompatActivity {
         rippleBackground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("aaa","aaa");
                 rippleBackground.stopRippleAnimation();
             }
         });
@@ -142,5 +147,4 @@ public class EffectExampleRippleEffect extends AppCompatActivity {
         Button docLinkBtn = findViewById(R.id.docLink);
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
     }
-
 }

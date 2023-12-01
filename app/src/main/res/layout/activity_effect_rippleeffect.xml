@@ -48,12 +48,12 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rippleEffect"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/effectContainer"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rippleEffectTextView">
+
 
             <com.skyfishjy.library.RippleBackground
                 android:id="@+id/rippleBackground"
@@ -62,16 +62,35 @@
                 app:rb_radius="32dp"
                 app:rb_rippleAmount="4"
                 app:rb_duration="3000"
-                app:rb_scale="6">
+                app:rb_scale="6"
+                app:rb_color="@color/darkpurple">
+
                 <ImageView
                     android:id="@+id/rippleImage"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ripple_image"/>
+                    android:src="@drawable/ripple_image" />
             </com.skyfishjy.library.RippleBackground>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/editView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rippleEffect"
+            app:layout_constraintBottom_toBottomOf="@+id/effectContainer">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click the black area to halt."
+                android:textSize="20dp"
+                android:gravity="center" />
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
