@@ -2,31 +2,37 @@ package com.can301.gp.demos;
 
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.can301.gp.Demonstration;
 import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.github.ybq.android.spinkit.SpinKitView;
+import com.jsibbold.zoomage.ZoomageView;
 import com.skyfishjy.library.RippleBackground;
 
 public class EffectExampleZooming extends AppCompatActivity {
@@ -49,6 +55,7 @@ public class EffectExampleZooming extends AppCompatActivity {
     /**
      * Opens the browser with the link to the documentation
      * (execute when the user clicks the view button)
+     *
      * @param link to the documentation
      */
     private void viewDocumentationPage(String link) {
@@ -59,8 +66,7 @@ public class EffectExampleZooming extends AppCompatActivity {
         // API level 30. To make the kind of packages visible, declare the queries in the manifest.
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
-        }
-        else {
+        } else {
             // Show the user that it cannot be done.
             // See https://developer.android.com/develop/ui/views/components/dialogs
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -80,6 +86,7 @@ public class EffectExampleZooming extends AppCompatActivity {
 
     /**
      * Go home when the user clicks the home button.
+     *
      * @param view
      */
     public void goHome(View view) {
@@ -91,9 +98,9 @@ public class EffectExampleZooming extends AppCompatActivity {
 
     // Change this to exactly the string as in the AndroidManifest.xml
     public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleZooming";
-    private ImageView image;
-    private ScaleGestureDetector scaleGestureDetector;
-    private float scaleFactor = 1.0f;
+    private ViewFlipper viewFlipper;
+    private ImageButton nextBtn, prevBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,14 +108,46 @@ public class EffectExampleZooming extends AppCompatActivity {
         setContentView(R.layout.activity_zooming);
 
 
-        image = findViewById(R.id.zoomingImage);
-        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+        viewFlipper = findViewById(R.id.viewFlipper);
+        nextBtn = findViewById(R.id.nextBtn);
+        prevBtn = findViewById(R.id.prevBtn);
+
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
         effectButton.setEnabled(false);
         codeButton.setEnabled(true);
 
-        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int currentIndex = viewFlipper.getDisplayedChild();
+                View currentView = viewFlipper.getChildAt(currentIndex);
+
+                if (currentView instanceof ZoomageView) {
+                    ZoomageView currentImageView = (ZoomageView) currentView;
+
+                    // Reset the scale to the initial value
+                    currentImageView.reset();
+                }
+                viewFlipper.showNext();
+            }
+        });
+
+        prevBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int currentIndex = viewFlipper.getDisplayedChild();
+                View currentView = viewFlipper.getChildAt(currentIndex);
+
+                if (currentView instanceof ZoomageView) {
+                    ZoomageView currentImageView = (ZoomageView) currentView;
+
+                    // Reset the scale to the initial value
+                    currentImageView.reset();
+                }
+                viewFlipper.showPrevious();
+            }
+        });
 
         // Handling parameters
         Intent inIntent = getIntent();
@@ -136,23 +175,6 @@ public class EffectExampleZooming extends AppCompatActivity {
 
         Button docLinkBtn = findViewById(R.id.docLink);
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
-    }
-
-    // Detect touch on the entire view
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return scaleGestureDetector.onTouchEvent(event);
-    }
-
-    // Setup the scale factor and apply to the image
-    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
-        @Override
-        public boolean onScale(@NonNull ScaleGestureDetector detector) {
-            scaleFactor *= scaleGestureDetector.getScaleFactor();
-            image.setScaleX(scaleFactor);
-            image.setScaleY(scaleFactor);
-            return true;
-        }
     }
 
 }
