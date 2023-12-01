@@ -48,6 +48,7 @@ public class EffectExampleDragView extends AppCompatActivity {
     /**
      * Opens the browser with the link to the documentation
      * (execute when the user clicks the view button)
+     *
      * @param link to the documentation
      */
     private void viewDocumentationPage(String link) {
@@ -58,8 +59,7 @@ public class EffectExampleDragView extends AppCompatActivity {
         // API level 30. To make the kind of packages visible, declare the queries in the manifest.
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
-        }
-        else {
+        } else {
             // Show the user that it cannot be done.
             // See https://developer.android.com/develop/ui/views/components/dialogs
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -79,6 +79,7 @@ public class EffectExampleDragView extends AppCompatActivity {
 
     /**
      * Go home when the user clicks the home button.
+     *
      * @param view
      */
     public void goHome(View view) {
@@ -90,7 +91,7 @@ public class EffectExampleDragView extends AppCompatActivity {
 
     // Change this to exactly the string as in the AndroidManifest.xml
     public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleDragView";
-    private ImageView imageView;
+    private ImageView imageView1, imageView2, imageView3, imageView4;
     private float xDown = 0, yDown = 0;
 
     @Override
@@ -99,18 +100,55 @@ public class EffectExampleDragView extends AppCompatActivity {
         // Change here to the layout name
         setContentView(R.layout.activity_dragging);
 
-        imageView = findViewById(R.id.draggingImage);
-
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
         effectButton.setEnabled(false);
         codeButton.setEnabled(true);
 
+        imageView1 = findViewById(R.id.draggingImage1);
+        imageView2 = findViewById(R.id.draggingImage2);
+        imageView3 = findViewById(R.id.draggingImage3);
+        imageView4 = findViewById(R.id.draggingImage4);
+
+        setDragListener(imageView1);
+        setDragListener(imageView2);
+        setDragListener(imageView3);
+        setDragListener(imageView4);
+
+        // Handling parameters
+        Intent inIntent = getIntent();
+        if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_TITLE_KEY)) {
+            throw new RuntimeException("Give me the effect title!");
+        }
+        if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY)) {
+            throw new RuntimeException("Give me the code ID!");
+        }
+        demoTitle = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_TITLE_KEY);
+        codeId = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY);
+
+        // Set information about this effect
+        TextView effectTextView = findViewById(R.id.effectExampleName);
+        effectTextView.setText(demoTitle);
+
+        // Go to the corresponding code page
+        codeButton.setOnClickListener(v -> goToCodePage());
+
+        // Get the documentation link
+        Resources resources = getResources();
+        // equivalent to R.string.doclinkstringid
+        int docLinkStringId = resources.getIdentifier(Demonstration.codeIdToDocLinkStringId(codeId), "string", getPackageName());
+        String docLinkString = getString(docLinkStringId);
+
+        Button docLinkBtn = findViewById(R.id.docLink);
+        docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
+    }
+
+    private void setDragListener(ImageView imageView) {
         imageView.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getActionMasked()){
+                switch (event.getActionMasked()) {
                     case MotionEvent.ACTION_DOWN:
                         xDown = event.getX();
                         yDown = event.getY();
@@ -146,32 +184,5 @@ public class EffectExampleDragView extends AppCompatActivity {
             }
         });
 
-        // Handling parameters
-        Intent inIntent = getIntent();
-        if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_TITLE_KEY)) {
-            throw new RuntimeException("Give me the effect title!");
-        }
-        if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY)) {
-            throw new RuntimeException("Give me the code ID!");
-        }
-        demoTitle = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_TITLE_KEY);
-        codeId = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY);
-
-        // Set information about this effect
-        TextView effectTextView = findViewById(R.id.effectExampleName);
-        effectTextView.setText(demoTitle);
-
-        // Go to the corresponding code page
-        codeButton.setOnClickListener(v -> goToCodePage());
-
-        // Get the documentation link
-        Resources resources = getResources();
-        // equivalent to R.string.doclinkstringid
-        int docLinkStringId = resources.getIdentifier(Demonstration.codeIdToDocLinkStringId(codeId), "string", getPackageName());
-        String docLinkString = getString(docLinkStringId);
-
-        Button docLinkBtn = findViewById(R.id.docLink);
-        docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
     }
-
 }
