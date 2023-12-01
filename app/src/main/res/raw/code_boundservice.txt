@@ -124,3 +124,123 @@ public class BoundServiceExampleService extends Service {
         player.release();
     }
 }
+
+public class BoundServiceExample extends AppCompatActivity {
+
+    void startAndBindToExampleService() {
+        Intent intent = new Intent(this, BoundServiceExampleService.class);
+
+        // Start the service.
+        if (!started) {
+            startService(intent);
+        }
+
+        // If not bound to the service,
+        // then bind to it.
+        if (!bound && binder == null) {
+
+            bindService(
+                intent,
+                myConnection,
+                // declare that the service's important is higher than the activity so that
+                // the system will try to keep the service even if the activity is killed.
+                Context.BIND_ABOVE_CLIENT);
+
+            bound = true;
+        }
+
+        started = true;
+        startSeekbarUpdatingThread();
+    }
+
+    /**
+     * Pauses or resumes the music play, depending on the current state.
+     * Also updates the button's appearance.
+     */
+    void pauseResume() {
+        if (bound && binder != null) {
+            boolean playing = binder.pauseResume();
+
+            // update the UI
+            if(playing) {
+                pauseResumeBtn.setText("Pause");
+                pauseResumeBtn.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_music_pause, 0, 0);
+            }
+            else {
+                pauseResumeBtn.setText("Resume");
+                pauseResumeBtn.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_music_resume, 0, 0);
+            }
+        }
+    }
+
+    void stopExampleService() {
+        // unbind first
+        unBindExampleService();
+
+        Intent intent = new Intent(this, BoundServiceExampleService.class);
+        stopService(intent);
+
+        bound = false;
+        started = false;
+
+        // reset this activity to avoid any problem.
+        this.recreate();
+    }
+
+    void unBindExampleService() {
+        if(bound && binder != null) {
+            unbindService(myConnection);
+        }
+        bound = false;
+        binder = null;
+    }
+
+    void startSeekbarUpdatingThread() {
+        new Thread(
+            () -> {
+                while (bound) {
+                    if(binder != null) {
+                        int prog = progressSeekBar.getMin() + (int)(binder.getProgress() *
+                                (progressSeekBar.getMax() - progressSeekBar.getMin()));
+                        runOnUiThread(() -> progressSeekBar.setProgress(prog));
+                    }
+
+                    // Update 10 times per second
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        ).start();
+    }
+
+    /**
+     * Remember to unbind on stop
+     */
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unBindExampleService();
+    }
+
+    /**
+     * And rebind on start
+     */
+    protected void onStart() {
+        super.onStart();
+        if (!bound && binder == null) {
+            Intent intent = new Intent(this, BoundServiceExampleService.class);
+            bindService(
+                    intent,
+                    myConnection,
+                    // declare that the service's important is higher than the activity so that
+                    // the system will try to keep the service even if the activity is killed.
+                    Context.BIND_ABOVE_CLIENT);
+
+            bound = true;
+        }
+    }
+
+}

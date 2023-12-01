@@ -170,7 +170,10 @@ public class BoundServiceExample extends AppCompatActivity {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                     float prog = (float)progress / (float)(seekBar.getMax() - seekBar.getMin());
-                    binder.goTo(prog);
+                    if(binder != null)
+                    {
+                        binder.goTo(prog);
+                    }
                 }
 
                 @Override
@@ -228,11 +231,17 @@ public class BoundServiceExample extends AppCompatActivity {
     }
 
     void stopExampleService() {
+        // unbind first
+        unBindExampleService();
+
         Intent intent = new Intent(this, BoundServiceExampleService.class);
         stopService(intent);
 
         bound = false;
         started = false;
+
+        // reset this activity to avoid any problem.
+        this.recreate();
     }
 
     void unBindExampleService() {
@@ -265,19 +274,19 @@ public class BoundServiceExample extends AppCompatActivity {
     }
 
     /**
-     * Remember to unbind on pause
+     * Remember to unbind on stop
      */
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         unBindExampleService();
     }
 
     /**
-     * And rebind on resume
+     * And rebind on start
      */
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         if (!bound && binder == null) {
             Intent intent = new Intent(this, BoundServiceExampleService.class);
             bindService(

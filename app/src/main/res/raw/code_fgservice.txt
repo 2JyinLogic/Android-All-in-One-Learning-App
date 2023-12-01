@@ -170,7 +170,7 @@ public class FGServiceExampleService extends Service {
     }
 
     /**
-     * Builds the PendingIntent for the user's click on DISSMISS on the notification.
+     * Builds the PendingIntent for the user's click on DISMISS on the notification.
      * @return the PendingIntent built
      */
     PendingIntent buildDismissMessageIntent() {
@@ -188,5 +188,18 @@ public class FGServiceExampleService extends Service {
      */
     void stop() {
         stopSelf();
+    }
+}
+
+public class FGServiceExample extends AppCompatActivity {
+
+    void startExampleService() {
+        Intent intent = new Intent(this, FGServiceExampleService.class);
+        ContextCompat.startForegroundService(this, intent);
+    }
+
+    void stopExampleService() {
+        Intent intent = new Intent(this, FGServiceExampleService.class);
+        stopService(intent);
     }
 }

@@ -161,6 +161,9 @@ public class BGServiceExample extends AppCompatActivity {
     void stopExampleService() {
         BGServiceExampleService.stopService = true;
         stopService(new Intent(this, BGServiceExampleService.class));
+
+        // recreate this activity to avoid problems
+        this.recreate();
     }
 
 }
