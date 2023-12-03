@@ -35,6 +35,8 @@ android {
 
 dependencies {
 
+    implementation ("com.jsibbold:zoomage:1.3.1")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("com.github.MikeOrtiz:TouchImageView:1.4.1")
     implementation ("com.github.ybq:Android-SpinKit:1.4.0") // for fancy loading anifation
     implementation("com.github.lzyzsd:circleprogress:1.2.1") // for progress bar loading

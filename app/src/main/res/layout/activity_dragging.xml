@@ -49,17 +49,52 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="400dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/draggingTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintVertical_bias="0.567">
 
             <ImageView
-                android:id="@+id/draggingImage"
+                android:id="@+id/draggingImage1"
                 android:layout_width="120dp"
-                android:layout_height="160dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/cat" />
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/cat1" />
+
+            <ImageView
+                android:id="@+id/draggingImage2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="55dp"
+                android:src="@drawable/cat2" />
+
+            <ImageView
+                android:id="@+id/draggingImage3"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/cat5" />
+
+            <ImageView
+                android:id="@+id/draggingImage4"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="55dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/cat3" />
         </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

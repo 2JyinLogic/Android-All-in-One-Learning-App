@@ -1,32 +1,45 @@
-    public static final String EFFECT_ACTIVITY_NAME = ".demos.EffectExampleZooming";
-    private ImageView image;
-    private ScaleGestureDetector scaleGestureDetector;
-    private float scaleFactor = 1.0f;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // Change here to the layout name
-        setContentView(R.layout.activity_effect_zooing);
+        private ViewFlipper viewFlipper;
+        private ImageButton nextBtn, prevBtn;
 
-        image = findViewById(R.id.zoomingImage);
-        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
-
-        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
-    }
-
-    // Detect touch on the entire view
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return scaleGestureDetector.onTouchEvent(event);
-    }
-
-    // Setup the scale factor and apply to the image
-    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
         @Override
-        public boolean onScale(@NonNull ScaleGestureDetector detector) {
-            scaleFactor *= scaleGestureDetector.getScaleFactor();
-            image.setScaleX(scaleFactor);
-            image.setScaleY(scaleFactor);
-            return true;
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            // Change here to the layout name
+            setContentView(R.layout.activity_zooming);
+
+            viewFlipper = findViewById(R.id.viewFlipper);
+            nextBtn = findViewById(R.id.nextBtn);
+            prevBtn = findViewById(R.id.prevBtn);
+
+            nextBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int currentIndex = viewFlipper.getDisplayedChild();
+                    View currentView = viewFlipper.getChildAt(currentIndex);
+
+                    if (currentView instanceof ZoomageView) {
+                        ZoomageView currentImageView = (ZoomageView) currentView;
+
+                        // Reset the scale to the initial value
+                        currentImageView.reset();
+                    }
+                    viewFlipper.showNext();
+                }
+            });
+
+            prevBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int currentIndex = viewFlipper.getDisplayedChild();
+                    View currentView = viewFlipper.getChildAt(currentIndex);
+
+                    if (currentView instanceof ZoomageView) {
+                        ZoomageView currentImageView = (ZoomageView) currentView;
+
+                        // Reset the scale to the initial value
+                        currentImageView.reset();
+                    }
+                    viewFlipper.showPrevious();
+                }
+            });
         }
-    }
