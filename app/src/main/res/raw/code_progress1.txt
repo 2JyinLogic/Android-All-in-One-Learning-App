@@ -1,0 +1,31 @@
+EditText editText = findViewById(R.id.editTextText2);
+        ProgressBar horProgressBar = findViewById(R.id.progressBar2);
+        ProgressBar cirProgressBar = findViewById(R.id.progressBar);
+        Button button3 = findViewById(R.id.button3);
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = editText.getText().toString();
+                if(TextUtils.isEmpty(s)){
+                    s = "0";
+                }
+                horProgressBar.setProgress(Integer.valueOf(s));
+                cirProgressBar.setProgress(Integer.valueOf(s));
+            }
+        });
+
+        Switch detSwitch = findViewById(R.id.determinateSwitch);
+
+        detSwitch.setOnCheckedChangeListener(
+            (btn, checked) -> {
+                if(checked) {
+                    horProgressBar.setIndeterminate(false);
+                    cirProgressBar.setIndeterminate(false);
+                }
+                else {
+                    horProgressBar.setIndeterminate(true);
+                    cirProgressBar.setIndeterminate(true);
+                }
+            }
+        );
