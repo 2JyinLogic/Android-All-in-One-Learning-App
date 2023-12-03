@@ -135,7 +135,7 @@ public class RadioGroupWidget extends AppCompatActivity {
                     answer.setImageResource(R.drawable.ic_bad);
                 }
                 else if(checkedId == R.id.radioButton2){
-                    display.setText("You have chosen the correctanswer");
+                    display.setText("You have chosen the correct answer");
                     answer.setImageResource(R.drawable.ic_good);
                 }
                 else if(checkedId == R.id.radioButton5){

@@ -130,7 +130,7 @@ public class SeekBarWidget extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                display1.setText("The contnt of the first seek bar is "+ String.valueOf(progress));
+                display1.setText("The content of the first seek bar is "+ String.valueOf(progress));
             }
 
             @Override
@@ -146,7 +146,7 @@ public class SeekBarWidget extends AppCompatActivity {
         seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                display2.setText("The contnt of the second seek bar is "+ String.valueOf(progress));
+                display2.setText("The content of the second seek bar is "+ String.valueOf(progress));
             }
 
             @Override
