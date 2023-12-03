@@ -18,6 +18,8 @@ import com.can301.gp.Demonstration;
 import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
+import android.os.AsyncTask;
+import android.widget.Toast;
 
 public class ProgressDialogExample extends AppCompatActivity {
     private String demoTitle;
@@ -25,7 +27,7 @@ public class ProgressDialogExample extends AppCompatActivity {
     // and for this activity to load the documentation link
     private String codeId;
     private ProgressDialog progressDialog;
-
+    private MockNetworkRequest currentTask;
     void goToCodePage() {
         Intent intent = new Intent(this, CodePage.class);
 
@@ -89,9 +91,9 @@ public class ProgressDialogExample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progressdialog_example);
 
-        //progressdialogButton
+        // Trigger the mock network request on button click
         Button progressDialogButton = findViewById(R.id.progressdialogButton);
-        progressDialogButton.setOnClickListener(v -> showProgressDialog());
+        progressDialogButton.setOnClickListener(v -> startMockNetworkRequest());
 
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
@@ -135,20 +137,67 @@ public class ProgressDialogExample extends AppCompatActivity {
      * It also registers an onCancelListener to perform specific actions when the ProgressDialog is canceled,
      * such as canceling network requests or other long-running operations.
      */
+
+
+    // Method to start the mock network request
+    private void startMockNetworkRequest() {
+        currentTask = new MockNetworkRequest();
+        showProgressDialog(); // Show the ProgressDialog with a Cancel button
+        currentTask.execute(); // Execute the AsyncTask
+    }
+
+    // Method to show ProgressDialog with a Cancel button
     private void showProgressDialog() {
-        if (progressDialog == null) {
-            progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("Loading..."); // Set loading message
-            progressDialog.setCancelable(true); // Set as cancelable
-            progressDialog.setOnCancelListener(dialog -> {
-                // Perform corresponding actions when the ProgressDialog is canceled
-                // For example: Cancel network requests or other long-running operations
-                // You can add your cancellation logic here
-                dismissProgressDialog(); // Close the ProgressDialog
-            });
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(true); // Allow the dialog to be cancelled
+
+        progressDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (currentTask != null && !currentTask.isCancelled()) {
+                    currentTask.cancel(true); // Cancel the AsyncTask
+                }
+            }
+        });
+        progressDialog.show();
+    }
+
+    // New inner class to simulate a network request
+    private class MockNetworkRequest extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... voids) {
+            try {
+                for (int i = 0; i < 5; i++) {
+                    if (isCancelled()) {
+                        return "Cancelled"; // Return immediately if cancelled
+                    }
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                return "Interrupted"; // Handle interrupted exception
+            }
+            return "Completed";
+        }
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
         }
 
-        progressDialog.show();
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            dismissProgressDialog(); // Dismiss the ProgressDialog when the task is finished
+            Toast.makeText(ProgressDialogExample.this, result, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected void onCancelled(String result) {
+            super.onCancelled(result);
+            dismissProgressDialog(); // Dismiss the ProgressDialog if the task is cancelled
+            Toast.makeText(ProgressDialogExample.this, "Operation cancelled", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**

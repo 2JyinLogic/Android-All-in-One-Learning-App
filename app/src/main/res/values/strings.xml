@@ -208,10 +208,10 @@
     Let BottomSheetDialog support data handling functions, such as getting user input, performing some logical operations, and displaying the results. Here, we use Example: Reverse order the input string
     </string>
     <string name="progressdialog_example_desc">
-       ProgressDialog used to display a progress bar or loading indicator, typically used when performing a long task to notify the user that the task is in progress.
+      This `ProgressDialogExample` class in Android demonstrates the use of `ProgressDialog` to indicate a loading process. It includes an `AsyncTask` named `MockNetworkRequest` to simulate a network request. The class allows users to cancel the ongoing task using a "Cancel" button on the dialog. It showcases handling asynchronous tasks in the background while providing feedback to the user through a UI element, ensuring a responsive and interactive application experience. The class also handles various other user interactions, such as navigating to different pages and viewing documentation.
     </string>
     <string name="timepickerdialog_example_desc">
-       Select a date from a calendar view.
+      This function triggers the display of a TimePickerDialog interface, which allows the user to select a time. The dialog is initialized with the current system time as its default selection. It also adapts to the user\'s preference for the time format (either 24-hour or AM/PM format) based on the state of a Switch present in the layout.
     </string>
     <string name="button_desc">
        Button is a common type of widget which is the simplest way to interact with an application. Users can click it in order to transmit their instructions. The buttons can also be replaced by images. Click on the button and the change will be shown.
@@ -257,6 +257,10 @@
     <string name="rating_desc">
     Click on the stars and make your rating, the result will be shown.
     </string>
+    <string name="datepickerdialog_example_desc">
+   This function is responsible for displaying a DatePickerDialog to the user. When invoked, it presents a calendar-style date picker interface, allowing the user to select a specific date. The function initializes the date picker with the current date as default, but this can be customized as needed.
+    </string>
 
+    <string name="switch_24_hour_format">24 Hour Format</string>
 
 </resources>
