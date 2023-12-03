@@ -36,15 +36,59 @@
         app:layout_constraintTop_toBottomOf="@+id/effectExampleName"
         app:layout_constraintVertical_bias="0.0">
 
-        <Button
-            android:id="@+id/datepickerDialogButton"
+        <TextView
+            android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Show DatePickerDialog "
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/datepickerdialog_example_desc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- Button for selecting start date -->
+        <Button
+            android:id="@+id/startDateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Start Date"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Button for selecting end date -->
+        <Button
+            android:id="@+id/endDateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select End Date"
+            app:layout_constraintTop_toBottomOf="@id/startDateButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/selectedStartDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected Start Date: None"
+            app:layout_constraintTop_toBottomOf="@+id/endDateButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/selectedEndDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected End Date: None"
+            app:layout_constraintTop_toBottomOf="@+id/selectedStartDateText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button

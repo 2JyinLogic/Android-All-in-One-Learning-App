@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.app.TimePickerDialog;//import
+import android.app.TimePickerDialog;
 import java.util.Calendar;
 
 import androidx.appcompat.app.AlertDialog;
@@ -19,7 +19,7 @@ import com.can301.gp.Demonstration;
 import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
-
+import android.widget.Switch;
 public class TimePickerDialogExample extends AppCompatActivity {
     private String demoTitle;
     // codeId is needed for the code page to load the corresponding code
@@ -136,17 +136,22 @@ public class TimePickerDialogExample extends AppCompatActivity {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
 
+        // Find the switch in the layout
+        Switch formatSwitch = findViewById(R.id.switch_time_format);
+
         // Create and display the TimePickerDialog
-        new TimePickerDialog(this,
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                 (view, hourOfDay, minuteOfHour) -> {
                     // Handle the logic after time selection here
                     // For example: Display the selected time
-                    // String selectedTime = hourOfDay + ":" + minuteOfHour;
+                    //String selectedTime = hourOfDay + ":" + minuteOfHour;
                 },
                 hour,
                 minute,
-                true  // Whether it's in 24-hour format
-        ).show();
+                formatSwitch.isChecked()  // Use the switch's state for 24-hour format
+        );
+
+        timePickerDialog.show();
     }
 
 

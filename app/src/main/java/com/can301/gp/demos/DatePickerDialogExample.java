@@ -18,7 +18,6 @@ import com.can301.gp.MainActivity;
 import com.can301.gp.R;
 import com.can301.gp.codepage.CodePage;
 import android.app.DatePickerDialog;
-import android.widget.DatePicker;
 import java.util.Calendar;
 
 public class DatePickerDialogExample extends AppCompatActivity {
@@ -27,6 +26,9 @@ public class DatePickerDialogExample extends AppCompatActivity {
     // codeId is needed for the code page to load the corresponding code
     // and for this activity to load the documentation link
     private String codeId;
+    private Calendar startDate = Calendar.getInstance();
+    private Calendar endDate = Calendar.getInstance();
+
     public static final String EFFECT_ACTIVITY_NAME = ".demos.DatePickerDialogExample";
     void goToCodePage() {
         Intent intent = new Intent(this, CodePage.class);
@@ -87,10 +89,13 @@ public class DatePickerDialogExample extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datepickerdialog_example);
-        //DatePickerDialogButton
-        Button datapickerDialogButton = findViewById(R.id.datepickerDialogButton);
-        datapickerDialogButton.setOnClickListener(v -> showDatePickerDialog());
 
+        // Initialize buttons for start and end date
+        Button startDateButton = findViewById(R.id.startDateButton);
+        Button endDateButton = findViewById(R.id.endDateButton);
+
+        startDateButton.setOnClickListener(v -> showStartDatePickerDialog());
+        endDateButton.setOnClickListener(v -> showEndDatePickerDialog());
 
         Button effectButton = findViewById(R.id.effectBottomButton);
         Button codeButton = findViewById(R.id.codeBottomButton);
@@ -125,23 +130,64 @@ public class DatePickerDialogExample extends AppCompatActivity {
         docLinkBtn.setOnClickListener(v -> viewDocumentationPage(docLinkString));
     }
     // New method to show DatePickerDialog
-    private void showDatePickerDialog() {
-        // Get Current Date
-        final Calendar c = Calendar.getInstance();
-        int mYear = c.get(Calendar.YEAR); // current year
-        int mMonth = c.get(Calendar.MONTH); // current month
-        int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
 
-        // Date Picker Dialog
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year,
-                                          int monthOfYear, int dayOfMonth) {
-                        // Do something with the date chosen by the user
-                    }
-                }, mYear, mMonth, mDay);
-        datePickerDialog.show();
+    private void showStartDatePickerDialog() {
+        DatePickerDialog startDatePicker = new DatePickerDialog(this, (view, year, month, dayOfMonth) -> {
+            startDate.set(Calendar.YEAR, year);
+            startDate.set(Calendar.MONTH, month);
+            startDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+            // Format the date as you like, e.g., "dd/MM/yyyy"
+            String dateString = dayOfMonth + "/" + (month + 1) + "/" + year; // Adding 1 to month as Calendar.MONTH is zero-based
+            updateStartDateInView(dateString);
+        }, startDate.get(Calendar.YEAR), startDate.get(Calendar.MONTH), startDate.get(Calendar.DAY_OF_MONTH));
+
+        startDatePicker.show();
     }
+
+    // Helper method to update the TextView with the selected start date
+    private void updateStartDateInView(String dateString) {
+        TextView selectedStartDateTextView = findViewById(R.id.selectedStartDateText);
+        selectedStartDateTextView.setText("Selected Start Date: " + dateString);
+    }
+
+    private void showEndDatePickerDialog() {
+        DatePickerDialog endDatePicker = new DatePickerDialog(this, (view, year, month, dayOfMonth) -> {
+            endDate.set(Calendar.YEAR, year);
+            endDate.set(Calendar.MONTH, month);
+            endDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+            // Format the date as you like, e.g., "dd/MM/yyyy"
+            String dateString = dayOfMonth + "/" + (month + 1) + "/" + year; // Adding 1 to month as Calendar.MONTH is zero-based
+            updateEndDateInView(dateString);
+        }, endDate.get(Calendar.YEAR), endDate.get(Calendar.MONTH), endDate.get(Calendar.DAY_OF_MONTH));
+
+        endDatePicker.show();
+    }
+
+    // Helper method to update the TextView with the selected end date
+    private void updateEndDateInView(String dateString) {
+        TextView selectedEndDateTextView = findViewById(R.id.selectedEndDateText);
+        selectedEndDateTextView.setText("Selected End Date: " + dateString);
+    }
+
+//    private void showDatePickerDialog() {
+//        // Get Current Date
+//        final Calendar c = Calendar.getInstance();
+//        int mYear = c.get(Calendar.YEAR); // current year
+//        int mMonth = c.get(Calendar.MONTH); // current month
+//        int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
+//
+//        // Date Picker Dialog
+//        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+//                new DatePickerDialog.OnDateSetListener() {
+//                    @Override
+//                    public void onDateSet(DatePicker view, int year,
+//                                          int monthOfYear, int dayOfMonth) {
+//                        // Do something with the date chosen by the user
+//                    }
+//                }, mYear, mMonth, mDay);
+//        datePickerDialog.show();
+//    }
 
 }
