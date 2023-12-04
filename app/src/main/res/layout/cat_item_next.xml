@@ -6,13 +6,24 @@
     android:layout_margin="10dp"
     android:background="@drawable/bg_sharp_white"
     android:layout_height="60dp">
+
     <TextView
 
-        android:layout_gravity="center"
+        android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="20dp"
-        android:id="@+id/tv_text"/>
+        android:layout_gravity="center"
+        android:text="demo title"
+        android:textColor="@color/darkpurple"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/desc_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="description" />
 
 </LinearLayout>

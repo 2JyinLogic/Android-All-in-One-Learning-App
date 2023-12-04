@@ -43,6 +43,8 @@ public class CatViewRvAdapter extends RecyclerView.Adapter<CatViewRvAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Demonstration demo = demosList.get(position);
         holder.tv_text.setText(demo.title);
+        holder.tv_text.setCompoundDrawablesWithIntrinsicBounds(demo.iconId, 0,0,0);
+        holder.desc_text.setText(demo.description);
 
         holder.itemView.setOnClickListener(v -> {
             demo.goToEffectActivity(mContext);
@@ -57,9 +59,11 @@ public class CatViewRvAdapter extends RecyclerView.Adapter<CatViewRvAdapter.View
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_text;
+        TextView desc_text;
         public ViewHolder(View itemView) {
             super(itemView);
             tv_text = itemView.findViewById(R.id.tv_text);
+            desc_text = itemView.findViewById(R.id.desc_text);
         }
     }
 

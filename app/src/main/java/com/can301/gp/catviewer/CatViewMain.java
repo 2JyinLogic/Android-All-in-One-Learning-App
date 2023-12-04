@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.can301.gp.Category;
 import com.can301.gp.GlobalData;
 import com.can301.gp.MainActivity;
 import com.can301.gp.R;
@@ -36,7 +37,8 @@ public class CatViewMain extends AppCompatActivity {
 
         int curCatIndex = getIntent().getIntExtra(CAT_VIEW_INDEX_KEY, 0);
         viewpager.setCurrentItem(curCatIndex);
-        tv_text.setText(GlobalData.catList.get(curCatIndex).title);
+
+        updateCategoryInformation(curCatIndex);
 
         viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -46,7 +48,7 @@ public class CatViewMain extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                tv_text.setText(GlobalData.catList.get(position).title);
+                updateCategoryInformation(position);
             }
 
             @Override
@@ -54,5 +56,16 @@ public class CatViewMain extends AppCompatActivity {
 
             }
         });
+    }
+
+    /**
+     * When the category selected changes,
+     * update the visual information by calling this method.
+     * @param catInd the index of the newly selected category.
+     */
+    void updateCategoryInformation(int catInd) {
+        Category cat = GlobalData.catList.get(catInd);
+        tv_text.setText(cat.title);
+        tv_text.setCompoundDrawablesWithIntrinsicBounds(0,cat.iconId,0,0);
     }
 }

@@ -320,14 +320,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
-        // highlight xxx
+        // highlight Services
         highlightedCats.add(0);
-        // highlight xxx
-        highlightedCats.add(1);
-        // highlight xxx
+        // highlight System Interaction
+        highlightedCats.add(9);
+        // highlight Animation
+        highlightedCats.add(4);
+        // highlight Effects
+        highlightedCats.add(8);
+        // highlight Dialogs
+        highlightedCats.add(5);
+        // highlight Widgets
         highlightedCats.add(2);
-        // highlight xxx
-        highlightedCats.add(3);
 
         // Fill in the lists
         catList = new ArrayList<Category>(categories.values());
@@ -387,11 +391,15 @@ public class MainActivity extends AppCompatActivity {
             Category cat2 = catList.get(highlightedCats.get(1));
             Category cat3 = catList.get(highlightedCats.get(2));
             Category cat4 = catList.get(highlightedCats.get(3));
+            Category cat5 = catList.get(highlightedCats.get(4));
+            Category cat6 = catList.get(highlightedCats.get(5));
 
             Button bt1 = findViewById(R.id.mainCatButton1);
             Button bt2 = findViewById(R.id.mainCatButton2);
             Button bt3 = findViewById(R.id.mainCatButton3);
             Button bt4 = findViewById(R.id.mainCatButton4);
+            Button bt5 = findViewById(R.id.mainCatButton5);
+            Button bt6 = findViewById(R.id.mainCatButton6);
 
             // Button icons (on top)
             bt1.setCompoundDrawablesWithIntrinsicBounds(
@@ -402,18 +410,26 @@ public class MainActivity extends AppCompatActivity {
                     null, drawableFromId(cat3.iconId), null, null);
             bt4.setCompoundDrawablesWithIntrinsicBounds(
                     null, drawableFromId(cat4.iconId), null, null);
+            bt5.setCompoundDrawablesWithIntrinsicBounds(
+                    null, drawableFromId(cat5.iconId), null, null);
+            bt6.setCompoundDrawablesWithIntrinsicBounds(
+                    null, drawableFromId(cat6.iconId), null, null);
 
             // Button texts
             bt1.setText(cat1.title);
             bt2.setText(cat2.title);
             bt3.setText(cat3.title);
             bt4.setText(cat4.title);
+            bt5.setText(cat5.title);
+            bt6.setText(cat6.title);
 
             // Redirections
             bt1.setOnClickListener(v -> goToCatViewPage(highlightedCats.get(0)));
             bt2.setOnClickListener(v -> goToCatViewPage(highlightedCats.get(1)));
             bt3.setOnClickListener(v -> goToCatViewPage(highlightedCats.get(2)));
             bt4.setOnClickListener(v -> goToCatViewPage(highlightedCats.get(3)));
+            bt5.setOnClickListener(v -> goToCatViewPage(highlightedCats.get(4)));
+            bt6.setOnClickListener(v -> goToCatViewPage(highlightedCats.get(5)));
         }
 
         // Search button
