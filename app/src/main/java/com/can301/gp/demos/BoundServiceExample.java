@@ -96,6 +96,8 @@ public class BoundServiceExample extends AppCompatActivity {
     // if the service has started
     boolean started = false;
 
+    float prog = 0.f;
+
     ServiceConnection myConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -169,17 +171,23 @@ public class BoundServiceExample extends AppCompatActivity {
             progressSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    float prog = (float)progress / (float)(seekBar.getMax() - seekBar.getMin());
-                    if(binder != null)
-                    {
-                        binder.goTo(prog);
-                    }
+                    // updating the seekbar will also result in this being called,
+                    // and result in the binder.goTo() being called repeatedly,
+                    // which will cause a lag.
+                    // To address this problem, record the progress and only update the seekbar in
+                    // onStopTrackingTouch
+                    prog = (float)progress / (float)(seekBar.getMax() - seekBar.getMin());
                 }
 
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {}
                 @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {}
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                    // see the comments in onProgressChanged()
+                    if(binder != null) {
+                        binder.goTo(prog);
+                    }
+                }
             });
         }
     }
@@ -191,6 +199,8 @@ public class BoundServiceExample extends AppCompatActivity {
         if (!started) {
             startService(intent);
         }
+
+        started = true;
 
         // If not bound to the service,
         // then bind to it.
@@ -206,7 +216,6 @@ public class BoundServiceExample extends AppCompatActivity {
             bound = true;
         }
 
-        started = true;
         startSeekbarUpdatingThread();
     }
 
@@ -287,16 +296,24 @@ public class BoundServiceExample extends AppCompatActivity {
      */
     protected void onStart() {
         super.onStart();
-        if (!bound && binder == null) {
-            Intent intent = new Intent(this, BoundServiceExampleService.class);
-            bindService(
-                    intent,
-                    myConnection,
-                    // declare that the service's important is higher than the activity so that
-                    // the system will try to keep the service even if the activity is killed.
-                    Context.BIND_ABOVE_CLIENT);
 
-            bound = true;
+        if(started) {
+            // If not bound to the service,
+            // then bind to it.
+            if (!bound && binder == null) {
+                Intent intent = new Intent(this, BoundServiceExampleService.class);
+
+                bindService(
+                        intent,
+                        myConnection,
+                        // declare that the service's important is higher than the activity so that
+                        // the system will try to keep the service even if the activity is killed.
+                        Context.BIND_ABOVE_CLIENT);
+
+                bound = true;
+            }
+
+            startSeekbarUpdatingThread();
         }
     }
 }
