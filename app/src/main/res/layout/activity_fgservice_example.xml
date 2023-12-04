@@ -74,7 +74,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="NOTE: ALLOW THE APP TO SHOW NOTIFICATIONS IN SETTINGS"
+            android:text="NOTE: ALLOW THE APP TO SHOW NOTIFICATIONS IN SETTINGS. THEN, RESTART THE APP."
             android:textColor="#F44336"
             android:textSize="20sp"
             android:textStyle="bold"
