@@ -83,6 +83,8 @@ public class BGServiceExample extends AppCompatActivity {
     // Change this to exactly the string as in the AndroidManifest.xml
     public static final String EFFECT_ACTIVITY_NAME = ".demos.BGServiceExample";
 
+    boolean started = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,6 +148,10 @@ public class BGServiceExample extends AppCompatActivity {
     }
 
     void startExampleService() {
+        if(started) {
+            return;
+        }
+
         // Get the values from the UI
         CheckBox cb = findViewById(R.id.newThreadCheckBox);
         boolean newThread = cb.isChecked();
@@ -156,14 +162,22 @@ public class BGServiceExample extends AppCompatActivity {
         intent.putExtra(BGServiceExampleService.SLEEP_TIME_KEY, timeToSleep);
         intent.putExtra(BGServiceExampleService.START_NEW_THREAD_KEY, newThread);
         startService(intent);
+
+        started = true;
     }
 
     void stopExampleService() {
+        if(!started) {
+            return;
+        }
+
         BGServiceExampleService.stopService = true;
         stopService(new Intent(this, BGServiceExampleService.class));
 
         // recreate this activity to avoid problems
         this.recreate();
+
+        started = false;
     }
 
 }
