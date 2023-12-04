@@ -1,4 +1,9 @@
-EditText editText = findViewById(R.id.editTextText2);
+public class ProgressBarWidget extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        EditText editText = findViewById(R.id.editTextText2);
         ProgressBar horProgressBar = findViewById(R.id.progressBar2);
         ProgressBar cirProgressBar = findViewById(R.id.progressBar);
         Button button3 = findViewById(R.id.button3);
@@ -29,3 +34,6 @@ EditText editText = findViewById(R.id.editTextText2);
                 }
             }
         );
+    }
+    
+}
