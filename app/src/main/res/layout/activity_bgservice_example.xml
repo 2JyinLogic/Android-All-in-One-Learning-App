@@ -117,7 +117,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="NOTE: NOT start in a new thread will FREEZE AND KILL the app"
+            android:text="@string/bg_service_example_note"
             android:textColor="#E91E63"
             android:textSize="20sp"
             android:textStyle="bold"

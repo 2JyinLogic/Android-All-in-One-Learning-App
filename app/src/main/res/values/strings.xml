@@ -76,6 +76,90 @@
     <string name="doc_link_qrcode2" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
     <string name="doc_link_timer" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
 
+    <string name="demo_title_timepickerdialog">TimePickerDialog</string>
+    <string name="demo_title_progressdialog">ProgressDialog</string>
+    <string name="demo_title_bottomsheetdialog">BottomSheetDialog</string>
+    <string name="demo_title_popupwindow">Popup Window</string>
+    <string name="demo_title_nightmode">Night Mode</string>
+    <string name="demo_title_rippleeffect">Ripple Effect</string>
+    <string name="demo_title_loadingeffect">Shimmer Loading Effect</string>
+    <string name="demo_title_progressbareffect">Progress Bar Loading Effect</string>
+    <string name="demo_title_fancyloadingeffect">Fancy Loading Effect</string>
+    <string name="demo_title_zooming">Zooming</string>
+    <string name="demo_title_dragging">Dragging</string>
+    <string name="demo_title_bgservice">Background Service</string>
+    <string name="demo_title_boundservice">Bound Service</string>
+    <string name="demo_title_fgservice">Foreground Service</string>
+    <string name="demo_title_alertdialog">AlertDialog</string>
+    <string name="demo_title_datepickerdialog">DatePickerDialog</string>
+    <string name="demo_title_navigation1">Bottom Navigation</string>
+    <string name="demo_title_navigation2">Drawer Navigation</string>
+    <string name="demo_title_animation1">Animations Collection</string>
+    <string name="demo_title_frameanimation">Frame Animation</string>
+    <string name="demo_title_attributeanimation">Attribute Animation</string>
+    <string name="demo_title_button1">Button</string>
+    <string name="demo_title_switch1">Switch</string>
+    <string name="demo_title_radio1">RadioGroup</string>
+    <string name="demo_title_progress1">ProgressBar</string>
+    <string name="demo_title_seek1">SeekBar</string>
+    <string name="demo_title_rating1">RatingBar</string>
+    <string name="demo_title_reqpermission">Request Permissions</string>
+    <string name="demo_title_systemsettings">Go To System Settings</string>
+    <string name="demo_title_interactcamera">Camera Interaction</string>
+    <string name="demo_title_interactcalendar">Calendar Interaction</string>
+    <string name="demo_title_appspecific">App-specific Files</string>
+    <string name="demo_title_sensors">Sensors</string>
+    <string name="demo_title_qrcode1">QR Code Generate</string>
+    <string name="demo_title_qrcode2">QR Code 2</string>
+    <string name="demo_title_timer">TimerExample</string>
+
+    <string name="cat_title_services">Services</string>
+    <string name="cat_title_qrcode">QR Code related</string>
+    <string name="cat_title_sys_interaction">System Interaction</string>
+    <string name="cat_title_storage">Storage</string>
+    <string name="cat_title_navigation">Navagation</string>
+    <string name="cat_title_animations">Animations</string>
+    <string name="cat_title_dialogs">Dialogs</string>
+    <string name="cat_title_effects">Effects</string>
+    <string name="cat_title_widgets">Widgets</string>
+    <string name="cat_title_gestures">Gestures</string>
+
+    <string name="cat_desc_services">
+        Demonstrates how you can implement different kinds of system services,
+        including foreground, bound, and background services
+    </string>
+    <string name="cat_desc_qrcode">
+        Demonstrates activities about QR code like scanning, creating.
+    </string>
+    <string name="cat_desc_sys_interaction">
+        Demonstrates how you can interact with the Android system.
+        For example, asking for permissions.
+    </string>
+    <string name="cat_desc_storage">
+        Learn how to preserve your app and user data via, for example,
+        persistent or cached files on external or internal storage.
+    </string>
+    <string name="cat_desc_navigation">
+        Show various navigation effects.
+    </string>
+    <string name="cat_desc_animations">
+        Demonstrates various animation effects.
+    </string>
+    <string name="cat_desc_dialogs">
+        Explore a variety of dialog styles and notification methods.
+        Learn how to grab user attention with modals, pop-ups, toasts,
+        and more for an engaging user experience.
+    </string>
+    <string name="cat_desc_effects">
+        Show various effects.
+    </string>
+    <string name="cat_desc_widgets">
+        Show various widgets.
+    </string>
+    <string name="cat_desc_gestures">
+        Show various gesture interactions that are made by hands.
+    </string>
+
 
     <string name="alertdialog_example_desc">
     This example demonstrates how to use AlertDialogs in Android to show pop-up messages or get user input. It covers creating alert dialogs with buttons, custom layouts, and handling user responses.
@@ -262,5 +346,9 @@
     </string>
 
     <string name="switch_24_hour_format">24 Hour Format</string>
+
+    <string name="bg_service_example_note">
+        NOTE: NOT start in a new thread will FREEZE AND KILL the app
+    </string>
 
 </resources>

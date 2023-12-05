@@ -23,5 +23,6 @@
         即使应用程序已关闭，用户也可以与通知上的消息进行交互（如Reply, Dismiss）。
     </string>
     <string name="fg_example_channel_desc">Foreground 服务示例的Channel。</string>
+    <string name="bg_service_example_note">注意：如果不在新线程中启动，应用程序将冻结并关闭。</string>
 
 </resources>

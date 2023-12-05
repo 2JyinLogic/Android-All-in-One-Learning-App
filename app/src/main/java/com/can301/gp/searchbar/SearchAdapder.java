@@ -102,7 +102,8 @@ public class SearchAdapder extends BaseAdapter implements Filterable {
                     for (int i = 0; i < filteredDemos.size(); i++){
                         Demonstration filterableCustomer = filteredDemos.get(i);
 
-                        if(filterableCustomer.title.toLowerCase()
+                        String titleString = context.getString(filterableCustomer.title);
+                        if(titleString.toLowerCase()
                                 .contains(constraint.toString().toLowerCase())){
                             _filterUIS.add(filterableCustomer);
                         }
