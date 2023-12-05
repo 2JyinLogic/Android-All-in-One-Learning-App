@@ -34,7 +34,7 @@ public final class Demonstration {
     }
 
     Demonstration(
-            String title, String description,
+            int title, int description,
             int iconId,
             Class<?> effectActivityClass, String codeId
     )
@@ -46,8 +46,10 @@ public final class Demonstration {
         this.effectActivityClass = effectActivityClass;
     }
 
-    public final String title;
-    public final String description;
+    // String id for the title
+    public final int title;
+    // String id for the description.
+    public final int description;
     // An icon for this demo
     public final int iconId;
     // codeId is needed for the code activity to load the corresponding code

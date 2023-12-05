@@ -8,7 +8,7 @@ package com.can301.gp;
  */
 public final class Category {
     Category(
-            String title, String description,
+            int title, int description,
             int iconId
     )
     {
@@ -17,7 +17,9 @@ public final class Category {
         this.iconId = iconId;
     }
 
-    public final String title;
-    public final String description;
+    // String id
+    public final int title;
+    // String id
+    public final int description;
     public final int iconId;
 }

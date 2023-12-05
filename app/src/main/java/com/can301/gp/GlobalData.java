@@ -9,9 +9,11 @@ import java.util.HashMap;
  */
 public class GlobalData {
 
-    public static HashMap<String, Category> categories = new HashMap<String, Category>();
-    public static HashMap<String, HashMap<String, Demonstration>> demos =
-            new HashMap<String, HashMap<String, Demonstration>>();
+    // String title id -> cat
+    public static HashMap<Integer, Category> categories = new HashMap<Integer, Category>();
+    // String title id -> { String title id -> demo }
+    public static HashMap<Integer, HashMap<Integer, Demonstration>> demos =
+            new HashMap<Integer, HashMap<Integer, Demonstration>>();
     // Those that will be displayed on the main page
     public static ArrayList<Integer> highlightedCats = new ArrayList<Integer>();
 
