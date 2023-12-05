@@ -140,170 +140,173 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up all demos.
         catEffectsDemos.put("Night Mode", new Demonstration(
-                        "Night Mode", getString(R.string.night_mode_example_desc),
+                        "Night Mode", R.string.night_mode_example_desc,
                 R.drawable.ic_night, EffectExampleNightMode.class,"nightmode"
                 )
         );
         catEffectsDemos.put("Ripple Effect", new Demonstration(
-                        "Ripple Effect", getString(R.string.ripple_effect_example_desc),
+                        "Ripple Effect", R.string.ripple_effect_example_desc,
                 R.drawable.ic_water, EffectExampleRippleEffect.class,"rippleeffect"
                 )
         );
         catEffectsDemos.put("Shimmer Loading Effect", new Demonstration(
-                        "Shimmer Loading Effect", getString(R.string.loading_effect_example_desc),
+                        "Shimmer Loading Effect", R.string.loading_effect_example_desc,
                         R.drawable.baseline_image_24, EffectExampleLoadingEffect.class,"loadingeffect"
                 )
         );
         catEffectsDemos.put("Progress Bar Loading Effect", new Demonstration(
-                        "Progress Bar Loading Effect", getString(R.string.progress_bar_effect_example_desc),
+                        "Progress Bar Loading Effect", R.string.progress_bar_effect_example_desc,
                         R.drawable.ic_progress_bar, EffectExampleProgressBarLoadingEffect.class,"progressbareffect"
                 )
         );
         catEffectsDemos.put("Fancy Loading Effect", new Demonstration(
-                        "Fancy Loading Effect", getString(R.string.fancy_loading_effect_example_desc),
+                        "Fancy Loading Effect", R.string.fancy_loading_effect_example_desc,
                         R.drawable.ic_progress_bar, EffectExampleFancyLoadingEffect.class,"fancyloadingeffect"
                 )
         );
         catGesturesDemos.put("Zooming", new Demonstration(
-                        "Zooming", getString(R.string.zooming_example_desc),
+                        "Zooming", R.string.zooming_example_desc,
                 R.drawable.ic_zooming, EffectExampleZooming.class,"zooming"
                 )
         );
         catGesturesDemos.put("Drag View", new Demonstration(
-                        "Dragging", getString(R.string.dragging_example_desc),
+                        "Dragging", R.string.dragging_example_desc,
                 R.drawable.ic_dragging, EffectExampleDragView.class,"dragging"
                 )
         );
 
         catServicesDemos.put("Background Service", new Demonstration(
                 "Background Service",
-                getString(R.string.bg_service_example_desc),
+                R.string.bg_service_example_desc,
                 R.drawable.ic_bg_service, BGServiceExample.class, "bgservice"
         ));
         catServicesDemos.put("Bound Service", new Demonstration(
                 "Bound Service",
-                getString(R.string.bound_service_example_desc),
+                R.string.bound_service_example_desc,
                 R.drawable.ic_bound_service, BoundServiceExample.class, "boundservice"
         ));
         catServicesDemos.put("Foreground Service", new Demonstration(
                 "Foreground Service",
-                getString(R.string.fg_service_example_desc),
+                R.string.fg_service_example_desc,
                 R.drawable.ic_fg_service, FGServiceExample.class, "fgservice"
         ));
 
         catSystemDemos.put("Request Permissions", new Demonstration(
                 "Request Permissions",
-                getString(R.string.request_permission_example_desc),
+                R.string.request_permission_example_desc,
                 R.drawable.ic_request_permission, RequestPermissionExample.class, "reqpermission"
         ));
         catSystemDemos.put("Calendar Interaction", new Demonstration(
                 "Calendar Interaction",
-                getString(R.string.interactcalendar_example_desc),
+                R.string.interactcalendar_example_desc,
                 R.drawable.baseline_edit_calendar_24, InteractCalendarExample.class, "interactcalendar"
         ));
         catSystemDemos.put("Go To System Settings", new Demonstration(
                 "Go To System Settings",
-                getString(R.string.go_system_settings_example_desc),
+                R.string.go_system_settings_example_desc,
                 R.drawable.ic_demo_settings, GoSystemSettingsExample.class, "systemsettings"
         ));
         catSystemDemos.put("Camera Interaction", new Demonstration(
                 "Camera Interaction",
-                getString(R.string.interactcamera_example_desc),
+                R.string.interactcamera_example_desc,
                 R.drawable.baseline_photo_camera_24, InteractCameraExample.class, "interactcamera"
         ));
         catSystemDemos.put("Sensors", new Demonstration(
                 "Sensors",
-                getString(R.string.sensors_example_desc),
+                R.string.sensors_example_desc,
                 R.drawable.ic_sensors, SensorsExampleActivity.class, "sensors"
         ));
 
         catStorageDemos.put("App-specific Files", new Demonstration(
                 "App-specific Files",
-                getString(R.string.app_specific_files_example_desc),
+                R.string.app_specific_files_example_desc,
                 R.drawable.ic_app_specific_files, AppSpecificFilesExample.class, "appspecific"
         ));
         catDialogsDemos.put("AlertDialog", new Demonstration(
                 "AlertDialog",
-                "Demonstration entry for an AlertDialog example. " +
-                        "This dialog showcases user interaction and informs about " +
-                        "important events. Represented by an icon (R.drawable.ic_demo1) " +
-                        "and uses AlertDialogExample.class",
+                R.string.alertdialog_example_desc,
                 R.drawable.baseline_chat_24, AlertDialogExample.class,"alertdialog"
         ));
         catDialogsDemos.put("DatePickerDialog", new Demonstration(
-                        "DatePickerDialog", "Select a date from a calendar view.",
+                        "DatePickerDialog", R.string.datepickerdialog_example_desc,
                         R.drawable.baseline_chat_24, DatePickerDialogExample.class,"datepickerdialog"
                 )
         );
         catNavigationDemos.put("navigation", new Demonstration(
-                "navigation", "Show the effect of bottom navigation bar and switching", R.drawable.baseline_navigation_24, NavigationExample.class, "navigation1"
+                "navigation", R.string.navigation_example_desc, R.drawable.baseline_navigation_24, NavigationExample.class, "navigation1"
         ));
         catNavigationDemos.put("drawernavigation", new Demonstration(
-                "drawernavigation", "Show the effect of drawer navigation bar and switching", R.drawable.baseline_navigation_24, NavigationDrawerExample.class, "navigation2"
+                "drawernavigation", R.string.navigation_drawer_example_desc, R.drawable.baseline_navigation_24, NavigationDrawerExample.class, "navigation2"
         ));
 
         catAnimationsDemos.put("Animations",new Demonstration(
-                "Animations","show the alpha, rotate, scale and translate of images",R.drawable.baseline_image_24, AnimationsExample.class,"animation1"
+                "Animations",R.string.animations_example_desc, R.drawable.baseline_image_24, AnimationsExample.class,"animation1"
         ));
         catAnimationsDemos.put("FrameAnimations",new Demonstration(
-                "FrameAnimations","Show how to create animation through frames-by-frames",R.drawable.baseline_animation_24, FrameAnimationsExample.class,"frameanimation"
+                "FrameAnimations",R.string.frame_animations_example_desc,R.drawable.baseline_animation_24, FrameAnimationsExample.class,"frameanimation"
         ));
         catAnimationsDemos.put("AttributeAnimations",new Demonstration(
-                "AttributeAnimations","Show how to create animation through using different attributes",R.drawable.baseline_keyboard_double_arrow_right_24, AttributeAnimationsExample.class,"attributeanimation"
+                "AttributeAnimations",R.string.attribute_animations_example_desc,R.drawable.baseline_keyboard_double_arrow_right_24, AttributeAnimationsExample.class,"attributeanimation"
         ));
 
         catDialogsDemos.put("PopupWindow", new Demonstration(
                         "PopupWindow",
-                        getString(R.string.popupwindow_example_desc),
+                        R.string.popupwindow_example_desc,
                         R.drawable.baseline_chat_24, PopupWindowExample.class,"popupwindow"
                 )
         );
         catDialogsDemos.put("BottomSheetDialog", new Demonstration(
                         "BottomSheetDialog",
-                        getString(R.string.bottomsheetdialog_example_desc),
+                        R.string.bottomsheetdialog_example_desc,
                         R.drawable.baseline_chat_24, BottomSheetDialogExample.class,"bottomsheetdialog"
                 )
         );
         catDialogsDemos.put("TimePickerDialog", new Demonstration(
                         "TimePickerDialog",
-                        getString(R.string.timepickerdialog_example_desc),
+                        R.string.timepickerdialog_example_desc,
                         R.drawable.baseline_chat_24, TimePickerDialogExample.class,"timepickerdialog"
                 )
         );
         catDialogsDemos.put("TimerExample", new Demonstration(
                         "TimerExample",
-                        "set countdown",
+                        R.string.timer_example_desc,
                         R.drawable.baseline_hourglass_top_24, TimerExample.class,"timer"
                 )
         );
 
         catDialogsDemos.put("ProgressDialog", new Demonstration(
                         "ProgressDialog",
-                        getString(R.string.progressdialog_example_desc),
+                        R.string.progressdialog_example_desc,
                         R.drawable.baseline_chat_24, ProgressDialogExample.class,"progressdialog"
                 )
         );
 
         catWidgetsDemos.put("Button", new Demonstration(
-                "Button","A common type of widget which is the simplest way to interact with an application. Users can click it in order to transmit their instructions.",R.drawable.ic_button, ButtonWidget.class, "button1"
+                "Button",
+                R.string.button_desc, R.drawable.ic_button, ButtonWidget.class, "button1"
         ));
         catWidgetsDemos.put("Switch", new Demonstration(
-                "Switch","A common type of widget. It has two states, on and off. The two states of the widget represent two states of the application. The layout will change according to the change of the state of a switch.",R.drawable.ic_switch, SwitchWidget.class, "switch1"
+                "Switch",
+                R.string.switch_desc,R.drawable.ic_switch, SwitchWidget.class, "switch1"
         ));
         catWidgetsDemos.put("Radio Group", new Demonstration(
-                "Radio Group","A group of buttons, but only one button of them can be chosen.",R.drawable.ic_radio, RadioGroupWidget.class, "radio1"
+                "Radio Group",
+                R.string.radio_desc,R.drawable.ic_radio, RadioGroupWidget.class, "radio1"
         ));
         catWidgetsDemos.put("Progress bar", new Demonstration(
-                "Progress bar","A type of widget to show the progress of the program in order to give the users an approximate waiting time.",R.drawable.ic_progress, ProgressBarWidget.class, "progress1"
+                "Progress bar",
+                 R.string.progress_desc,R.drawable.ic_progress, ProgressBarWidget.class, "progress1"
         ));
         catWidgetsDemos.put("Seek Bar", new Demonstration(
-                "Seek Bar","A type of widget to let the users choose a number by drag the bar.",R.drawable.ic_seek_bar, SeekBarWidget.class, "seek1"
+                "Seek Bar",
+                R.string.seek_desc,R.drawable.ic_seek_bar, SeekBarWidget.class, "seek1"
         ));
         catWidgetsDemos.put("Rating Bar", new Demonstration(
-                "Rating Bar","A type of widget to let the users rating for something in order to know if they like the object.",R.drawable.ic_rating_bar, RatingBarWidget.class, "rating1"
+                "Rating Bar",
+                R.string.rating_desc,R.drawable.ic_rating_bar, RatingBarWidget.class, "rating1"
         ));
         catQrcodeDemos.put("QRcodeGenerate",new Demonstration(
-                "QRcodeGenerate","generate QRcode",R.drawable.baseline_qr_code_24, QRcodeGenerateExample.class,"qrcode1"
+                "QRcodeGenerate",R.string.qrcode_generate_desc,R.drawable.baseline_qr_code_24, QRcodeGenerateExample.class,"qrcode1"
         ));
 
         // Decide which demos go into which category.
