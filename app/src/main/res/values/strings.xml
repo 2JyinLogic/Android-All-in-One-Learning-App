@@ -225,16 +225,7 @@
         By configuring the attributes in the Object Animator, you can control all the attributes contained in the image/text,
         such as "alpha", transparency, scaling, rotation, color change, and so on
     </string>
-    <string name="request_permission_example_desc">
-        Every Android app runs in a limited-access sandbox. If your app needs to use resources or
-        information outside of its own sandbox, you can declare a runtime permission and
-        set up a permission request that provides this access.
-
-        In this example, each button on the page can be clicked to prompt the app to
-        ask for a specific runtime permission. Normally, you should do this when the user starts
-        interacting with the yrelated feature. Declare in the manifest in advance what permissions
-        you may need.
-    </string>
+    <string name="request_permission_example_desc">"         Every Android app runs in a limited-access sandbox. If your app needs to use resources or         information outside of its own sandbox, you can declare a runtime permission and         set up a permission request that provides this access.          In this example, each button on the page can be clicked to prompt the app to         ask for a specific runtime permission. Normally, you should do this when the user starts         interacting with the yrelated feature. Declare in the manifest in advance what permissions         you may need.     "</string>
     <string name="bg_service_example_desc">
         A background service performs an operation that isn\'t directly noticed by the user.
 
