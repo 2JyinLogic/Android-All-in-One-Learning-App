@@ -1,80 +1,80 @@
 <resources>
     <string name="app_name">GroupProject</string>
 
-    <string name="code_link_nightmode">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleNightMode.java</string>
-    <string name="code_link_rippleeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleRippleEffect.java</string>
-    <string name="code_link_loadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleLoadingEffect.java</string>
-    <string name="code_link_progressbareffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleProgressBarLoadingEffect.java</string>
-    <string name="code_link_fancyloadingeffect">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleFancyLoadingEffect.java</string>
-    <string name="code_link_zooming">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleZooming.java</string>
-    <string name="code_link_dragging">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleDragView.java</string>
-    <string name="code_link_bgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
-    <string name="code_link_boundservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
-    <string name="code_link_alertdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
-    <string name="code_link_datepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/DatePickerDialogExample.java</string>
-    <string name="code_link_navigation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationExample.java</string>
-    <string name="code_link_navigation2">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationDrawerExample.java</string>
-    <string name="code_link_animation1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AnimationsExample.java</string>
-    <string name="code_link_frameanimation">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FrameAnimationsExample.java</string>
-    <string name="code_link_attributeanimation">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AttributeAnimationsExample.java</string>
-    <string name="code_link_fgservice">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FGServiceExampleService.java</string>
-    <string name="code_link_popupwindow">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/PopupWindowExample.java</string>
-    <string name="code_link_bottomsheetdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BottomSheetExample.java</string>
-    <string name="code_link_timepickerdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/TimePickerDialogExample.java</string>
-    <string name="code_link_progressdialog">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressDialogExample.java</string>
-    <string name="code_link_button1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ButtonWidget.java</string>
-    <string name="code_link_switch1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SwitchWidget.java</string>
-    <string name="code_link_radio1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RadioGroupWidget.java</string>
-    <string name="code_link_progress1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressBarWidget.java</string>
-    <string name="code_link_seek1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SeekBarWidget.java</string>
-    <string name="code_link_rating1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RatingBarWidget.java</string>
-    <string name="code_link_reqpermission">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RequestPermissionExample.java</string>
-    <string name="code_link_systemsettings">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/GoSystemSettingsExample.java</string>
-    <string name="code_link_interactcamera">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCameraExample.java</string>
-    <string name="code_link_interactcalendar">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCalendarExample.java</string>
-    <string name="code_link_appspecific">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AppSpecificFilesExample.java</string>
-    <string name="code_link_sensors">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SensorsExampleActivity.java</string>
-    <string name="code_link_qrcode1">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/QRcodeGenerateExamole.java</string>
-    <string name="code_link_qrcode2">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/QRcodeScanExamole.java</string>
-    <string name="code_link_timer">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/TimerExamole.java</string>
+    <string name="code_link_nightmode" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleNightMode.java</string>
+    <string name="code_link_rippleeffect" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleRippleEffect.java</string>
+    <string name="code_link_loadingeffect" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleLoadingEffect.java</string>
+    <string name="code_link_progressbareffect" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleProgressBarLoadingEffect.java</string>
+    <string name="code_link_fancyloadingeffect" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleFancyLoadingEffect.java</string>
+    <string name="code_link_zooming" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleZooming.java</string>
+    <string name="code_link_dragging" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/EffectExampleDragView.java</string>
+    <string name="code_link_bgservice" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BGServiceExampleService.java</string>
+    <string name="code_link_boundservice" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BoundServiceExampleService.java</string>
+    <string name="code_link_alertdialog" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AlertDialogExample.java</string>
+    <string name="code_link_datepickerdialog" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/DatePickerDialogExample.java</string>
+    <string name="code_link_navigation1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationExample.java</string>
+    <string name="code_link_navigation2" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/NavigationDrawerExample.java</string>
+    <string name="code_link_animation1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AnimationsExample.java</string>
+    <string name="code_link_frameanimation" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FrameAnimationsExample.java</string>
+    <string name="code_link_attributeanimation" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AttributeAnimationsExample.java</string>
+    <string name="code_link_fgservice" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/FGServiceExampleService.java</string>
+    <string name="code_link_popupwindow" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/PopupWindowExample.java</string>
+    <string name="code_link_bottomsheetdialog" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/BottomSheetExample.java</string>
+    <string name="code_link_timepickerdialog" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/TimePickerDialogExample.java</string>
+    <string name="code_link_progressdialog" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressDialogExample.java</string>
+    <string name="code_link_button1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ButtonWidget.java</string>
+    <string name="code_link_switch1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SwitchWidget.java</string>
+    <string name="code_link_radio1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RadioGroupWidget.java</string>
+    <string name="code_link_progress1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/ProgressBarWidget.java</string>
+    <string name="code_link_seek1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SeekBarWidget.java</string>
+    <string name="code_link_rating1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RatingBarWidget.java</string>
+    <string name="code_link_reqpermission" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/RequestPermissionExample.java</string>
+    <string name="code_link_systemsettings" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/GoSystemSettingsExample.java</string>
+    <string name="code_link_interactcamera" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCameraExample.java</string>
+    <string name="code_link_interactcalendar" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/InteractCalendarExample.java</string>
+    <string name="code_link_appspecific" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/AppSpecificFilesExample.java</string>
+    <string name="code_link_sensors" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/SensorsExampleActivity.java</string>
+    <string name="code_link_qrcode1" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/QRcodeGenerateExamole.java</string>
+    <string name="code_link_qrcode2" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/QRcodeScanExamole.java</string>
+    <string name="code_link_timer" translatable="false">https://github.com/CAN301GroupProj2023/CAN301GroupProject2023/blob/master/app/src/main/java/com/can301/gp/demos/TimerExamole.java</string>
 
 
-    <string name="doc_link_timepickerdialog">https://developer.android.com/reference/android/app/TimePickerDialog</string>
-    <string name="doc_link_progressdialog">https://developer.android.com/reference/android/app/ProgressDialog</string>
-    <string name="doc_link_bottomsheetdialog">https://developer.android.com/reference/com/google/android/material/bottomsheet/BottomSheetDialogFragment</string>
-    <string name="doc_link_popupwindow">https://developer.android.com/reference/android/widget/PopupWindow</string>
-    <string name="doc_link_nightmode">https://developer.android.com/develop/ui/views/theming/darktheme</string>
-    <string name="doc_link_rippleeffect">https://developer.android.com/reference/android/graphics/drawable/RippleDrawable</string>
-    <string name="doc_link_loadingeffect">https://developer.android.com/develop/ui/views/launch/splash-screen/migrate</string>
-    <string name="doc_link_progressbareffect">https://developer.android.com/reference/android/widget/ProgressBar</string>
-    <string name="doc_link_fancyloadingeffect">https://developer.android.com/jetpack/compose/components/progress</string>
-    <string name="doc_link_zooming">https://developer.android.com/jetpack/compose/touch-input/pointer-input/multi-touch</string>
-    <string name="doc_link_dragging">https://developer.android.com/jetpack/compose/touch-input/pointer-input/drag-swipe-fling</string>
-    <string name="doc_link_bgservice">https://developer.android.com/guide/components/services</string>
-    <string name="doc_link_boundservice">https://developer.android.com/guide/components/services#CreatingBoundService</string>
-    <string name="doc_link_alertdialog">https://developer.android.com/reference/android/app/AlertDialog</string>
-    <string name="doc_link_datepickerdialog">https://developer.android.com/develop/ui/views/components/pickers#DatePicker</string>
-    <string name="doc_link_navigation1">https://developer.android.com/guide/navigation</string>
-    <string name="doc_link_navigation2">https://developer.android.com/guide/navigation</string>
-    <string name="doc_link_animation1">https://developer.android.com/develop/ui/views/animations/overview</string>
-    <string name="doc_link_frameanimation">https://developer.android.com/develop/ui/views/animations/overview</string>
-    <string name="doc_link_attributeanimation">https://developer.android.com/develop/ui/views/animations/overview</string>
-    <string name="doc_link_fgservice">https://developer.android.com/guide/components/foreground-services</string>
-    <string name="doc_link_button1">https://developer.android.com/reference/android/widget/Button</string>
-    <string name="doc_link_switch1">https://developer.android.com/reference/android/widget/Switch</string>
-    <string name="doc_link_radio1">https://developer.android.com/reference/android/widget/RadioGroup</string>
-    <string name="doc_link_progress1">https://developer.android.com/reference/android/widget/ProgressBar</string>
-    <string name="doc_link_seek1">https://developer.android.com/reference/android/widget/SeekBar</string>
-    <string name="doc_link_rating1">https://developer.android.com/reference/android/widget/RatingBar</string>
-    <string name="doc_link_reqpermission">https://developer.android.com/training/permissions/requesting</string>
-    <string name="doc_link_systemsettings">https://developer.android.com/reference/android/provider/Settings</string>
-    <string name="doc_link_interactcamera">https://developer.android.com/training/camera/photobasics</string>
-    <string name="doc_link_interactcalendar">https://developer.android.com/reference/android/provider/CalendarContract</string>
-    <string name="doc_link_appspecific">https://developer.android.com/training/data-storage/app-specific</string>
-    <string name="doc_link_sensors">https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview#java</string>
-    <string name="doc_link_qrcode1">https://developer.android.com/training/data-storage/app-specific</string>
-    <string name="doc_link_qrcode2">https://developer.android.com/training/data-storage/app-specific</string>
-    <string name="doc_link_timer">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_timepickerdialog" translatable="false">https://developer.android.com/reference/android/app/TimePickerDialog</string>
+    <string name="doc_link_progressdialog" translatable="false">https://developer.android.com/reference/android/app/ProgressDialog</string>
+    <string name="doc_link_bottomsheetdialog" translatable="false">https://developer.android.com/reference/com/google/android/material/bottomsheet/BottomSheetDialogFragment</string>
+    <string name="doc_link_popupwindow" translatable="false">https://developer.android.com/reference/android/widget/PopupWindow</string>
+    <string name="doc_link_nightmode" translatable="false">https://developer.android.com/develop/ui/views/theming/darktheme</string>
+    <string name="doc_link_rippleeffect" translatable="false">https://developer.android.com/reference/android/graphics/drawable/RippleDrawable</string>
+    <string name="doc_link_loadingeffect" translatable="false">https://developer.android.com/develop/ui/views/launch/splash-screen/migrate</string>
+    <string name="doc_link_progressbareffect" translatable="false">https://developer.android.com/reference/android/widget/ProgressBar</string>
+    <string name="doc_link_fancyloadingeffect" translatable="false">https://developer.android.com/jetpack/compose/components/progress</string>
+    <string name="doc_link_zooming" translatable="false">https://developer.android.com/jetpack/compose/touch-input/pointer-input/multi-touch</string>
+    <string name="doc_link_dragging" translatable="false">https://developer.android.com/jetpack/compose/touch-input/pointer-input/drag-swipe-fling</string>
+    <string name="doc_link_bgservice" translatable="false">https://developer.android.com/guide/components/services</string>
+    <string name="doc_link_boundservice" translatable="false">https://developer.android.com/guide/components/services#CreatingBoundService</string>
+    <string name="doc_link_alertdialog" translatable="false">https://developer.android.com/reference/android/app/AlertDialog</string>
+    <string name="doc_link_datepickerdialog" translatable="false">https://developer.android.com/develop/ui/views/components/pickers#DatePicker</string>
+    <string name="doc_link_navigation1" translatable="false">https://developer.android.com/guide/navigation</string>
+    <string name="doc_link_navigation2" translatable="false">https://developer.android.com/guide/navigation</string>
+    <string name="doc_link_animation1" translatable="false">https://developer.android.com/develop/ui/views/animations/overview</string>
+    <string name="doc_link_frameanimation" translatable="false">https://developer.android.com/develop/ui/views/animations/overview</string>
+    <string name="doc_link_attributeanimation" translatable="false">https://developer.android.com/develop/ui/views/animations/overview</string>
+    <string name="doc_link_fgservice" translatable="false">https://developer.android.com/guide/components/foreground-services</string>
+    <string name="doc_link_button1" translatable="false">https://developer.android.com/reference/android/widget/Button</string>
+    <string name="doc_link_switch1" translatable="false">https://developer.android.com/reference/android/widget/Switch</string>
+    <string name="doc_link_radio1" translatable="false">https://developer.android.com/reference/android/widget/RadioGroup</string>
+    <string name="doc_link_progress1" translatable="false">https://developer.android.com/reference/android/widget/ProgressBar</string>
+    <string name="doc_link_seek1" translatable="false">https://developer.android.com/reference/android/widget/SeekBar</string>
+    <string name="doc_link_rating1" translatable="false">https://developer.android.com/reference/android/widget/RatingBar</string>
+    <string name="doc_link_reqpermission" translatable="false">https://developer.android.com/training/permissions/requesting</string>
+    <string name="doc_link_systemsettings" translatable="false">https://developer.android.com/reference/android/provider/Settings</string>
+    <string name="doc_link_interactcamera" translatable="false">https://developer.android.com/training/camera/photobasics</string>
+    <string name="doc_link_interactcalendar" translatable="false">https://developer.android.com/reference/android/provider/CalendarContract</string>
+    <string name="doc_link_appspecific" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_sensors" translatable="false">https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview#java</string>
+    <string name="doc_link_qrcode1" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_qrcode2" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_timer" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
 
 
     <string name="alertdialog_example_desc">
@@ -235,7 +235,7 @@
        Show how to scan QRcodes.
     </string>
 
-    <string name="fg_example_channel_name">FG Example Channel</string>
+    <string name="fg_example_channel_name" translatable="false">FG Example Channel</string>
     <string name="fg_example_channel_desc">The channel for the Foreground Service example.</string>
     <string name="animations_example_desc">
     The tweens animation only needs to set the two states and duration before and after,
