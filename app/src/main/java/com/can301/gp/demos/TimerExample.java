@@ -55,6 +55,8 @@ public class TimerExample extends AppCompatActivity {
     private String codeId;
     private TextView tvCountdown;
     private Button btnSet;
+    private int count;
+
     private CountDownTimer countDownTimer;
     private long timeLeftInMillis;
     private SQLiteDatabase database;
@@ -183,7 +185,11 @@ public class TimerExample extends AppCompatActivity {
         TimePickerDialog timePickerDialog = new TimePickerDialog(TimerExample.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                startCountdown(hourOfDay, minute);
+                if (count<1){
+                    startCountdown(hourOfDay, minute);
+                    count++;
+                }
+
             }
         }, 0, 0, true);
 
@@ -215,6 +221,7 @@ public class TimerExample extends AppCompatActivity {
                 deleteCountdownFromDatabase();
                 Intent intent = new Intent("com.example.countdown");
                 sendBroadcast(intent);
+                count--;
             }
         }.start();
     }
@@ -318,6 +325,6 @@ public class TimerExample extends AppCompatActivity {
 
 
 
-    }
+}
 
 

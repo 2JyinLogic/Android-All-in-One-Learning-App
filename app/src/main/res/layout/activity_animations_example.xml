@@ -95,7 +95,7 @@
         android:id="@+id/translate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="100dp"
+
         android:height="50dp"
         android:text="translate"
 
