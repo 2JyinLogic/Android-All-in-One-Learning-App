@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/Screen"
+    android:id="@+id/screen"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".demos.EffectExampleNightMode">
@@ -11,8 +12,8 @@
         android:id="@+id/effectExampleName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#6750A3"
-        style="@style/effectName"
+        android:background="@color/darkpurple"
+        android:textColor="@color/white"
         android:gravity="center"
         android:padding="16dp"
         android:textSize="22sp"
@@ -57,6 +58,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nightModeTextView">
 
+                <TextView
+                    android:id="@+id/switchText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Light Mode  "
+                    android:textSize="17dp"
+                    app:layout_constraintEnd_toStartOf="@+id/modeSwitch"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/modeSwitch"
@@ -64,10 +75,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:thumb="@drawable/thumb"
-                    app:track="@drawable/track"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toEndOf="@+id/switchText"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:track="@drawable/track" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -85,6 +96,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:id="@+id/card1"
+                        app:cardBackgroundColor="@color/white"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         app:cardElevation="20dp"
@@ -97,7 +109,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/tex1"
+                                android:id="@+id/text1"
                                 android:text="Popo"
                                 android:textSize="18sp"
                                 android:layout_centerHorizontal="true"
@@ -115,6 +127,8 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card2"
+                        app:cardBackgroundColor="@color/white"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
@@ -129,7 +143,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/tex2"
+                                android:id="@+id/text2"
                                 android:text="Andy"
                                 android:textSize="18sp"
                                 android:layout_centerHorizontal="true"
@@ -160,6 +174,8 @@
                     app:layout_constraintTop_toBottomOf="@id/row1">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card3"
+                        app:cardBackgroundColor="@color/white"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
@@ -192,6 +208,8 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card4"
+                        app:cardBackgroundColor="@color/white"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
@@ -224,6 +242,8 @@
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -237,6 +257,7 @@
         android:drawableLeft="@drawable/ic_view_documentation"
         android:text="View Documentation"
         android:textSize="16sp"
+        android:backgroundTint="@color/darkpurple"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -249,6 +270,7 @@
         android:onClick="goHome"
         android:text="Home"
         android:textSize="16sp"
+        android:backgroundTint="@color/darkpurple"
         app:layout_constraintEnd_toStartOf="@+id/docLink"
         app:layout_constraintTop_toTopOf="@+id/docLink" />
 
@@ -261,22 +283,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/effectBottomButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/bottom_button_style"
+            android:background="@drawable/button_light_effect"
+            android:textColor="@color/mediangray"
             android:text="Effect"
+            android:textAllCaps="false"
             android:textSize="22sp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/codeBottomButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/bottom_button_style"
+            android:background="@drawable/button_light_code"
             android:text="Code"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
             android:textSize="22sp" />
 
     </LinearLayout>
