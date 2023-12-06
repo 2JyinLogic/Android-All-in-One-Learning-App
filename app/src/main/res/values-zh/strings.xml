@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">小组项目</string>
 
+    <string name="demo_title_nightmode">夜间模式</string>
+    <string name="demo_title_rippleeffect">涟漪效果</string>
+    <string name="demo_title_loadingeffect">闪烁加载效果</string>
+    <string name="demo_title_progressbareffect">进度球效果</string>
+    <string name="demo_title_fancyloadingeffect">炫彩加载效果</string>
+    <string name="demo_title_zooming">缩放</string>
+    <string name="demo_title_dragging">拖拽</string>
     <string name="demo_title_bgservice">后台服务</string>
     <string name="cat_title_services">服务</string>
     <string name="cat_title_sys_interaction">系统交互</string>
@@ -11,6 +18,8 @@
     <string name="demo_title_systemsettings">转到系统设置</string>
     <string name="demo_title_appspecific">App 相关文件</string>
     <string name="demo_title_sensors">传感器</string>
+    <string name="cat_title_effects">效果</string>
+    <string name="cat_title_gestures">手势</string>
     <string name="request_permission_example_desc">" 每个 Android 应用程序都在有限访问的沙盒中运行。如果您的应用程序需要使用自身沙盒之外的资源或信息，您可以声明一个运行时权限，并设置一个权限请求来提供这种访问。         在本示例中，可以点击页面上的每个按钮，提示应用程序请求特定的运行时权限。通常情况下，应在用户开始与相关功能交互时进行此操作。事先在清单中声明可能需要哪些权限。    "</string>
     <string name="bg_service_example_desc">
         后台服务执行用户不会直接注意到的操作。
@@ -41,9 +50,19 @@
     <string name="sensors_example_desc">大多数 Android 设备都内置传感器，可以测量运动、方向和各种环境条件。          这些传感器能够提供高精度和准确度的原始数据，如果您想要监控三维设备移动或定位，或者想要监控设备附近的周围环境的变化，这些传感器非常有用。           在此示例中，您将学习如何从不同类型的传感器获取精度和值。</string>
     <string name="fg_example_channel_desc">Foreground 服务示例的Channel。</string>
     <string name="bg_service_example_note">注意：如果不在新线程中启动，应用程序将冻结并关闭。</string>
+    <string name="night_mode_example_desc">在明亮的白天条件下使用“日间模式”，在夜晚照明昏暗时切换至“夜间模式”。           在这个示例中，通过轻轻一触切换按钮，您可以体验到在直观的用户界面切换之间轻松切换明亮和夜间模式。</string>
+    <string name="ripple_effect_example_desc">涟漪效果通常在各种场景中被广泛使用，比如信号检索和按钮点击，以增强用户的视觉体验。         在这个示例中，您可以通过点击角色图标来启动涟漪效果。点击空白区域将停止涟漪效果，提供一种动态而交互式的视觉反馈机制。</string>
+    <string name="loading_effect_example_desc">闪烁加载是一种在数据加载过程中使用的技术，用于提供用户反馈。它利用灰色区域或图标来模拟即将加载的内容的布局，使用户感知到页面正在加载过程中。这种方法通过提供正在进行的活动的视觉指示，有助于缓解用户在数据加载过程中的焦虑感。</string>
+    <string name="progress_bar_effect_example_desc">进度球是一种动态加载指示器，旨在增强用户在数据检索过程中的体验。它采用脉动的动画或颜色变化来表示正在进行的加载，为用户提供了过程的视觉提示。这种微妙而有效的技术减轻了用户的担忧，确保了流畅而知情的导航体验。</string>
+    <string name="fancy_loading_effect_example_desc">炫彩加载效果作为引人入胜的动态指示器，丰富了用户在各种过程中的体验。这些视觉上令人愉悦的动画超越了传统的加载条，为用户界面引入了一种令人愉快的视觉效果。           以下是九种提升用户体验的炫彩加载效果：</string>
+    <string name="zooming_example_desc">图像缩放是一项改变性的功能，当用户与视觉内容进行交互时，它提升了用户体验。它超越了传统的静态显示，为用户提供了对图像的身临其境和动态的探索。这种引人入胜的功能允许用户进行缩放，提供更近距离地查看细节，创造出更具交互性和个性化的观看体验。</string>
+    <string name="dragging_example_desc">图像拖拽是一种动态且互动性强的功能，极大地提升了用户与视觉内容交互时的体验。与传统的静态显示不同，拖拽使用户能够在图像之间无缝导航，提供更沉浸式和个性化的探索体验。</string>
+
     <string name="cat_desc_services">安卓服务</string>
     <string name="cat_desc_sys_interaction">与Android系统的互动</string>
     <string name="cat_desc_storage">存储</string>
+    <string name="cat_desc_effects">展示多种UI效果</string>
+    <string name="cat_desc_gestures">展示多种手势交互</string>
     <string name="main_browse_all_categories">浏览所有分类</string>
     <string name="main_all_categories_button">所有分类</string>
     <string name="main_search_specific_demo">搜索特定Demo</string>
