@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">小组项目</string>
+
+    <string name="demo_title_bgservice">后台服务</string>
+    <string name="cat_title_services">服务</string>
+    <string name="cat_title_sys_interaction">系统交互</string>
+    <string name="cat_title_storage">文件存储</string>
+    <string name="demo_title_fgservice">前台服务</string>
+    <string name="demo_title_boundservice">绑定服务</string>
+    <string name="demo_title_reqpermission">请求权限</string>
+    <string name="demo_title_systemsettings">转到系统设置</string>
+    <string name="demo_title_appspecific">App 相关文件</string>
+    <string name="demo_title_sensors">传感器</string>
+    <string name="request_permission_example_desc">" 每个 Android 应用程序都在有限访问的沙盒中运行。如果您的应用程序需要使用自身沙盒之外的资源或信息，您可以声明一个运行时权限，并设置一个权限请求来提供这种访问。         在本示例中，可以点击页面上的每个按钮，提示应用程序请求特定的运行时权限。通常情况下，应在用户开始与相关功能交互时进行此操作。事先在清单中声明可能需要哪些权限。    "</string>
     <string name="bg_service_example_desc">
         后台服务执行用户不会直接注意到的操作。
 
@@ -22,7 +34,19 @@
         用户可以与通知上的信息进行交互（如Reply, Dismiss等），即使在应用程序关闭时也是如此。
         即使应用程序已关闭，用户也可以与通知上的消息进行交互（如Reply, Dismiss）。
     </string>
+
+
+    <string name="go_system_settings_example_desc">每个 Android 设备上的系统设置应用程序都是用户可以调整有关系统、用户和每个应用程序的几乎所有设置的地方。 然而，由于条目太多，新手用户在需要更改特定设置时很容易迷失方向。           在此示例中，您可以学习如何将用户导航到系统设置应用程序中的许多特定设置条目。</string>
+    <string name="app_specific_files_example_desc">在许多情况下，您的应用会创建其他应用不需要或不应访问的文件。 系统提供以下位置来存储此类特定于应用程序的文件：          内部存储目录和外部存储目录。 您可以创建持久文件和缓存文件。           在此示例中，您可以在任何目录中创建持久文件和缓存文件，并检查文件是否存在。</string>
+    <string name="sensors_example_desc">大多数 Android 设备都内置传感器，可以测量运动、方向和各种环境条件。          这些传感器能够提供高精度和准确度的原始数据，如果您想要监控三维设备移动或定位，或者想要监控设备附近的周围环境的变化，这些传感器非常有用。           在此示例中，您将学习如何从不同类型的传感器获取精度和值。</string>
     <string name="fg_example_channel_desc">Foreground 服务示例的Channel。</string>
     <string name="bg_service_example_note">注意：如果不在新线程中启动，应用程序将冻结并关闭。</string>
+    <string name="cat_desc_services">安卓服务</string>
+    <string name="cat_desc_sys_interaction">与Android系统的互动</string>
+    <string name="cat_desc_storage">存储</string>
+    <string name="main_browse_all_categories">浏览所有分类</string>
+    <string name="main_all_categories_button">所有分类</string>
+    <string name="main_search_specific_demo">搜索特定Demo</string>
+    <string name="main_highlighted_cats">突出显示的分类</string>
 
 </resources>
