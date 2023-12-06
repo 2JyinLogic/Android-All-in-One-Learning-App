@@ -49,4 +49,23 @@
     <string name="main_search_specific_demo">搜索特定Demo</string>
     <string name="main_highlighted_cats">突出显示的分类</string>
 
+    <string name="button_desc">
+       按钮是一种常见的组件，它是与应用程序交互的最简单方式。用户可以点击它来传送他们的指令。按钮也可以用图像代替。单击按钮，将发生改变。
+    </string>
+    <string name="radio_desc">
+       单选组是一组按钮，但只能选择其中的一个按钮。选择一个按钮，改变将会发生。
+    </string>
+    <string name="switch_desc">
+       开关是一种常见的组件。它有两种状态，开和关。组件的两种状态表示应用程序的两种状态。布局会根据开关状态的变化而变化。
+    </string>
+    <string name="progress_desc">
+      一种显示程序进度的组件，以便为用户提供大致的等待时间。
+    </string>
+    <string name="seek_desc">
+       拖动按钮，文本将根据按钮的状态进行更改。
+    </string>
+    <string name="rating_desc">
+     点击星星并进行打分，结果将会显示。
+    </string>
+
 </resources>
