@@ -34,7 +34,7 @@ public class CodePage extends AppCompatActivity {
     // ID of the source code resource.
     private String codeId;
     // Title of the demostration
-    private String demoTitle;
+    private int demoTitle;
 
     // Class name of the activity of the thing that is displayed
     private String activityClassName;
@@ -129,14 +129,14 @@ public class CodePage extends AppCompatActivity {
 
             codeId = inIntent.getStringExtra(CODE_ID_KEY);
             activityClassName = inIntent.getStringExtra(CODE_CLASS_NAME_KEY);
-            demoTitle = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_TITLE_KEY);
+            demoTitle = inIntent.getIntExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, 0);
         }
         // If it does not exist, try to load from a previously destroyed instance,
         // if it was previously saved.
         else if (savedInstanceState != null) {
             codeId = savedInstanceState.getString(CODE_ID_KEY);
             activityClassName = savedInstanceState.getString(CODE_CLASS_NAME_KEY);
-            demoTitle = savedInstanceState.getString(Demonstration.EFFECT_DEMO_TITLE_KEY);
+            demoTitle = savedInstanceState.getInt(Demonstration.EFFECT_DEMO_TITLE_KEY);
         }
         // Otherwise, unable to establish the state.
         else {
@@ -214,7 +214,7 @@ public class CodePage extends AppCompatActivity {
     public void onSaveInstanceState(Bundle outState) {
         outState.putString(CODE_ID_KEY, codeId);
         outState.putString(CODE_CLASS_NAME_KEY, activityClassName);
-        outState.putString(Demonstration.EFFECT_DEMO_TITLE_KEY, demoTitle);
+        outState.putInt(Demonstration.EFFECT_DEMO_TITLE_KEY, demoTitle);
 
         // Call superclass to save any view hierarchy.
         super.onSaveInstanceState(outState);

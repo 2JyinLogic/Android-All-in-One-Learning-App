@@ -1,5 +1,5 @@
 public class BottomSheetDialogExample extends AppCompatActivity {
-    private String demoTitle;
+    private int demoTitle;
     private String codeId;
 
     // ... Existing methods ...

@@ -26,7 +26,7 @@ import com.can301.gp.codepage.CodePage;
 
 public class ProgressBarWidget extends AppCompatActivity {
 
-    private String demoTitle;
+    private int demoTitle;
     // codeId is needed for the code page to load the corresponding code
     // and for this activity to load the documentation link
     private String codeId;
@@ -105,7 +105,8 @@ public class ProgressBarWidget extends AppCompatActivity {
         if (!inIntent.hasExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY)) {
             throw new RuntimeException("Give me the code ID!");
         }
-        demoTitle = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_TITLE_KEY);
+        demoTitle = inIntent.getIntExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, 0);
+        assert demoTitle != 0;
         codeId = inIntent.getStringExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY);
 
         // Set information about this effect
