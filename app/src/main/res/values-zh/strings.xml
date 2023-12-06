@@ -41,6 +41,12 @@
     <string name="sensors_example_desc">大多数 Android 设备都内置传感器，可以测量运动、方向和各种环境条件。          这些传感器能够提供高精度和准确度的原始数据，如果您想要监控三维设备移动或定位，或者想要监控设备附近的周围环境的变化，这些传感器非常有用。           在此示例中，您将学习如何从不同类型的传感器获取精度和值。</string>
     <string name="fg_example_channel_desc">Foreground 服务示例的Channel。</string>
     <string name="bg_service_example_note">注意：如果不在新线程中启动，应用程序将冻结并关闭。</string>
-    <string name="demo_title_fgservice">前台服务</string>
+    <string name="cat_desc_services">安卓服务</string>
+    <string name="cat_desc_sys_interaction">与Android系统的互动</string>
+    <string name="cat_desc_storage">存储</string>
+    <string name="main_browse_all_categories">浏览所有分类</string>
+    <string name="main_all_categories_button">所有分类</string>
+    <string name="main_search_specific_demo">搜索特定Demo</string>
+    <string name="main_highlighted_cats">突出显示的分类</string>
 
 </resources>

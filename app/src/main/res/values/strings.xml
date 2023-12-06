@@ -114,7 +114,7 @@
     <string name="demo_title_timer">TimerExample</string>
 
     <string name="cat_title_services">Services</string>
-    <string name="cat_title_qrcode">QR Code related</string>
+    <string name="cat_title_qrcode">QR Code</string>
     <string name="cat_title_sys_interaction">System Interaction</string>
     <string name="cat_title_storage">Storage</string>
     <string name="cat_title_navigation">Navagation</string>
@@ -340,6 +340,19 @@
 
     <string name="bg_service_example_note">
         NOTE: NOT start in a new thread will FREEZE AND KILL the app
+    </string>
+
+    <string name="main_browse_all_categories">
+        Browse All Categories
+    </string>
+    <string name="main_all_categories_button">
+        All Categories
+    </string>
+    <string name="main_search_specific_demo">
+        Search For Specific Demo
+    </string>
+    <string name="main_highlighted_cats">
+        Highlighted Categories
     </string>
 
 </resources>
