@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">小组项目</string>
 
+    <string name="demo_title_timepickerdialog">时间选择对话框</string>
+    <string name="demo_title_progressdialog">进度对话框</string>
+    <string name="demo_title_bottomsheetdialog">底部表单对话框</string>
+    <string name="demo_title_popupwindow">弹出式窗口</string>
+    <string name="demo_title_alertdialog">警报对话框</string>
+    <string name="demo_title_datepickerdialog">日期选择对话框</string>
+    <string name="demo_title_interactcamera">相机交互</string>
+    <string name="demo_title_interactcalendar">日历交互</string>
+
     <string name="demo_title_bgservice">后台服务</string>
     <string name="cat_title_services">服务</string>
     <string name="cat_title_sys_interaction">系统交互</string>
@@ -34,6 +43,35 @@
         用户可以与通知上的信息进行交互（如Reply, Dismiss等），即使在应用程序关闭时也是如此。
         即使应用程序已关闭，用户也可以与通知上的消息进行交互（如Reply, Dismiss）。
     </string>
+    <string name="cat_desc_dialogs">
+       探索各种对话框样式和通知方法。了解如何通过情态动词、弹出窗口、祝酒词等吸引用户的注意力，以获得引人入胜的用户体验。
+    </string>
+    <string name="alertdialog_example_desc">
+    这个例子演示了如何在Android中使用AlertDialogs来显示弹出消息或获取用户输入。它涵盖了创建带有按钮的警报对话框、自定义布局和处理用户响应。
+    </string>
+
+    <string name="interactcamera_example_desc">
+   这个例子演示了如何在Android应用程序中与相机进行交互。你可以拍照，请求相机权限，并显示捕获的图像。
+    </string>
+    <string name="interactcalendar_example_desc">
+    这个例子演示了如何从Android应用程序向用户的日历中添加事件。集成日历功能通过在应用程序中无缝管理他们的日程安排来增强用户粘性。
+    </string>
+    <string name="popupwindow_example_desc">
+      出现在屏幕顶部的小弹出窗口，通常用来显示附加信息或选项。
+    </string>
+    <string name="bottomsheetdialog_example_desc">
+    让BottomSheetDialog支持数据处理功能，例如获取用户输入、执行一些逻辑操作和显示结果。这里，我们使用Example:对输入字符串进行反向排序
+    </string>
+    <string name="progressdialog_example_desc">
+     这个‘ProgressDialogExample’类在Android中演示了使用’ProgressDialog’来指示加载过程。它包含一个名为“MockNetworkRequest”的“AsyncTask”来模拟网络请求。该类允许用户使用对话框上的“cancel”按钮取消正在进行的任务。它展示了在后台处理异步任务的同时，通过UI元素向用户提供反馈，确保了响应性和交互性的应用程序体验。该类还处理各种其他用户交互，例如导航到不同的页面和查看文档。
+    </string>
+    <string name="timepickerdialog_example_desc">
+     该函数触发TimePickerDialog界面的显示，该界面允许用户选择时间。对话框初始化时，默认选择当前系统时间。它还适应用户对时间格式(24小时或AM/PM格式)的偏好，基于布局中存在的开关状态。
+    </string>
+    <string name="datepickerdialog_example_desc">
+     这个函数负责向用户显示DatePickerDialog。当调用时，它会显示一个日历样式的日期选择器接口，允许用户选择一个特定的日期。该函数初始化日期选择器，将当前日期作为默认值，但可以根据需要自定义。
+    </string>
+    <string name="switch_24_hour_format">24小时模式</string>
 
 
     <string name="go_system_settings_example_desc">每个 Android 设备上的系统设置应用程序都是用户可以调整有关系统、用户和每个应用程序的几乎所有设置的地方。 然而，由于条目太多，新手用户在需要更改特定设置时很容易迷失方向。           在此示例中，您可以学习如何将用户导航到系统设置应用程序中的许多特定设置条目。</string>
