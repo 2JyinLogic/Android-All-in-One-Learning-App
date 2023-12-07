@@ -324,20 +324,32 @@ public class MainActivity extends AppCompatActivity {
         // Decided by ourselves
         highlightedCats = new ArrayList<>();
         // highlight Services
-        highlightedCats.add(0);
+        highlightedCats.add(6);
         // highlight System Interaction
-        highlightedCats.add(9);
-        // highlight Animation
-        highlightedCats.add(4);
-        // highlight Effects
         highlightedCats.add(8);
+        // highlight Animation
+        highlightedCats.add(0);
+        // highlight Effects
+        highlightedCats.add(3);
         // highlight Dialogs
-        highlightedCats.add(5);
+        highlightedCats.add(1);
         // highlight Widgets
-        highlightedCats.add(2);
+        highlightedCats.add(9);
 
         // Fill in the lists
-        catList = new ArrayList<Category>(categories.values());
+        catList = new ArrayList<Category>();
+        // Fill in the catList by hand so I can control the order
+        catList.add(categories.get(R.string.cat_title_animations));
+        catList.add(categories.get(R.string.cat_title_dialogs));
+        catList.add(categories.get(R.string.cat_title_gestures));
+        catList.add(categories.get(R.string.cat_title_effects));
+        catList.add(categories.get(R.string.cat_title_navigation));
+        catList.add(categories.get(R.string.cat_title_qrcode));
+        catList.add(categories.get(R.string.cat_title_services));
+        catList.add(categories.get(R.string.cat_title_storage));
+        catList.add(categories.get(R.string.cat_title_sys_interaction));
+        catList.add(categories.get(R.string.cat_title_widgets));
+
         demoList = new ArrayList<Demonstration>();
         for (HashMap<Integer, Demonstration> h : demos.values()) {
             demoList.addAll(h.values());

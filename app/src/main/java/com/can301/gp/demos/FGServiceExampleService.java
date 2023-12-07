@@ -163,7 +163,7 @@ public class FGServiceExampleService extends Service {
         // Go to the effect activity for the foreground service.
         Intent replyIntent = new Intent(this, FGServiceExample.class);
         replyIntent.setAction(ACTION_AGREE);
-        replyIntent.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, "Foreground Service");
+        replyIntent.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, R.string.demo_title_fgservice);
         replyIntent.putExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY, "fgservice");
         return PendingIntent.getActivity(
                 this, 0, replyIntent, PendingIntent.FLAG_IMMUTABLE);
@@ -177,7 +177,7 @@ public class FGServiceExampleService extends Service {
         // Go to the effect activity for the foreground service.
         Intent replyIntent = new Intent(this, FGServiceExample.class);
         replyIntent.setAction(ACTION_DISMISS);
-        replyIntent.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, "Foreground Service");
+        replyIntent.putExtra(Demonstration.EFFECT_DEMO_TITLE_KEY, R.string.demo_title_fgservice);
         replyIntent.putExtra(Demonstration.EFFECT_DEMO_CODE_ID_KEY, "fgservice");
         return PendingIntent.getActivity(
                 this, 0, replyIntent, PendingIntent.FLAG_IMMUTABLE);

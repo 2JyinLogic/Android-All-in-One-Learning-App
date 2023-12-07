@@ -15,6 +15,7 @@ public class GlobalData {
     public static HashMap<Integer, HashMap<Integer, Demonstration>> demos =
             new HashMap<Integer, HashMap<Integer, Demonstration>>();
     // Those that will be displayed on the main page
+    // Each element is the index of the category in catList.
     public static ArrayList<Integer> highlightedCats = new ArrayList<Integer>();
 
     // For the sake of the selectors that only know about indices,
@@ -22,5 +23,5 @@ public class GlobalData {
     public static ArrayList<Category> catList = new ArrayList<Category>();
     public static ArrayList<Demonstration> demoList = new ArrayList<Demonstration>();
 
-    public static final int numHighlighedCats = 4;
+    public static final int numHighlighedCats = 6;
 }
