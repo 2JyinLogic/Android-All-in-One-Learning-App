@@ -32,6 +32,7 @@
     <string name="demo_title_systemsettings">转到系统设置</string>
     <string name="demo_title_appspecific">App 相关文件</string>
     <string name="demo_title_sensors">传感器</string>
+    <string name="cat_title_dialogs">对话框</string>
     <string name="cat_title_effects">效果</string>
     <string name="cat_title_widgets">UI控件</string>
     <string name="cat_title_gestures">手势</string>
