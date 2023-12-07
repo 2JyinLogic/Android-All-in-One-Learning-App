@@ -72,9 +72,9 @@
     <string name="doc_link_interactcalendar" translatable="false">https://developer.android.com/reference/android/provider/CalendarContract</string>
     <string name="doc_link_appspecific" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
     <string name="doc_link_sensors" translatable="false">https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview#java</string>
-    <string name="doc_link_qrcode1" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
-    <string name="doc_link_qrcode2" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
-    <string name="doc_link_timer" translatable="false">https://developer.android.com/training/data-storage/app-specific</string>
+    <string name="doc_link_qrcode1" translatable="false">https://developer.android.com/develop/ui/views/graphics/drawables</string>
+    <string name="doc_link_qrcode2" translatable="false">https://developer.android.com/develop/ui/views/graphics/drawables</string>
+    <string name="doc_link_timer" translatable="false">https://developer.android.com/training/scheduling/alarms/string></string>
 
     <string name="demo_title_timepickerdialog">TimePickerDialog</string>
     <string name="demo_title_progressdialog">ProgressDialog</string>

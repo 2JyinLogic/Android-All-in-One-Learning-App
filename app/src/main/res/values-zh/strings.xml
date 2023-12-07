@@ -87,4 +87,50 @@
      点击星星并进行打分，结果将会显示。
     </string>
 
+    <string name="frame_animations_example_desc">
+        帧动画通过可绘制的帧文件拼接一系列图片，设置每个图片的显示时间，然后通过在布局中调用@drawable/frame来显示它
+        单击按钮，它将从第一帧开始显示，连续播放形成动画效果。
+    </string>
+    <string name="attribute_animations_example_desc">
+        属性动画提供了一种更方便的操作方式。通过在对象动画器中配置属性，可以控制图像/文本中包含的所有属性，例如调节透明度、缩放、旋转、移动等
+    </string>
+    <string name="animations_example_desc">
+        tweens动画只需要设置前后两种状态和持续时间，软件自动完成中间过程。
+        下面，以透明度、旋转、缩放和平移作为示例，我们将演示如何使用点击按钮来实现元素更改
+    </string>
+    <string name="navigation_example_desc">
+        底部导航栏通常用于页面转换，便于构建整体框架，突出显示核心功能，简化工作流程，方便用户切换页面
+        此外，可以在设置中自定义选择状态和其他状态，从而可以轻松突出显示当前页面。
+    </string>
+    <string name="navigation_drawer_example_desc">
+        按住左边缘或拖动以显示抽屉导航栏。
+    </string>
+    <string name="timer_example_desc">
+        设置倒计时并在时间结束后提示。
+    </string>
+    <string name="qrcode_generate_desc">
+        演示如何生成二维码,在此处输入消息。
+    </string>
+
+    <string name="demo_title_navigation1">底部导航栏</string>
+    <string name="demo_title_navigation2">抽屉导航栏</string>
+    <string name="demo_title_animation1">补间动画</string>
+    <string name="demo_title_frameanimation">帧动画</string>
+    <string name="demo_title_attributeanimation">属性动画</string>
+    <string name="demo_title_qrcode1">二维码生成</string>
+    <string name="demo_title_timer">设置倒计时</string>
+
+    <string name="cat_title_qrcode">二维码</string>
+    <string name="cat_title_navigation">导航栏</string>
+    <string name="cat_title_animations">动画</string>
+    <string name="cat_desc_qrcode">
+        演示有关二维码的活动，如扫描、创建。
+    </string>
+    <string name="cat_desc_navigation">
+        显示各种导航栏的效果。
+    </string>
+    <string name="cat_desc_animations">
+        显示各种动画的效果和实现方式。
+    </string>
+
 </resources>
