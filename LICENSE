@@ -1,4 +1,4 @@
-This file uses a compiled binary of java-prettify at https://github.com/GerritCodeReview/java-prettify
+This project uses a compiled binary of java-prettify at https://github.com/GerritCodeReview/java-prettify
 
 Hence a copy of its Apache license is included here
 
